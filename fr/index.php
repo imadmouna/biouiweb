@@ -75,61 +75,43 @@
   </tr>
   <tr>
     <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666;"><p></p>
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td align="left" valign="top" style="padding-left:10px"><strong style="color:#77AD1B;">Transport & Infrastructures</strong><br />
-              <br />
-			  Notre expertise s'étends sur plusieurs segments d'infrastructures à savoir:<br /><br />
+      
 
-conduits, projets de barrages, l'eau potable et des collecteurs d'eau de pluie, ponts,l'ar-sanary, travaux de génie civil.
-<br /><br />
-BIOUITRAVAUX se dévoue a offrir , des services complet couvrant toutes les activités de la construction des routes et chemins de fer...<br /><br />
-              <a href="projecttri.php" style="color:#333333">cliquez ici pour accéder au projects</a></p></td>
-          <td width="400" align="right" valign="top" style="padding-left:10px;padding-right:20px"><img src="img/img.jpg" width="240" height="260" style="padding:1px;border:solid 1px #CCCCCC"/></td>
-        </tr>
-        <tr>
-          <td colspan="2" style="padding-left:10px"><br /></td>
-        </tr>
-      </table>
-      <br />
-      <br />
+    <?php
+        $query = mysql_query("select * from activites order by id desc");
+        while($t1 = mysql_fetch_array($query)){
+    ?>
+
+
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td align="left" valign="top" style="padding-left:10px"><strong style="color:#77AD1B;">Travaux hydrauliques et génie civil</strong><br />
-              <br />
-              <p>BIOUITRAVAUX donne une grande valeur aux travaux hydrauliques ainsi qu'&agrave; la g&eacute;nie civil pour leur importance 
-                dans les domaines d'affaires de BIOUITRAVAUX dans le but d'&ecirc;tre comp&eacute;titif dans la mod&eacute;rnisation des villes et des projets de comfort car
-                BIOUITRAVAUX donnant vie &agrave; ce que les gens ont besoin.</p>
-              <p>Les services dans ce domaine comprend des projets visant principalement des constructions de distribution d'eau, la protection contre les inondations <br />
-                de b&acirc;timents: commerciales et industrielles ...<br />
-              </p>
-              <br />
-              <br />
-              <a href="civil.php" style="color:#333333">cliquez ici pour accéder au projects</a></td>
-          <td width="400" align="right" valign="top" style="padding-left:10px;padding-right:20px"><img src="img/img1.jpg" width="240" height="260" style="padding:1px;border:solid 1px #CCCCCC"/></td>
+          <td align="left" valign="top" style="padding-left:10px"><strong style="color:#77AD1B;">
+            <?php echo stripslashes(utf8_decode($t1[1])); ?>
+          </strong>
+          <br />
+          <br />
+			     <?php echo stripslashes(utf8_decode($t1[2])); ?>
+          </td>
+          <td width="400" align="right" valign="top" style="padding-left:10px;padding-right:20px">
+            <img src="../<?php echo $t1[3]; ?>" width="240" height="260" style="padding:1px;border:solid 1px #CCCCCC" />
+          </td>
         </tr>
         <tr>
           <td colspan="2" style="padding-left:10px"><br /></td>
         </tr>
       </table>
-      <p><br />
-          <br />
-      </p>
-      <div>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td align="left" valign="top" style="padding-right:30px;padding-left:10px"><span style="padding-left:0px"><strong style="color:#77AD1B;">Aménagement et autres travaux</strong><br />
-                  <br />
-				  Modernisation et/ou reconstruction de bâtiments, commercials, des espaces de vie et le d&eacute;veloppement de projets...
-              <br />
-              <br />
-              <a href="plan_work.php" style="color:#333333">cliquez ici pour accéder au projects</a></span></td>
-            <td width="400" align="right" valign="top" style="padding-left:10px;padding-right:20px"><img src="img/img2.jpg" width="240" height="260" style="padding:1px;border:solid 1px #CCCCCC"/></td>
-          </tr>
-        </table><br /><br />
-      </div></td>
-  </tr>
-</table>
+      <br />
+      <br />
+
+
+    <?php
+      }
+    ?>
+
+
+
+
+      
           </td>
       </tr>
       

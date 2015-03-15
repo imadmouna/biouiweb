@@ -10,26 +10,37 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 }
   include("../connect.php");
 
-  if(isset($_GET['spr'])){
-    if(($_GET['spr'])){
-      mysql_query("delete from activites where id=".$_GET["spr"]);
-      echo "<script>alert('Suppression valide !');</script>";
-      echo "<script>document.location.href='activites.php';</script>";
+  $t = "";
+  if(isset($_GET['id'])){
+    if(($_GET['id'])){
+        $q = mysql_query("select * from activites where id = ".$_GET['id']);
+        $t = mysql_fetch_array( $q );
     }
   }
-  if(isset($_POST['titre']) and isset($_POST['texte']) and isset($_FILES['photo']['tmp_name'])){
-    if(($_POST['titre']) and ($_POST['texte']) and ($_FILES['photo']['tmp_name'])){
 
-      $path = $_FILES['photo']['name'];
-      $ext = pathinfo($path, PATHINFO_EXTENSION);
+  
+  if(isset($_POST['titre']) and isset($_POST['texte']) and isset($_POST['id'])){
+    if(($_POST['titre']) and ($_POST['texte']) and ($_POST['id'])){
 
-      $chemin = "images/others/".sha1(time()).".".$ext;
-      mysql_query("insert into activites values(null,'"
-              .addslashes(utf8_encode($_POST['titre']))
-        ."','".addslashes(utf8_encode($_POST['texte']))."','".$chemin."')");
-      copy($_FILES['photo']['tmp_name'], "../".$chemin);
-      echo "<script>alert('Insertion valide !');</script>";
-      echo "<script>document.location.href='activites.php';</script>";
+
+      if(isset($_FILES['photo']['tmp_name']) and ($_FILES['photo']['tmp_name'])){
+        $path = $_FILES['photo']['name'];
+        $ext = pathinfo($path, PATHINFO_EXTENSION);
+
+        $chemin = "images/others/".sha1(time()).".".$ext;
+        mysql_query("update activites set titre = '"
+                .addslashes(utf8_encode($_POST['titre']))
+          ."', texte = '".addslashes(utf8_encode($_POST['texte']))."', photo='".$chemin."' where id=".$_POST['id']);
+        copy($_FILES['photo']['tmp_name'], "../".$chemin);
+      }else{
+
+        mysql_query("update activites set titre = '"
+                .addslashes(utf8_encode($_POST['titre']))
+          ."', texte = '".addslashes(utf8_encode($_POST['texte']))."' where id=".$_POST['id']);
+      }
+      
+      echo "<script>alert('Modification valide !');</script>";
+      echo "<script>document.location.href='editActivite.php?id=".$_POST['id']."';</script>";
     }
   }
 ?>
@@ -149,16 +160,24 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                     
                     <div class="form-group">
                         <label>Titre</label>
-                        <input type="text" name="titre" class="form-control">
+                        <input type="text" name="titre" class="form-control" value="<?php if($t) echo stripslashes(utf8_decode($t[1])); ?>">
                     </div>
                     <div class="form-group">
                         <label>Texte</label>
-                         <textarea name="texte" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                         <textarea name="texte" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                          <?php if($t) echo stripslashes(utf8_decode($t[2])); ?>
+                        </textarea>
+
                     </div>
                     <div class="form-group">
                         <label>Photo</label>
+                        <br>
+                          <img src="../<?php echo stripslashes(utf8_decode($t[3])); ?>" width="100" class="thumbnail" />
+                        <br>
                         <input type="file" class="form-control" name="photo">
                     </div>
+
+                    <input type="hidden" name="id" value="<?php if(isset($_GET['id']) and $_GET['id']) echo $_GET['id']; ?>" />
                     
                     <div class="box-footer">
                     <input type="submit" class="btn btn-default" value="Valider">
@@ -167,37 +186,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
                   <br><br>
 
-                  <table class="table table-striped">
-                      <tr>
-                          <td>Photo</td>
-                          <td>Titre</td>
-                          <td>Texte</td>
-                          <td></td>
-                      </tr>
-                      <?php
-                          $query = mysql_query("select * from activites order by id desc");
-                          while($t = mysql_fetch_array($query)){
-                      ?>
-                      <tr>
-                          <td>
-                              <img src="../<?php echo stripslashes(utf8_decode($t[3])); ?>" width="100" class="thumbnail" />
-                          </td>
-                          <td>
-                              <?php echo stripslashes(utf8_decode($t[1])); ?>
-                          </td>
-                          <td>
-                              <?php echo substr(stripslashes(utf8_decode($t[2])),0,100)."..."; ?>
-                          </td>
-                          <td>
-                              <a href="editActivite.php?id=<?php echo $t[0]; ?>" class="btn btn-success pull-right"><i class="fa fa-edit"></i> Modifier</a>
-                              <a href="?spr=<?php echo $t[0]; ?>" class="btn btn-danger pull-right"><i class="fa fa-times"></i> Supprimer</a>
-                          </td>
-                      </tr>
-
-                      <?php
-                        }
-                      ?>
-                  </table>
+                  
 
 
 
