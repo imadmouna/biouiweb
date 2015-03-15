@@ -106,7 +106,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
         <section class="content-header">
           <h1>
-            <small>Texte accueil</small>
+            <small>Nos activit&eacute;s</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -127,19 +127,48 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                 </div>
 
                 <div class='box-body pad'>
-                  <form method="get">
-                    <textarea name="texte" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
-                      <?php
-                        $query = mysql_query("select texte from accueil");
-                        $t = mysql_fetch_array($query);
-                        echo utf8_decode($t[0]);                        
-                      ?>
-                    </textarea>
+                  <form method="POST" enctype="multipart/form-data">
+                    
+                    <div class="form-group">
+                        <label>Titre</label>
+                        <input type="text" name="titre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Texte</label>
+                         <textarea name="texte" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Photo</label>
+                        <input type="file" class="form-control" name="photo">
+                    </div>
                     
                     <div class="box-footer">
                     <input type="submit" class="btn btn-default" value="Valider">
                   </div>
                   </form>
+
+                  <br><br>
+
+                  <table class="table table-striped">
+                      <tr>
+                          <td>Photo</td>
+                          <td>Titre</td>
+                          <td>Texte</td>
+                          <td></td>
+                      </tr>
+                      <tr>
+                          <td>Photo</td>
+                          <td>Titre</td>
+                          <td>Texte</td>
+                          <td>
+                              <a href="" class="btn btn-success pull-right"><i class="fa fa-edit"></i> Modifier</a>
+                              <a href="" class="btn btn-danger pull-right"><i class="fa fa-times"></i> Supprimer</a>
+                          </td>
+                      </tr>
+                  </table>
+
+
+
                 </div>
               </div>
         </section>
