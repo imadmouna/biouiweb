@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Bienvenue - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -61,15 +61,14 @@
   </tr>
   <tr>
     <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666;"><br /><br />
-    <p>BIOUI TRAVAUX est leader dans les domaines de la construction des Infrastructures de Transport, du G&eacute;nie Civil et du d&eacute;veloppement de projets au Maroc. <br />
-	<br />
-	Nous combinons entre notre expertise, nos capacit&eacute;s techniques, un parc de machines &eacute;norme et &agrave; la pointe de la t&eacute;chnologie ainsi que notre force financi&egrave;re pour la r&eacute;alisations  des maisons, des espaces de vie, la modernisation urbaine, le d&eacute;veloppement  des projets publics.
-	<br />
-	<br />
-	Trois principales activit&eacute;s font partie de toute une gamme de services qui couvres une grande cha&icirc;ne de l'industrie de la construction:
-	</p>
-    <p><br /><br />
-        </td>
+      <?php
+        include("../connect.php");
+        $query = mysql_query("select texte from accueil");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+      ?>
+      <br />
+    </td>
   </tr>
   <tr>
   <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;font-size:30px;font-family:TitilliumMaps26L500wt;color:#77AD1B;background-color:#C0D897">Nos activit&eacute;s</td>

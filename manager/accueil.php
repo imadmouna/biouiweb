@@ -1,3 +1,12 @@
+<?php
+  include("../connect.php");
+
+  if(isset($_GET['texte']) and $_GET['texte']){
+      mysql_query("update accueil set texte='".addslashes(utf8_encode($_GET['texte']))."'");
+      echo "<script>document.location.href='accueil.php';</script>";
+  }
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,12 +36,12 @@
     <div class="wrapper">
       
       <header class="main-header">
-
-        <a href="main.php" class="logo"><b>Admin</b>LTE</a>
+        
+        <a href="#" class="logo"><b>Admin</b>LTE</a>
 
         <nav class="navbar navbar-static-top" role="navigation">
 
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <a href="main.php" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
           </a>
           <div class="navbar-custom-menu">
@@ -88,8 +97,7 @@
 
         <section class="content-header">
           <h1>
-            Dashboard
-            <small>Control panel</small>
+            <small>Texte accueil</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -97,11 +105,38 @@
           </ol>
         </section>
 
-        <!-- Main content -->
+
         <section class="content">
-          
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
+            <div class='box'>
+                <div class='box-header'>
+                  <h3 class='box-title'><small></small></h3>
+                  <!-- tools box -->
+                  <div class="pull-right box-tools">
+                    <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                    <button class="btn btn-default btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+
+                <div class='box-body pad'>
+                  <form method="get">
+                    <textarea name="texte" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                      <?php
+                        $query = mysql_query("select texte from accueil");
+                        $t = mysql_fetch_array($query);
+                        echo utf8_decode($t[0]);                        
+                      ?>
+                    </textarea>
+                    
+                    <div class="box-footer">
+                    <input type="submit" class="btn btn-default" value="Valider">
+                  </div>
+                  </form>
+                </div>
+              </div>
+        </section>
+
+      </div>
+
       
     </div>
 
