@@ -23,7 +23,7 @@
               </a>
               <ul class="treeview-menu">
                 <li class="actives"><a href="pdg.php"><i class="fa fa-circle-o"></i> Mot du PDG</a></li>
-                <li><a href="services.php"><i class="fa fa-circle-o"></i> Nos activit&eacute;s</a></li>
+                <li><a href="services.php"><i class="fa fa-circle-o"></i> Nos services</a></li>
               </ul>
             </li>
             
