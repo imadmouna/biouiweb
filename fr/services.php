@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Nos services - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -62,28 +62,15 @@
   </tr>
   <tr>
     <td align="left" valign="top" style="padding-left:40px;color:#666666"><br />
-    Notre&nbsp;expertise:&nbsp;<br />
+    
+    <?php
+        include("../connect.php");
+        $query = mysql_query("select texte from services");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+      ?>
+
     <br />
-	 La construction d'espaces humain et la sécurité routière avec un impact minimal sur notre - environnement naturel.<br />
-      <br />
- Parmi la gamme de nos services:<br />
-<br />
-- Planification et analyse de l'environnement<br />
-<br />
-- Construction et gestion des routes<br />
-<br />
-- Réfections de carrefours existants, des boulevards et des routes principales<br />
-<br />
-- Réhabilitation et le réaménagement des espaces publics, les plates-formes et des structures<br />
-<br />
-- Travaux Civil<br />
-<br />
-- Travaux de voirie lotissement, l'assainissement et de stationnement<br />
-<br />
-- Finition (marquage, signalisation, nettoyage...)<br />
-<br /> 
-Pour plus 
-&nbsp;d'informations&nbsp;&agrave; propos de nos&nbsp;services,  <a href="contact.php" style="color:#666666">contactez nous!</a><br />
 <br /></td>
   </tr>
 </table>

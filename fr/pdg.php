@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Mot du PDG - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -60,22 +60,15 @@
   </tr>
   <tr>
     <td align="left" valign="top" style="padding-left:40px;color:#666666;font-size:14px"><br />
-	Durant plus de 10 ans, nous avons bâti une solide réputation de qualité et de fiabilité dans tous les domaines de notre activité, ce dont  nous sommes très fiers.
-<br /><br />
-Notre principal atout, allier savoir-faire technique, respect de l’environnement et sécurité.
-<br /><br />
-Face à l’ampleur des réformes engagées par notre pays, nous souhaitons accompagner activement la mise en œuvre de cette stratégie, s’engager pour construire des routes plus sûres et créer des
+	
+      <?php
+        include("../connect.php");
+        $query = mysql_query("select texte from pdg");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+      ?>
 
-environnements humains.
-
-Notre expertise et une bonne maîtrise des risques et des paramètres environnementaux, nous permettent d’avoir une longueur d’avance.<br /><br /><br /><br /><br />
-Cordialement,<br />
-<br />
-      <p> <div align="right" style="padding-right:20px">Abdennabi BIIOUI<br />
-        <strong>Pr&eacute;sident Directeur G&eacute;n&eacute;ral </strong></div>
-        
-      </p>
-      </p><br /><br /></td>
+    <br /><br /></td>
   </tr>
 </table>
           </td>
