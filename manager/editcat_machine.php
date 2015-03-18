@@ -10,9 +10,28 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 }
   include("../connect.php");
 
-  if(isset($_GET['texte']) and $_GET['texte']){
-      mysql_query("update services set texte='".addslashes(utf8_encode($_GET['texte']))."'");
-      echo "<script>document.location.href='services.php';</script>";
+  $t = "";
+  if(isset($_GET['id'])){
+    if(($_GET['id'])){
+        $q = mysql_query("select * from cat_machine where id = ".$_GET['id']);
+        $t = mysql_fetch_array( $q );
+    }
+  }
+
+  
+  if(isset($_POST['titre']) and isset($_POST['id'])){
+    if(($_POST['titre']) and ($_POST['id'])){
+
+
+      
+
+        mysql_query("update cat_machine set cat = '"
+                .addslashes(utf8_encode($_POST['titre']))."' where id=".$_POST['id']);
+      
+      
+      echo "<script>alert('Modification valide !');</script>";
+      echo "<script>document.location.href='editcat_machine.php?id=".$_POST['id']."';</script>";
+    }
   }
 ?>
 
@@ -106,7 +125,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
         <section class="content-header">
           <h1>
-            <small>Nos services</small>
+            <small>Edition cat&eacute;gorie</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -127,26 +146,27 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                 </div>
 
                 <div class='box-body pad'>
-                  <div class="alert alert-warning">
-                      Pour inclure une photo sur la page, veuillez vous rendre sur la séction 
-                      <b><i class="fa fa-upload"></i> Upload de fichiers</b>
-                      <br>Ensuite r&eacute;cup&eacute;rez le chemin de l'image et cliquez sur 
-                      <a class="btn btn-primary"><i class="fa fa-file-image-o"></i></a>
-                  </div>
+                  <form method="POST" enctype="multipart/form-data">
+                    
+                    <div class="form-group">
+                        <label>Titre</label>
+                        <input type="text" name="titre" class="form-control" value="<?php if($t) echo stripslashes(utf8_decode($t[1])); ?>">
+                    </div>
+                   
 
-                  <form method="get">
-                    <textarea name="texte" class="textarea" style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
-                      <?php
-                        $query = mysql_query("select texte from services");
-                        $t = mysql_fetch_array($query);
-                        echo utf8_decode($t[0]);                        
-                      ?>
-                    </textarea>
+                    <input type="hidden" name="id" value="<?php if(isset($_GET['id']) and $_GET['id']) echo $_GET['id']; ?>" />
                     
                     <div class="box-footer">
                     <input type="submit" class="btn btn-default" value="Valider">
                   </div>
                   </form>
+
+                  <br><br>
+
+                  
+
+
+
                 </div>
               </div>
         </section>

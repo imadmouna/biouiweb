@@ -11,8 +11,8 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
   include("../connect.php");
 
   if(isset($_GET['texte']) and $_GET['texte']){
-      mysql_query("update services set texte='".addslashes(utf8_encode($_GET['texte']))."'");
-      echo "<script>document.location.href='services.php';</script>";
+      mysql_query("update organisation set texte='".addslashes(utf8_encode($_GET['texte']))."'");
+      echo "<script>document.location.href='organisation.php';</script>";
   }
 ?>
 
@@ -106,7 +106,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
         <section class="content-header">
           <h1>
-            <small>Nos services</small>
+            <small>Organisation</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -137,7 +137,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                   <form method="get">
                     <textarea name="texte" class="textarea" style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
                       <?php
-                        $query = mysql_query("select texte from services");
+                        $query = mysql_query("select texte from organisation");
                         $t = mysql_fetch_array($query);
                         echo utf8_decode($t[0]);                        
                       ?>

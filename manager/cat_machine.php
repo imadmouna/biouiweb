@@ -10,9 +10,19 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 }
   include("../connect.php");
 
-  if(isset($_GET['texte']) and $_GET['texte']){
-      mysql_query("update services set texte='".addslashes(utf8_encode($_GET['texte']))."'");
-      echo "<script>document.location.href='services.php';</script>";
+  if(isset($_GET['spr'])){
+    if(($_GET['spr'])){
+      mysql_query("delete from cat_machine where id=".$_GET["spr"]);
+      echo "<script>alert('Suppression valide !');</script>";
+      echo "<script>document.location.href='cat_machine.php';</script>";
+    }
+  }
+  if(isset($_POST['titre'])){
+    if(($_POST['titre'])){
+      mysql_query("insert into cat_machine values(null,'".addslashes(utf8_encode($_POST['titre']))."')");
+      echo "<script>alert('Insertion valide !');</script>";
+      echo "<script>document.location.href='cat_machine.php';</script>";
+    }
   }
 ?>
 
@@ -106,7 +116,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
         <section class="content-header">
           <h1>
-            <small>Nos services</small>
+            <small>Cat&eacute;gories de machines</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -127,32 +137,76 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                 </div>
 
                 <div class='box-body pad'>
-                  <div class="alert alert-warning">
-                      Pour inclure une photo sur la page, veuillez vous rendre sur la séction 
-                      <b><i class="fa fa-upload"></i> Upload de fichiers</b>
-                      <br>Ensuite r&eacute;cup&eacute;rez le chemin de l'image et cliquez sur 
-                      <a class="btn btn-primary"><i class="fa fa-file-image-o"></i></a>
-                  </div>
-
-                  <form method="get">
-                    <textarea name="texte" class="textarea" style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
-                      <?php
-                        $query = mysql_query("select texte from services");
-                        $t = mysql_fetch_array($query);
-                        echo utf8_decode($t[0]);                        
-                      ?>
-                    </textarea>
+                  <form method="POST" enctype="multipart/form-data">
+                    
+                    <div class="form-group">
+                        <label>Titre</label>
+                        <input type="text" name="titre" class="form-control">
+                    </div>
+                    
                     
                     <div class="box-footer">
                     <input type="submit" class="btn btn-default" value="Valider">
                   </div>
                   </form>
+
+                  <br><br>
+
+                  <table class="table table-striped">
+                      <tr>
+                          <td>Titre</td>
+                          <td></td>
+                      </tr>
+                      <?php
+                          $query = mysql_query("select * from cat_machine order by id desc");
+                          while($t = mysql_fetch_array($query)){
+                      ?>
+                      <tr>
+                          <td>
+                              <?php echo stripslashes(utf8_decode($t[1])); ?>
+                          </td>
+                          
+                          <td>
+                              <a href="editcat_machine.php?id=<?php echo $t[0]; ?>" class="btn btn-success pull-right"><i class="fa fa-edit"></i> Modifier</a>
+                              <a href="" data-nom="<?php echo stripslashes(utf8_decode($t[1])); ?>" data-id="<?php echo $t[0]; ?>" class="btn btn-danger pull-right btn-spr"><i class="fa fa-times"></i> Supprimer</a>
+                          </td>
+                      </tr>
+
+                      <?php
+                        }
+                      ?>
+                  </table>
+
+
+
                 </div>
               </div>
         </section>
 
       </div>
 
+
+
+
+      <div class="modal fade modal-me">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span></button>
+              <h4 class="modal-title"><i class="fa fa-trash-o"></i> <b>Attention !</b></h4>
+            </div>
+            <div class="modal-body">
+              <p class="spr-msg"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+              <a href="" class="btn btn-danger btn-spr-oui"><i class="glyphicon glyphicon-trash"></i> Supprimer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+              
       
     </div>
 
@@ -177,5 +231,23 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
     <script src="lte/dist/js/app.min.js" type="text/javascript"></script>
     <script src="lte/dist/js/pages/dashboard.js" type="text/javascript"></script>
     <script src="lte/dist/js/demo.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+
+    $(".btn-spr").click(function(e){
+        e.preventDefault();
+
+        id = $(this).data("id");
+        nom = $(this).data("nom");
+
+        $(".spr-msg").html("Voulez-vous vraiment supprimer <b>' "+nom+" '</b> ?");
+        $(".btn-spr-oui").attr("href", "cat_machine.php?spr="+id);
+
+        $(".modal-me").modal("show");
+    });
+
+    </script>
+
   </body>
 </html>

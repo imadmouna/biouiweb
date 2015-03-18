@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Parc de machines - BIOUITRAVAUX</title>
 
 
@@ -88,18 +88,30 @@
   <tr>
     <td align="left" valign="top" style="padding-left:0px;color:#666666"><br />
 	<div style="padding-right:20px;padding-left:40px">
-	<b>BIOUITRAVAUX</b> fait un gros investissement dans le parc de machines et d'équipements pour se sentir prête pour tout type de projets dans tous les segments où elle agit.
-Voici quelques machines et équipements:<br />
-<br />
+	
+	<?php
+        include("../connect.php");
+        $query = mysql_query("select texte from texte_parc");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+    ?>
+
+	<br />
+	<br />
 	</div>
-	<div style="padding-right:20px;padding-left:50px"><?php
-	for($i=1;$i<=16;$i++){
-?>
-<a href="../parc/<?php echo $i; ?>.JPG" rel="lightbox[roadtrip]" style="text-decoration:none">
-	<span><img style="padding:2px;border:1px solid #00CC00;width:100px;height:75px" src="../parc/min/<?php echo $i; ?>.JPG" border="0" />	</span></a>
-<?php 
-	}
-?></div>
+	<div style="padding-right:20px;padding-left:50px">
+
+	<?php
+        $query1 = mysql_query("select * from uploadtextparc");
+        while($t1 = mysql_fetch_array($query1)){ 
+    ?>
+
+		<a href="../images/uploads/parc/big/<?php echo $t1[1]; ?>" rel="lightbox[roadtrip]" style="text-decoration:none">
+		<span><img style="padding:2px;border:1px solid #00CC00;width:100px;height:75px" src="../images/uploads/parc/small/<?php echo $t1[1]; ?>" border="0" />	</span></a>
+	<?php 
+		}
+	?>
+	</div>
 	<br />
 <br />
 

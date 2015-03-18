@@ -127,8 +127,15 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                 </div>
 
                 <div class='box-body pad'>
+                  <div class="alert alert-warning">
+                      Pour inclure une photo sur la page, veuillez vous rendre sur la séction 
+                      <b><i class="fa fa-upload"></i> Upload de fichiers</b>
+                      <br>Ensuite r&eacute;cup&eacute;rez le chemin de l'image et cliquez sur 
+                      <a class="btn btn-primary"><i class="fa fa-file-image-o"></i></a>
+                  </div>
+
                   <form method="get">
-                    <textarea name="texte" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                    <textarea name="texte" class="textarea" style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
                       <?php
                         $query = mysql_query("select texte from pdg");
                         $t = mysql_fetch_array($query);
