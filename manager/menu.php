@@ -34,7 +34,7 @@
               <ul class="treeview-menu">
                 <li class="actives"><a href="machine_text_photo.php"><i class="fa fa-circle-o"></i> Texte et photos</a></li>
                 <li><a href="cat_machine.php"><i class="fa fa-tags"></i> Cat&eacute;gories de machines</a></li>
-                <li><a href="organisation.php"><i class="fa fa-list"></i> Les machines</a></li>
+                <li><a href="machines.php"><i class="fa fa-list"></i> Les machines</a></li>
               </ul>
             </li>
             

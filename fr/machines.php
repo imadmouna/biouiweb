@@ -122,26 +122,18 @@
       
   <?php 
   include("../connect.php");
-  $req=mysql_query("select distinct(designation) from mat1");
+  $req=mysql_query("select * from cat_machine");
   while($t=mysql_fetch_array($req)){
   
-  	$designation="";
-  	if($t[0]=='earth')$designation="Machines et équipements des travaux de terrassement et de construction routière";
-	if($t[0]=='sanitary')$designation="Machines et équipements des des travaux d'installations sanitaires et de construction de conduits";
-	if($t[0]=='quarry')$designation="Machines de carrière et de forage";
-	if($t[0]=='asphalt')$designation="Equipements D'asphalte et de Bitume";
-	if($t[0]=='trans')$designation="Equipements de carrière et transports";
-	if($t[0]=='build')$designation="Elévateurs et constructions";
 	
-	
-	
-  	$r=mysql_query("select * from mat1 where designation='".$t[0]."' group by typem,marque,type");echo '<h3 style="background-image:url(img/imgi.jpg); background-repeat:repeat-y;background-position:left"><a href="#" style="color:#666666">'.$designation.'</a></h3><div  style="font-family:TitilliumMaps26L500wt;font-size:14px;color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family:TitilliumMaps26L500wt;font-size:14px;color:#666666">';
-	echo '<tr><td style="color:#00cc00">Désignation</td><td style="color:#00cc00">Spécifications(Puissance, capacité, ...)</td><td style="color:#00cc00">Nombre</td></tr><tr><td>&nbsp;</td></tr>';
-	while($t=mysql_fetch_array($r)){
-		$s="select typem,marque,type,count(*) from mat1 where typem='".$t[1]."' and marque='".$t[2]."' and type='".$t[3]."' group by marque;";
-		$tab=mysql_fetch_array(mysql_query($s));
+  	$r=mysql_query("select * from machines where cat=".$t[0]);
+  	echo '<h3 style="background-image:url(img/imgi.jpg); background-repeat:repeat-y;background-position:left"><a href="#" style="color:#666666">'.stripslashes(utf8_decode($t[1])).'</a></h3>
+  	<div  style="font-family:TitilliumMaps26L500wt;font-size:14px;color:#666666">
+  	<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family:TitilliumMaps26L500wt;font-size:14px;color:#666666">';
+	echo '<tr><td style="color:#00cc00">D&eacute;signation</td><td style="color:#00cc00">Sp&eacute;cifications(Puissance, capacit&eacute;, ...)</td><td style="color:#00cc00">Nombre</td></tr><tr><td>&nbsp;</td></tr>';
+	while($tab=mysql_fetch_array($r)){		
 		
-		echo ' <tr height="22"><td height="22" width="294">'.$tab[0].'</td><td width="294">'.$tab[1].'&nbsp;'.$tab[2].'</td><td width="294">'.$tab[3].'</td></tr>';
+		echo ' <tr height="22"><td height="22" width="294">'.$tab[1].'</td><td width="294">'.$tab[2].'</td><td width="294">'.$tab[3].'</td></tr>';
 	
 	}	
 	echo '</table></div>';
