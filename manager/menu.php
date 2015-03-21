@@ -54,7 +54,7 @@
                 <i class="fa fa-briefcase"></i> <span>Projets</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="actives"><a href="missionvision.php"><i class="fa fa-circle-o"></i> Transports & Infrastructures</a></li>
+                <li class="actives"><a href="projecttri.php"><i class="fa fa-circle-o"></i> Transports & Infrastructures</a></li>
                 <li><a href="enviro.php"><i class="fa fa-circle-o"></i> Travaux Hydrauliques & G&eacute;nie Civil</a></li>
                 <li><a href="securite.php"><i class="fa fa-circle-o"></i> Am&eacute;nagement & Autres travaux</a></li>
                 <li><a href="securite.php"><i class="fa fa-circle-o"></i> Projets en images</a></li>

@@ -11,8 +11,8 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
   include("../connect.php");
 
   if(isset($_GET['texte']) and $_GET['texte']){
-      mysql_query("update accueil set texte='".addslashes(utf8_encode($_GET['texte']))."'");
-      echo "<script>document.location.href='accueil.php';</script>";
+      mysql_query("update projecttri set texte='".addslashes(utf8_encode($_GET['texte']))."'");
+      echo "<script>document.location.href='projecttri.php';</script>";
   }
 ?>
 
@@ -106,7 +106,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
         <section class="content-header">
           <h1>
-            <small>Texte accueil</small>
+            <small>Transports & Infrastructures</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -118,7 +118,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
         <section class="content">
             <div class='box'>
                 <div class='box-header'>
-                  <h3 class='box-title'><small></small></h3>
+                  <h3 class='box-title'>Texte de pr&eacute;sentation<small></small></h3>
                   <!-- tools box -->
                   <div class="pull-right box-tools">
                     <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
@@ -130,7 +130,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                   <form method="get">
                     <textarea name="texte" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
                       <?php
-                        $query = mysql_query("select texte from accueil");
+                        $query = mysql_query("select texte from projecttri");
                         $t = mysql_fetch_array($query);
                         echo utf8_decode($t[0]);                        
                       ?>
@@ -142,6 +142,38 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                   </form>
                 </div>
               </div>
+
+
+
+
+
+              <div class='box'>
+                <div class='box-header'>
+                  <h3 class='box-title'>Projets<small></small></h3>
+                  <!-- tools box -->
+                  <div class="pull-right box-tools">
+                    <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                    <button class="btn btn-default btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+
+                <div class='box-body pad'>
+                  <form method="get">
+                    <textarea name="texte" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                      <?php
+                        $query = mysql_query("select texte from projecttri");
+                        $t = mysql_fetch_array($query);
+                        echo utf8_decode($t[0]);                        
+                      ?>
+                    </textarea>
+                    
+                    <div class="box-footer">
+                    <input type="submit" class="btn btn-default" value="Valider">
+                  </div>
+                  </form>
+                </div>
+              </div>
+
         </section>
 
       </div>
