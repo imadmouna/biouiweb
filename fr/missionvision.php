@@ -60,30 +60,17 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B;">Mission et Vision</td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666"><label style="color:#77AD1B"><br />MISSION</label><br />
-      <br />
-      Notre mission est de créer des solutions d'ingénierie, des espaces de vie, le renforcement des structures de haute qualité, faire des routes et des lieux sans affecter l'environnement de faire vivre plus à l'aise avec nos valeurs;<br /><br />
-	  <strong><img width="12" height="10" src="img/puce.png" />&nbsp;Integrit&eacute;</strong>
-      <div style="padding-left:30px">Gardez les meilleures relations avec nos clients, nos fournisseurs et employés
-	  <br />
-Des relations fondées sur la confiance et le respect mutuel</div><br />
-  <strong><img width="12" height="10" src="img/puce.png" /></strong><strong>&nbsp;Responsabilit&eacute;</strong> <br />
-        <div style="padding-left:30px">Tout le monde doit considérer l'impact de ses décisions et actions</div><br />
-        <strong><img width="12" height="10" src="img/puce.png" /></strong>        <strong>&nbsp;Autonomie</strong> <br />
-        <div style="padding-left:30px">L'épanouissement personnel, l'élaboration de nouvelles options, de la créativité.</div><br />
-        <strong><img width="12" height="10" src="img/puce.png" /></strong>        <strong>&nbsp;Securit&eacute;</strong> <br />
-  <div style="padding-left:30px">Comme le proverbe &laquo;Mieux vaut prévenir que guérir!&raquo;<br />
-Maintenir un environnement de travail de qualité, protéger les plantes et préserver l'environnement.</div>
-  <br />
-        <strong><img width="12" height="10" src="img/puce.png" alt="http://biouitravaux.com/uploads/images/puce.png" /></strong>        <strong>&nbsp;Humilit&eacute;</strong> <br />
-        <div style="padding-left:30px">&Ecirc;tre modeste et toujours fier de ce que nous faisons</div>
-		<br /><br />
-		<label style="color:#77AD1B">VISION</label>
-		<br /><br />
-		Pour poursuivre notre chemin à l'expansion des segments d'affaires dans notre secteur, d'engager nos valeurs sur l'ensemble de nos gens qui travaillent avec nous et les développer selon les critères techniques, des informations, l'homme étant essentiel.
-		<br /><br />
-		Offrir nos services à nos clients avec le respect du temps, standard et leurs autres besoins.<br />
-		<br />
+    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
+
+    <?php
+        include("../connect.php");
+        $query = mysql_query("select texte from missionvision");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+    ?>
+
+    <br />
+    <br />
 		</td>
   </tr>
 </table>

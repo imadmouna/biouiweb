@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- G�n�r� le :  Mer 18 Mars 2015 � 22:24
+-- G�n�r� le :  Sam 21 Mars 2015 � 07:27
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.5.8
 
@@ -68,14 +68,15 @@ CREATE TABLE IF NOT EXISTS `cat_machine` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cat` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `cat_machine`
 --
 
 INSERT INTO `cat_machine` (`id`, `cat`) VALUES
-(2, 'Transport & Infrastructures');
+(2, 'Transport & Infrastructures'),
+(4, 'RÃ©publique');
 
 -- --------------------------------------------------------
 
@@ -154,6 +155,23 @@ INSERT INTO `data_link1` (`id`, `contenu`, `lien`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `enviro`
+--
+
+CREATE TABLE IF NOT EXISTS `enviro` (
+  `texte` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `enviro`
+--
+
+INSERT INTO `enviro` (`texte`) VALUES
+('bbbbb');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `machines`
 --
 
@@ -162,8 +180,16 @@ CREATE TABLE IF NOT EXISTS `machines` (
   `designation` text NOT NULL,
   `specification` text NOT NULL,
   `nbr` int(11) NOT NULL,
+  `cat` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `machines`
+--
+
+INSERT INTO `machines` (`id`, `designation`, `specification`, `nbr`, `cat`) VALUES
+(2, 'Bulldozer', 'Caterpillar D6HLGP', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -182,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `manage` (
 --
 
 INSERT INTO `manage` (`login`, `pass`, `last_log`) VALUES
-('manager', 'mimadl3a', 'Wed 18 Mar 20h, 2015');
+('manager', 'mimadl3a', 'Thu 19 Mar 18h, 2015');
 
 -- --------------------------------------------------------
 
@@ -1211,6 +1237,23 @@ INSERT INTO `mat1` (`id`, `typem`, `marque`, `type`, `designation`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `missionvision`
+--
+
+CREATE TABLE IF NOT EXISTS `missionvision` (
+  `texte` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `missionvision`
+--
+
+INSERT INTO `missionvision` (`texte`) VALUES
+('aa');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `organisation`
 --
 
@@ -1241,6 +1284,23 @@ CREATE TABLE IF NOT EXISTS `pdg` (
 
 INSERT INTO `pdg` (`texte`) VALUES
 ('Durant plus de 10 ans, nous avons bÃ¢ti une solide rÃ©putation de qualitÃ© \r\net de fiabilitÃ© dans tous les domaines de notre activitÃ©, ce dont  nous \r\nsommes trÃ¨s fiers.\r\n<br><br>\r\nNotre principal atout, allier savoir-faire technique, respect de lâenvironnement et sÃ©curitÃ©.\r\n<br><br>\r\nFace Ã  lâampleur des rÃ©formes engagÃ©es par notre pays, nous souhaitons \r\naccompagner activement la mise en Åuvre de cette stratÃ©gie, sâengager \r\npour construire des routes plus sÃ»res et crÃ©er des\r\n\r\nenvironnements humains.\r\n\r\nNotre expertise et une bonne maÃ®trise des risques et des paramÃ¨tres \r\nenvironnementaux, nous permettent dâavoir une longueur dâavance.<br><br><br><br><br>\r\nCordialement,<br>\r\n<br>\r\n      <p> </p><div>Abdennabi BIIOUI<br>\r\n        <strong>PrÃ©sident Directeur GÃ©nÃ©ral </strong></div>\r\n        \r\n      \r\n      <p><br></p><br>');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `securite`
+--
+
+CREATE TABLE IF NOT EXISTS `securite` (
+  `texte` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `securite`
+--
+
+INSERT INTO `securite` (`texte`) VALUES
+('ff');
 
 -- --------------------------------------------------------
 

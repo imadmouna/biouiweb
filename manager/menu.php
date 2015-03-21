@@ -38,6 +38,17 @@
               </ul>
             </li>
             
+            <li class="actives treeview">
+              <a href="#">
+                <i class="fa fa-compass"></i> <span>Nos valeurs</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li class="actives"><a href="missionvision.php"><i class="fa fa-circle-o"></i> Mission et vision</a></li>
+                <li><a href="enviro.php"><i class="fa fa-circle-o"></i> Environnement</a></li>
+                <li><a href="securite.php"><i class="fa fa-circle-o"></i> S&eacute;curit&eacute;</a></li>
+              </ul>
+            </li>
+            
             <li><a href="upload.php"><i class="fa fa-upload"></i> Upload de fichiers</a></li>
             
           </ul>

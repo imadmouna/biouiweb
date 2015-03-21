@@ -60,16 +60,21 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B;">Environnement</td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666"><br />
-	Dès le départ, nous avons compris la valeur de notre milieu naturel et la nécessité de minimiser notre impact. <br />Par conséquent Biouitravaux a développé un savoir-faire tout vert.
-	<p>
-	Protéger notre environnement naturel est en effet au cœur de notre politique industrielle. Il commence par une analyse du site du projet, son environnement immédiat et prend en compte toutes les contraintes environnementales, mais aussi:
-	 </p>
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> Gestion des déchets.</p>
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> Recyclage.</p>
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> Protection contre le bruit.</p>      
-      <label style="color:#77AD1B"><br />
-      </label></td>
+    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
+
+
+
+    <?php
+        include("../connect.php");
+        $query = mysql_query("select texte from enviro");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+    ?>
+
+    <br />
+    <br />
+
+    </td>
   </tr>
 </table>
           </td>

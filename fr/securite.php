@@ -61,17 +61,21 @@
       <br /></td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666"><p>La sécurit&eacute; est l'affaire de tous!</p>      
-      <p>Dans Biouitravaux, la s&eacute;curit&eacute; intervient &agrave; plusieurs niveaux:</p>
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> 
-	  En amont de la construction de routes, dans la phase de conception pour int&eacute;grer le facteur de visibilit&eacute; et le comportement des usagers sur les routes.
-	  </p>
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> En aval avec les traitements de surface pour am&eacute;liorer l'adh&eacute;rence.</p>
-      <p><br />
-      </p>
-      <p>Enfin Biouitravaux engage des plans de formation &agrave; son personnel et des actions de pr&eacute;vention et de contr&ocirc;le (instructions sp&eacute;ciales) d'am&eacute;liorer en permanence la s&eacute;curit&eacute; du personnel sur les sites.</p>
-      <label style="color:#77AD1B"><br />
-      </label></td>
+    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
+
+
+    <?php
+        include("../connect.php");
+        $query = mysql_query("select texte from securite");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+    ?>
+
+    <br />
+    <br />
+
+
+    </td>
   </tr>
 </table>
           </td>
