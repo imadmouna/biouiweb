@@ -10,9 +10,33 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 }
   include("../connect.php");
 
-  if(isset($_GET['texte']) and $_GET['texte']){
-      mysql_query("update projecttri set texte='".addslashes(utf8_encode($_GET['texte']))."'");
+  if(isset($_POST['type']) and isset($_POST['titre']) and isset($_POST['desc']) and isset($_FILES['logo']['tmp_name'])){
+    if(($_POST['type']) and ($_POST['titre']) and ($_POST['desc']) and ($_FILES['logo']['tmp_name'])){
+
+
+      $ds          = DIRECTORY_SEPARATOR; 
+      $storeFolder = '../images/uploads/';
+
+      $tempFile = $_FILES['logo']['tmp_name'];
+      $targetPath = dirname( __FILE__ ) . $ds. $storeFolder . $ds;
+     
+
+      $path = $_FILES['logo']['name'];
+      $ext = pathinfo($path, PATHINFO_EXTENSION);
+
+      $fichier = sha1(uniqid(mt_rand(), true)).".".$ext;
+      $targetFile =  $targetPath.$fichier;
+   
+      copy($tempFile,$targetFile);
+
+
+      mysql_query("insert into projets values(null, '".
+        addslashes(utf8_encode($_POST['type']))."', '".
+        addslashes(utf8_encode($_POST['titre']))."', '".
+        addslashes(utf8_encode($_POST['desc']))."', '".
+        $fichier."','projecttri')");
       echo "<script>document.location.href='projecttri.php';</script>";
+    }
   }
 ?>
 
@@ -158,10 +182,10 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                 </div>
 
                 <div class='box-body pad'>
-                  <form method="get">
+                  <form method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Type de projet:</label>
-                        <select class="form-control">
+                        <select class="form-control" name="type">
                             <option value="1">En cours</option>
                             <option value="2">Achev&eacute;</option>
                         </select>
@@ -186,6 +210,60 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                     <input type="submit" class="btn btn-default" value="Valider">
                   </div>
                   </form>
+                </div>
+              </div>
+
+
+
+
+
+              <div class='box'>
+                <div class='box-header'>
+                  <h3 class='box-title'>Liste des projets<small></small></h3>
+                  <!-- tools box -->
+                  <div class="pull-right box-tools">
+                    <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                    <button class="btn btn-default btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+
+                <div class='box-body pad'>
+                  
+                  <table class="table table-striped">
+                    <tr>
+                        <td width="100">Logo</td>
+                        <td>Titre</td>
+                        <td>Descriptif</td>
+                        <td>Type de projet</td>
+                        <td></td>
+                    </tr>
+                    <?php
+                      $qq = mysql_query("select * from projets where cat='projecttri'");
+                      while( $tqq = mysql_fetch_array($qq) ){
+
+                    ?>
+                      <tr>
+                          <td><img src="../images/uploads/<?php echo stripslashes(utf8_decode($tqq[4]));?>" class="img-thumbnail" width="100" /></td>
+                          <td><?php echo stripslashes(utf8_decode($tqq[2]));?></td>
+                          <td><?php echo stripslashes(utf8_decode($tqq[3]));?></td>
+                          <td><?php if($tqq[1]==1)echo "En cours"; else echo "Achev&eacute;"?></td>
+                          <td>
+                              <div class="col-md-6 pull-right">
+                                  <div class="col-md-6">
+                                      <a href="editProjet.php?id=<?php echo $tqq[0];?>" class="btn btn-primary"><i class="fa fa-edit"></i> Modifier<a/>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <a data-id="<?php echo $tqq[0];?>" class="btn btn-danger btn-spr"><i class="fa fa-times"></i> Supprimer<a/>
+                                  </div>
+                              </div>
+                          </td>
+                      </tr>
+                    <?php
+
+                      }
+                    ?>
+                  </table>
+
                 </div>
               </div>
 
