@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Sam 21 Mars 2015 à 07:27
+-- Généré le :  Mar 24 Mars 2015 à 19:29
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.5.8
 
@@ -208,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `manage` (
 --
 
 INSERT INTO `manage` (`login`, `pass`, `last_log`) VALUES
-('manager', 'mimadl3a', 'Thu 19 Mar 18h, 2015');
+('manager', 'mimadl3a', 'Tue 24 Mar 19h, 2015');
 
 -- --------------------------------------------------------
 
@@ -1288,6 +1288,38 @@ INSERT INTO `pdg` (`texte`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `projecttri`
+--
+
+CREATE TABLE IF NOT EXISTS `projecttri` (
+  `texte` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `projecttri`
+--
+
+INSERT INTO `projecttri` (`texte`) VALUES
+('projecttri1<br>');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `projets`
+--
+
+CREATE TABLE IF NOT EXISTS `projets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` int(11) NOT NULL,
+  `titre` text NOT NULL,
+  `desc` text NOT NULL,
+  `cat` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `securite`
 --
 
@@ -1346,16 +1378,15 @@ CREATE TABLE IF NOT EXISTS `upload` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `chemin` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Contenu de la table `upload`
 --
 
 INSERT INTO `upload` (`id`, `chemin`) VALUES
-(7, '8a3d7c60107f654fb211c6fc256158087048ec5d.jpg'),
-(6, 'beecb728f09994c1faeb5a681cef13da010527b5.jpg'),
-(8, '73b228a14b6f1edb8aedc51ac4982a624f5f3282.jpg');
+(9, '0753cc587f40368e89811afeeb6716e84ddb6bd5.jpg'),
+(10, '76b144171966a8c4ce42c6714ae3454417eb7e28.jpg');
 
 -- --------------------------------------------------------
 

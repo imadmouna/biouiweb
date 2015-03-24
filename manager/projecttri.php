@@ -159,13 +159,28 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
                 <div class='box-body pad'>
                   <form method="get">
-                    <textarea name="texte" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
-                      <?php
-                        $query = mysql_query("select texte from projecttri");
-                        $t = mysql_fetch_array($query);
-                        echo utf8_decode($t[0]);                        
-                      ?>
-                    </textarea>
+                    <div class="form-group">
+                        <label>Type de projet:</label>
+                        <select class="form-control">
+                            <option value="1">En cours</option>
+                            <option value="2">Achev&eacute;</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Titre:</label>
+                        <input type="text" class="form-control" name="titre" />
+                    </div>
+                    <div class="form-group">
+                        <label>Description:</label>
+                        
+                        <textarea name="desc" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                        </textarea>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label>Logo:</label>
+                        <input type="file" class="form-control" name="logo" />
+                    </div>
                     
                     <div class="box-footer">
                     <input type="submit" class="btn btn-default" value="Valider">
