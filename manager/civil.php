@@ -16,14 +16,14 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
     if(($_GET['spr'])){
       mysql_query("delete from projets where id=".$_GET["spr"]);
       echo "<script>alert('Suppression valide !');</script>";
-      echo "<script>document.location.href='projecttri.php';</script>";
+      echo "<script>document.location.href='civil.php';</script>";
     }
   }
 
 
   if(isset($_GET['texte']) and $_GET['texte']){
-      mysql_query("update projecttri set texte='".addslashes(utf8_encode($_GET['texte']))."'");
-      echo "<script>document.location.href='projecttri.php';</script>";
+      mysql_query("update civil set texte='".addslashes(utf8_encode($_GET['texte']))."'");
+      echo "<script>document.location.href='civil.php';</script>";
   }
 
   if(isset($_POST['type']) and isset($_POST['titre']) and isset($_POST['desc']) and isset($_FILES['logo']['tmp_name'])){
@@ -50,8 +50,8 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
         addslashes(utf8_encode($_POST['type']))."', '".
         addslashes(utf8_encode($_POST['titre']))."', '".
         addslashes(utf8_encode($_POST['desc']))."', '".
-        $fichier."','projecttri')");
-      echo "<script>document.location.href='projecttri.php';</script>";
+        $fichier."','civil')");
+      echo "<script>document.location.href='civil.php';</script>";
     }
   }
 ?>
@@ -146,7 +146,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
         <section class="content-header">
           <h1>
-            <small>Transports & Infrastructures</small>
+            <small>Travaux Hydrauliques & G&eacute;nie Civil</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -170,7 +170,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                   <form method="get">
                     <textarea name="texte" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
                       <?php
-                        $query = mysql_query("select texte from projecttri");
+                        $query = mysql_query("select texte from civil");
                         $t = mysql_fetch_array($query);
                         echo utf8_decode($t[0]);                        
                       ?>
@@ -254,7 +254,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                         <td></td>
                     </tr>
                     <?php
-                      $qq = mysql_query("select * from projets where cat='projecttri'");
+                      $qq = mysql_query("select * from projets where cat='civil'");
                       while( $tqq = mysql_fetch_array($qq) ){
 
                     ?>
@@ -266,7 +266,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                           <td>
                               <div class="col-md-6 pull-right">
                                   <div class="col-md-6">
-                                      <a href="editProjet.php?id=<?php echo $tqq[0];?>&cat=projecttri" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Modifier<a/>
+                                      <a href="editProjet.php?id=<?php echo $tqq[0];?>&cat=civil" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Modifier<a/>
                                   </div>
                                   <div class="col-md-6">
                                       <a data-nom="<?php echo substr(stripslashes(utf8_decode($tqq[2])),0,20)."..."; ?>" data-id="<?php echo $tqq[0];?>" class="btn btn-danger btn-spr btn-xs"><i class="fa fa-times"></i> Supprimer<a/>
@@ -324,7 +324,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
         nom = $(this).data("nom");
 
         $(".spr-msg").html("Voulez-vous vraiment supprimer <b>' "+nom+" '</b> ?");
-        $(".btn-spr-oui").attr("href", "projecttri.php?spr="+id);
+        $(".btn-spr-oui").attr("href", "civil.php?spr="+id);
 
         $(".modal-me").modal("show");
     });

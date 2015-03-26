@@ -11,47 +11,51 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
   include("../connect.php");
 
 
-
-  if(isset($_GET['spr'])){
-    if(($_GET['spr'])){
-      mysql_query("delete from projets where id=".$_GET["spr"]);
-      echo "<script>alert('Suppression valide !');</script>";
-      echo "<script>document.location.href='projecttri.php';</script>";
-    }
+  if(isset($_GET['id']) and isset($_GET['cat'])){
+      if(($_GET['id']) and ($_GET['cat'])){
+          $qq = mysql_query("select * from projets where id = ".$_GET['id']);
+          $tt = mysql_fetch_array($qq);
+      }
   }
 
 
-  if(isset($_GET['texte']) and $_GET['texte']){
-      mysql_query("update projecttri set texte='".addslashes(utf8_encode($_GET['texte']))."'");
-      echo "<script>document.location.href='projecttri.php';</script>";
-  }
 
-  if(isset($_POST['type']) and isset($_POST['titre']) and isset($_POST['desc']) and isset($_FILES['logo']['tmp_name'])){
-    if(($_POST['type']) and ($_POST['titre']) and ($_POST['desc']) and ($_FILES['logo']['tmp_name'])){
+  if(isset($_POST['type']) and isset($_POST['titre']) and isset($_POST['desc']) and isset($_POST['id']) and isset($_POST['cat'])){
+    if(($_POST['type']) and ($_POST['titre']) and ($_POST['desc']) and ($_POST['id']) and ($_POST['cat'])){
 
 
-      $ds          = DIRECTORY_SEPARATOR; 
-      $storeFolder = '../images/uploads/';
+      if(isset($_FILES['logo']['tmp_name']) and ($_FILES['logo']['tmp_name'])){
+          $ds          = DIRECTORY_SEPARATOR; 
+          $storeFolder = '../images/uploads/';
 
-      $tempFile = $_FILES['logo']['tmp_name'];
-      $targetPath = dirname( __FILE__ ) . $ds. $storeFolder . $ds;
-     
+          $tempFile = $_FILES['logo']['tmp_name'];
+          $targetPath = dirname( __FILE__ ) . $ds. $storeFolder . $ds;
+         
 
-      $path = $_FILES['logo']['name'];
-      $ext = pathinfo($path, PATHINFO_EXTENSION);
+          $path = $_FILES['logo']['name'];
+          $ext = pathinfo($path, PATHINFO_EXTENSION);
 
-      $fichier = sha1(uniqid(mt_rand(), true)).".".$ext;
-      $targetFile =  $targetPath.$fichier;
-   
-      copy($tempFile,$targetFile);
+          $fichier = sha1(uniqid(mt_rand(), true)).".".$ext;
+          $targetFile =  $targetPath.$fichier;
+       
+          copy($tempFile,$targetFile);
 
 
-      mysql_query("insert into projets values(null, '".
-        addslashes(utf8_encode($_POST['type']))."', '".
-        addslashes(utf8_encode($_POST['titre']))."', '".
-        addslashes(utf8_encode($_POST['desc']))."', '".
-        $fichier."','projecttri')");
-      echo "<script>document.location.href='projecttri.php';</script>";
+          mysql_query("update projets set type = '".
+            addslashes(utf8_encode($_POST['type']))."', titre = '".
+            addslashes(utf8_encode($_POST['titre']))."', descr = '".
+            addslashes(utf8_encode($_POST['desc']))."', logo = '".
+            $fichier."' where id= ".$_POST['id']);
+      }else{
+
+        mysql_query("update projets set type = '".
+            addslashes(utf8_encode($_POST['type']))."', titre = '".
+            addslashes(utf8_encode($_POST['titre']))."', descr = '".
+            addslashes(utf8_encode($_POST['desc']))."' where id= ".$_POST['id']);
+      }
+
+      
+      echo "<script>document.location.href='editProjet.php?id=".$_POST['id']."&cat=".$_POST['cat']."';</script>";
     }
   }
 ?>
@@ -156,40 +160,13 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
 
         <section class="content">
-            <div class='box'>
-                <div class='box-header'>
-                  <h3 class='box-title'>Texte de pr&eacute;sentation<small></small></h3>
-                  <!-- tools box -->
-                  <div class="pull-right box-tools">
-                    <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-default btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-                  </div>
-                </div>
-
-                <div class='box-body pad'>
-                  <form method="get">
-                    <textarea name="texte" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
-                      <?php
-                        $query = mysql_query("select texte from projecttri");
-                        $t = mysql_fetch_array($query);
-                        echo utf8_decode($t[0]);                        
-                      ?>
-                    </textarea>
-                    
-                    <div class="box-footer">
-                    <input type="submit" class="btn btn-default" value="Valider">
-                  </div>
-                  </form>
-                </div>
-              </div>
-
-
+            
 
 
 
               <div class='box'>
                 <div class='box-header'>
-                  <h3 class='box-title'>Projets<small></small></h3>
+                  <h3 class='box-title'>Edition projet<small></small></h3>
                   <!-- tools box -->
                   <div class="pull-right box-tools">
                     <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
@@ -202,25 +179,30 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                     <div class="form-group">
                         <label>Type de projet:</label>
                         <select class="form-control" name="type">
-                            <option value="1">En cours</option>
-                            <option value="2">Achev&eacute;</option>
+                            <option value="1" <?php if(isset($tt) and $tt[1] == "1")echo "selected"; ?> >En cours</option>
+                            <option value="2" <?php if(isset($tt) and $tt[1] == "2")echo "selected"; ?>>Achev&eacute;</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Titre:</label>
-                        <input type="text" class="form-control" name="titre" />
+                        <input type="text" class="form-control" name="titre" value="<?php if(isset($tt) and $tt[2])echo stripslashes(utf8_decode($tt[2])); ?>" />
                     </div>
                     <div class="form-group">
                         <label>Description:</label>
                         
-                        <textarea name="desc" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
-                        </textarea>
+                        <textarea name="desc" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php if(isset($tt) and $tt[2])echo stripslashes(utf8_decode($tt[3])); ?></textarea>
                         
                     </div>
                     <div class="form-group">
                         <label>Logo:</label>
+                        <br>
+                        <img src="../images/uploads/<?php echo stripslashes(utf8_decode($tt[4]));?>" class="img-thumbnail" width="100" />
+                        <br>
                         <input type="file" class="form-control" name="logo" />
                     </div>
+
+                    <input type="hidden" name="id" value="<?php echo stripslashes(utf8_decode($tt[0]));?>" />
+                    <input type="hidden" name="cat" value="<?php echo $_GET['cat'];?>" />
                     
                     <div class="box-footer">
                     <input type="submit" class="btn btn-default" value="Valider">
@@ -233,55 +215,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
 
 
-              <div class='box'>
-                <div class='box-header'>
-                  <h3 class='box-title'>Liste des projets<small></small></h3>
-                  <!-- tools box -->
-                  <div class="pull-right box-tools">
-                    <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-default btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-                  </div>
-                </div>
-
-                <div class='box-body pad'>
-                  
-                  <table class="table table-striped">
-                    <tr>
-                        <td width="100">Logo</td>
-                        <td>Titre</td>
-                        <td>Descriptif</td>
-                        <td>Type de projet</td>
-                        <td></td>
-                    </tr>
-                    <?php
-                      $qq = mysql_query("select * from projets where cat='projecttri'");
-                      while( $tqq = mysql_fetch_array($qq) ){
-
-                    ?>
-                      <tr>
-                          <td><img src="../images/uploads/<?php echo stripslashes(utf8_decode($tqq[4]));?>" class="img-thumbnail" width="100" /></td>
-                          <td><?php echo substr(stripslashes(utf8_decode($tqq[2])),0,20)."..."; ?></td>
-                          <td><?php echo substr(stripslashes(utf8_decode($tqq[3])),0,20)."...";?></td>
-                          <td><?php if($tqq[1]==1)echo "En cours"; else echo "Achev&eacute;"?></td>
-                          <td>
-                              <div class="col-md-6 pull-right">
-                                  <div class="col-md-6">
-                                      <a href="editProjet.php?id=<?php echo $tqq[0];?>&cat=projecttri" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Modifier<a/>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <a data-nom="<?php echo substr(stripslashes(utf8_decode($tqq[2])),0,20)."..."; ?>" data-id="<?php echo $tqq[0];?>" class="btn btn-danger btn-spr btn-xs"><i class="fa fa-times"></i> Supprimer<a/>
-                                  </div>
-                              </div>
-                          </td>
-                      </tr>
-                    <?php
-
-                      }
-                    ?>
-                  </table>
-
-                </div>
-              </div>
+              
 
         </section>
 
