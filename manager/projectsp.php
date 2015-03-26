@@ -151,7 +151,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                   <form method="get">
                     <textarea name="texte" class="textarea" style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
                       <?php
-                        $query = mysql_query("select texte from texte_parc");
+                        $query = mysql_query("select texte from texte_projetsp");
                         $t = mysql_fetch_array($query);
                         echo utf8_decode($t[0]);                        
                       ?>
@@ -244,7 +244,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 <table class="table table-striped lst-fichiers-table">
 
 <?php
-  $qq = mysql_query("select * from uploadTextParc order by id DESC");
+  $qq = mysql_query("select * from uploadTextProjetsp order by id DESC");
   while($ttq = mysql_fetch_array($qq)){
 ?>
           <tr>
@@ -324,7 +324,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
   previewNode.parentNode.removeChild(previewNode);
    
   var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
-  url: "ajax/uploadParcPics.php", // Set the url
+  url: "ajax/uploadProjetspPics.php", // Set the url
   thumbnailWidth: 80,
   thumbnailHeight: 80,
   parallelUploads: 20,

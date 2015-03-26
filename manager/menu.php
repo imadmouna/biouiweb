@@ -57,11 +57,10 @@
                 <li class="actives"><a href="projecttri.php"><i class="fa fa-circle-o"></i> Transports & Infrastructures</a></li>
                 <li><a href="civil.php"><i class="fa fa-circle-o"></i> Travaux Hydrauliques & G&eacute;nie Civil</a></li>
                 <li><a href="plan_work.php"><i class="fa fa-circle-o"></i> Am&eacute;nagement & Autres travaux</a></li>
-                <li><a href="securite.php"><i class="fa fa-circle-o"></i> Projets en images</a></li>
+                <li><a href="projectsp.php"><i class="fa fa-circle-o"></i> Projets en images</a></li>
               </ul>
             </li>
             
-            <li><a href="projectsp.php"><i class="fa fa-file-image-o"></i> Projets en images</a></li>
             <li><a href="upload.php"><i class="fa fa-upload"></i> Upload de fichiers</a></li>
             
           </ul>
