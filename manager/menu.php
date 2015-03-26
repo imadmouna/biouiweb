@@ -48,13 +48,25 @@
                 <li><a href="securite.php"><i class="fa fa-circle-o"></i> S&eacute;curit&eacute;</a></li>
               </ul>
             </li>
-            
             <li class="actives treeview">
               <a href="#">
                 <i class="fa fa-briefcase"></i> <span>Projets</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li class="actives"><a href="projecttri.php"><i class="fa fa-circle-o"></i> Transports & Infrastructures</a></li>
+                <li><a href="civil.php"><i class="fa fa-circle-o"></i> Travaux Hydrauliques & G&eacute;nie Civil</a></li>
+                <li><a href="plan_work.php"><i class="fa fa-circle-o"></i> Am&eacute;nagement & Autres travaux</a></li>
+                <li><a href="projectsp.php"><i class="fa fa-circle-o"></i> Projets en images</a></li>
+              </ul>
+            </li>
+            
+            
+            <li class="actives treeview">
+              <a href="#">
+                <i class="fa fa-briefcase"></i> <span>References</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li class="actives"><a href="gps.php"><i class="fa fa-map-marker"></i> Coordonn&eacute;es Gps</a></li>
                 <li><a href="civil.php"><i class="fa fa-circle-o"></i> Travaux Hydrauliques & G&eacute;nie Civil</a></li>
                 <li><a href="plan_work.php"><i class="fa fa-circle-o"></i> Am&eacute;nagement & Autres travaux</a></li>
                 <li><a href="projectsp.php"><i class="fa fa-circle-o"></i> Projets en images</a></li>

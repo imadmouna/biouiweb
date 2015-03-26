@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Projets en images - BIOUITRAVAUX</title>
 	
 <script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -68,20 +68,29 @@
   <tr>
     <td align="left" valign="top" style="padding-left:10px;padding-right:20px;color:#666666"><br />
 			<div style="padding-left:20px">
-			<b>BIOUITRAVAUX</b> agit dans différents segments de la construction au Maroc, chaque réalisation ouvre de nouveaux horizons et de nouvelles perpectives.
-Être efficace, réactif et innovateur contribue à maintenir notre leadership.
+			
+    <?php
+        include("../connect.php");
+        $query = mysql_query("select texte from texte_projetsp");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+    ?>
+
 <br /><br />
 Voici une gallerie de photos de quelques projets:
 			</div>
 			<br /><br />
 			<div style="padding-left:50px">
 			<?php
-			for($i=1;$i<=10;$i++){
-			?>
-			<span><a href="../projects/max/<?php echo $i;?>.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img src="../projects/min/<?php echo $i;?>.jpg" width="100" height="100" border="0" style="padding:2px;border:1px solid #00CC00;" /></a></span>
-			<?php
-			}
-			?>
+        $query1 = mysql_query("select * from uploadtextprojetsp");
+        while($t1 = mysql_fetch_array($query1)){ 
+      ?>
+
+      <a href="../images/uploads/projetsp/big/<?php echo $t1[1]; ?>" rel="lightbox[roadtrip]" style="text-decoration:none">
+      <span><img style="padding:2px;border:1px solid #00CC00;width:100px;height:75px" src="../images/uploads/projetsp/small/<?php echo $t1[1]; ?>" border="0" />  </span></a>
+    <?php 
+      }
+    ?>
 			</div>
 			<br />
 			<br /></td>

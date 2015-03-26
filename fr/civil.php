@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Travaux Hydrauliques &amp; G&eacute;nie Civil - BIOUITRAVAUX</title>
 	
 
@@ -85,168 +85,127 @@
   <tr>
     <td align="left" valign="top" style="padding-left:10px;padding-right:20px;color:#666666"><br />
 			<div style="padding-left:20px">
-			Les travaux hydrauliques sont réalisés avec sensibili&eacute;, quels matériaux sont employés, la façon dont les travaux sont fait, et les ingénieurs utilisent des techniques pour rendre les résultats définitifs résistant aux ouragans, tremblements de terre, incendies, et d'autres forces de la nature.<br />
-			<br />
-BIOUITRAVAUX a les capacités nécessaires, un personnel hautement qualifié avec une qualité de savoir-faire combiné à un rendement afin d'atteindre son objectif dans tous les segments de la construction au Maroc.
-<br />
-<br />
-Voici certains de nos projets dans le segment des Travaux Hydrauliques et la génie civil :			</div>
+
+                    <?php
+                      include("../connect.php");
+                      $query = mysql_query("select texte from civil");
+                      $t = mysql_fetch_array($query);
+                      echo utf8_decode($t[0]);                        
+                    ?>
+
+      </div>
 			<br /><br />
 	
-	 <div style="padding-left:10px">
-  <div id="accordion" style="font-family:TitilliumMaps26L500wt;width:960px;font-size:14px">
-  <h3 style="background-image:url(img/imgh.jpg); background-repeat:repeat-y;background-position:left"><a href="#" style="color:#666666">Projets en cours </a></h3>
-	  <div style="font-family:TitilliumMaps26L500wt;font-size:14px;color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td align="left" valign="top"> </td>
-        </tr>
-        <tr>
-          <td align="left" valign="top" style="padding-left:0px">
-		  <br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="top"><img src="img/logo/geo.jpg" width="100" height="100" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">Direction des am&eacute;nagement hydraulique</td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>Travaux d'am&eacute;nagement de l'Oued SIDI OTHMANE et de b&eacute;tonnage des ouvrages de protection de la ville de ZAIO contre les inondations<br />
-                Travaux d'am&eacute;nagement de l'oued chouf cherg pour la protection contre les inondations &agrave; missour dans la province de boulemane </td>
-              </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-		  <br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"><img src="img/logo/fadesa.jpg" width="89" height="25" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">FADESA</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>Travaux d'adduction d'eau d'arrosage</td>
-            </tr>
-          </table>
-		  <br /></td>
-        </tr>
-      </table></div>
-	  
-  <h3 style="background-image:url(img/imgh.jpg); background-repeat:repeat-y;background-position:left"><a href="#" style="color:#666666">Projects achev&eacute;s</a></h3>
-	  <div><table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td align="left" valign="top"> </td>
-        </tr>
-        <tr>
-          <td align="left" valign="top" style="padding-left:20px">
-		  <br />
-		 	
-<br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"><img src="img/logo/LogoONEP.gif" width="100" height="50" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">ONEP</td></tr><tr><td>&nbsp;</td><td>
-			  <b>Travaux d'assainissement</b> des eaux pluviales BV Moulay Rachid au centre de Saidia (province de Berkane)<br />
-<b>Réhabilitation</b> de la piste d'accès ... la station de traitement de Nador<br />
-La mise en œuvre de nouvelles<b> raccordements en eau potable</b> des centres placés sous DR 03/06 (Berkane)<br />
-<b>Enlèvement des conduites</b> abandonnées et le <b>renforcement des sols </b>et le <b>revêtement des chaussées</b> endommagées, sont dans la ville de Nador<br />
-Mise en œuvre de nouvelles connexions d'<b>assainissement</b> du centre de Nador et El Aroui<br />
-<b>Réhabilitation</b> et <b>renouvellement</b> du centre de distribution Berkane<br />
-<b>Réhabilitation du génie civil</b> 1500 chars et 750 M3 M3 en centre Zaio (province de Nador)<br />
-<b>Renouvellement d'une section sur l'approvisionnement</b> de la ligne ferroviaire Nador et Beni NSAR à Taourirt-Nador<br />
-Projet d'<b>assainissement</b> de liquide dans la ville de Nador, Lot: <b>Travaux de resurfaçage</b> du boulevard Zghanghan entre le rond-point, Zaanan et Oued El Monker<br />
-			  </td>
-              </tr></table><table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-			  <br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"><img src="img/logo/fadesa.jpg" width="89" height="25" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">FADESA</td></tr><tr><td>&nbsp;</td><td>
-			  Mise en place du réseau de l'eau potable / Medina<br />
-<b>Travaux de construction</b> de l'approvisionnement en eau d'irrigation<br />
-Le logement des eaux usées des égouts Jardins Moulouya...SAIDIA<br />
-Potable mise en oeuvre du réseau / Jardins Moulouya<br />
-<b>Travaux Assainissement</b>-première tranche<br />
-<b>Réseau de drainage</b> des eaux pluviales port / MEDINA<br />
-<b>Travaux d'assainissement</b> des eaux usées de la Médina<br />
-			  </td>
-              </tr></table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-              <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-            </tr>
-          </table>
-		  <br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"><img src="img/logo/dpe.png" width="100" height="29" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">DPE
-Nador</td></tr><tr><td>&nbsp;</td><td><b>Travaux de reconstruction</b> d'un dalot multiple au PK 349+400 de la RN2 ( Liaison Kassita -Oued Nekkor) dans la Province de Nador
-<br />
-<b>Travaux de reconstruction</b> d'un ouvrage d'art au PK 418+000 de la RN2 (Liaison Driouch -Arouit) Dans la Province de Nador
-</td>
-</tr></table><table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-<br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"><img src="img/logo/dpe.png" width="100" height="29" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">DRE
-Oujda</td></tr><tr><td>&nbsp;</td>
-<td><b>R&eacute;alisation du tron&ccedil;on aval  du canal de protection</b> de la ville et de la nouvelle station touristique de Saidia contre les inondations - Province de Berkane</td>
-</tr></table><table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-<br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"><img src="img/logo/dpe.png" width="100" height="29" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">DRE Tanger Tetouan</td></tr><tr><td>&nbsp;</td>
-              <td><b>Travaux de construction</b> d'ouvrages d'art sur la RN 2 du PK 14+704 au PK 26+705 ( Province Fahs -Anjra ), Lot N&deg;3 : Construction d'un ouvrage type dalot situ&eacute; au PK 26+639 de la RN2  (TANGER)</td>
-              </tr></table><table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-              <br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">Wilaya de
-la R.O</td></tr><tr><td>&nbsp;</td>
-<td><b>Travaux de r&eacute;habilitation</b> et <b>r&eacute;am&eacute;nagement</b> du boulevard Mohammed V &agrave; Oujda ; travaux de g&eacute;nie civil - rev&ecirc;tement (lot n&deg;1)
-<br />
-Am&eacute;nagement de la corniche de Sa&iuml;dia lot n&deg;1 Gros &oelig;uvres-Rev&ecirc;tements (2&egrave;me tranche)</td>
-</tr></table><table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-			  
-			  </td>
-        </tr>
-      </table></div>
-	  
-	  </div>
-	  </div>
+	   <div style="padding-left:10px">
+                  <div id="accordion" style="font-family:TitilliumMaps26L500wt;width:960px;font-size:14px">
+                    <h3 style="background-image:url(img/imgh.jpg); background-repeat:repeat-y;background-position:left"><a href="#" style="color:#666666">Projets en cours </a></h3>
+                    <div style="font-family:TitilliumMaps26L500wt;font-size:14px;color:#666666">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td align="left" valign="top"></td>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top" style="padding-left:0px"><br />
+                              <br />
+
+                              <?php
+                                $queryq = mysql_query("select * from projets where cat = 'civil' and type=1 order by titre");
+                                while($tqq = mysql_fetch_array($queryq)){
+                              ?>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="100" height="100" align="center" valign="middle">
+                                      <img src="../images/uploads/<?php echo $tqq[4]; ?>" width="80" height="63" />
+                                  </td>
+                                  <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">
+                                    <?php echo stripslashes(utf8_decode($tqq[2])); ?> 
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>&nbsp;</td>
+                                  <td> 
+
+                                    <?php echo stripslashes(utf8_decode($tqq[3])); ?> 
+
+                                  </td>
+                                </tr>
+                              </table>
+
+
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                  <td valign="top" width="40"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
+                                  <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
+                                </tr>
+                              </tbody></table>
+
+                              <br />
+                              <?php
+                                }
+                              ?>
+
+
+                                                     
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <h3 style="background-image:url(img/imgh.jpg); background-repeat:repeat-y;background-position:left"><a href="#" style="color:#666666">Projets achev&eacute;s </a></h3>
+                    <div style="font-family:TitilliumMaps26L500wt;color:#666666">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td align="left" valign="top"></td>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top" style="padding-left:20px"><br />
+                            
+                            <br />
+
+                              <?php
+                                $queryq = mysql_query("select * from projets where cat = 'civil' and type=2 order by titre");
+                                while($tqq = mysql_fetch_array($queryq)){
+                              ?>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="100" height="100" align="center" valign="middle">
+                                      <img src="../images/uploads/<?php echo $tqq[4]; ?>" width="80" height="63" />
+                                  </td>
+                                  <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">
+                                    <?php echo stripslashes(utf8_decode($tqq[2])); ?> 
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>&nbsp;</td>
+                                  <td> 
+
+                                    <?php echo stripslashes(utf8_decode($tqq[3])); ?> 
+
+                                  </td>
+                                </tr>
+                              </table>
+
+
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                  <td valign="top" width="40"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
+                                  <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
+                                </tr>
+                              </tbody></table>
+
+                              <br />
+                              <?php
+                                }
+                              ?>
+
+
+                                         
+
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
 	  <br />
 	  <br />     
     <br />
