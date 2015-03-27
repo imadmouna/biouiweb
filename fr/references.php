@@ -77,19 +77,19 @@
       
       <br />
       <div style="border:1px solid #00CC00;width:905px">
-
+        <br>
 
         <?php
           $qq = mysql_query("select * from uploadreferencepics order by id DESC");
           while($ttq = mysql_fetch_array($qq)){
         ?>
 
-            <img src="img/logo/geo.jpg" width="100" height="100"  style="padding-left:20px;float:left:top:0px;position:relative" />
+            <img src="../images/uploads/references/small/<?php echo $ttq[1];?>" width="100" height="100"  style="padding-left:9px;padding-top:10px;;float:left:top:0px;position:relative" />
 
         <?php
           }
         ?>
-
+        <br><br>
 
         
 

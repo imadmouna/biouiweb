@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- G�n�r� le :  Ven 27 Mars 2015 � 17:56
+-- G�n�r� le :  Ven 27 Mars 2015 � 21:31
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.5.8
 
@@ -94,6 +94,26 @@ CREATE TABLE IF NOT EXISTS `civil` (
 
 INSERT INTO `civil` (`texte`) VALUES
 ('<div>\r\n			Les travaux hydrauliques sont rÃ©alisÃ©s avec sensibiliÃ©, quels \r\nmatÃ©riaux sont employÃ©s, la faÃ§on dont les travaux sont fait, et les \r\ningÃ©nieurs utilisent des techniques pour rendre les rÃ©sultats dÃ©finitifs\r\n rÃ©sistant aux ouragans, tremblements de terre, incendies, et d''autres \r\nforces de la nature.<br>\r\n			<br>\r\nBIOUITRAVAUX a les capacitÃ©s nÃ©cessaires, un personnel hautement \r\nqualifiÃ© avec une qualitÃ© de savoir-faire combinÃ© Ã  un rendement afin \r\nd''atteindre son objectif dans tous les segments de la construction au \r\nMaroc.\r\n<br>\r\n<br>\r\nVoici certains de nos projets dans le segment des Travaux Hydrauliques et la gÃ©nie civil :			</div>\r\n			<br>');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `classification`
+--
+
+CREATE TABLE IF NOT EXISTS `classification` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `texte` text NOT NULL,
+  `fichier` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `classification`
+--
+
+INSERT INTO `classification` (`id`, `texte`, `fichier`) VALUES
+(2, '<b>MinistÃ¨re de l''Ã©quipement et des transports\r\n</b><br>  \r\n  \r\n    Certification de qualification et de classification des entreprises intervenant dans le secteur de l''habitat. <br>', '90efdfcf458dfe13feb0a51e0fc66d0f14ca8b21.jpg');
 
 -- --------------------------------------------------------
 
@@ -245,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `manage` (
 --
 
 INSERT INTO `manage` (`login`, `pass`, `last_log`) VALUES
-('manager', 'mimadl3a', 'Fri 27 Mar 10h, 2015');
+('manager', 'mimadl3a', 'Fri 27 Mar 21h, 2015');
 
 -- --------------------------------------------------------
 
@@ -1415,6 +1435,23 @@ CREATE TABLE IF NOT EXISTS `services` (
 
 INSERT INTO `services` (`texte`) VALUES
 ('Notre&nbsp;expertise:&nbsp;<br>\r\n    <br>\r\n	 La construction d''espaces humain et la sÃ©curitÃ© routiÃ¨re avec un impact minimal sur notre - environnement naturel.<br>\r\n      <br>\r\n Parmi la gamme de nos services:<br>\r\n<br>\r\n- Planification et analyse de l''environnement<br>\r\n<br>\r\n- Construction et gestion des routes<br>\r\n<br>\r\n- RÃ©fections de carrefours existants, des boulevards et des routes principales<br>\r\n<br>\r\n- RÃ©habilitation et le rÃ©amÃ©nagement des espaces publics, les plates-formes et des structures<br>\r\n<br>\r\n- Travaux Civil<br>\r\n<br>\r\n- Travaux de voirie lotissement, l''assainissement et de stationnement<br>\r\n<br>\r\n- Finition (marquage, signalisation, nettoyage...)<br>\r\n<br> \r\nPour plus \r\n&nbsp;d''informations&nbsp;Ã  propos de nos&nbsp;services,  <a href="http://localhost/BIOUI/fr/contact.php" rel="nofollow" target="_blank">contactez nous!</a><br>');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `texte_classification`
+--
+
+CREATE TABLE IF NOT EXISTS `texte_classification` (
+  `texte` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `texte_classification`
+--
+
+INSERT INTO `texte_classification` (`texte`) VALUES
+('Biouitravaux est l''un des principaux concurrents dans la construction au Maroc.<br>\r\n	  En quelques annÃ©es, Biouitravaux s''est dÃ©veloppÃ© pour devenir un \r\nleader dans son domaine en raison d''une Ã©quipe innovante, le \r\nsavoir-faire des processus dans tous les <a href="http://localhost/BIOUI/fr/projecttri.php" rel="nofollow" target="_blank">projets</a> et  grÃ¢ce Ã  son Ã©normes <a href="http://localhost/BIOUI/fr/machines.php" rel="nofollow" target="_blank">Parc de machines</a>.\r\n    <br>');
 
 -- --------------------------------------------------------
 

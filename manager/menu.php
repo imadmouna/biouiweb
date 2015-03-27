@@ -67,9 +67,9 @@
               </a>
               <ul class="treeview-menu">
                 <li class="actives"><a href="gps.php"><i class="fa fa-map-marker"></i> Coordonn&eacute;es Gps</a></li>
-                <li><a href="civil.php"><i class="fa fa-circle-o"></i> Travaux Hydrauliques & G&eacute;nie Civil</a></li>
-                <li><a href="plan_work.php"><i class="fa fa-circle-o"></i> Am&eacute;nagement & Autres travaux</a></li>
-                <li><a href="projectsp.php"><i class="fa fa-circle-o"></i> Projets en images</a></li>
+                <li><a href="classification.php"><i class="fa fa-circle-o"></i> Classifications</a></li>
+                <li><a href="prix.php"><i class="fa fa-circle-o"></i> Prix</a></li>
+                <li><a href="certif.php"><i class="fa fa-circle-o"></i> Certificat de travail compl&eacute;mentaire</a></li>
               </ul>
             </li>
             
