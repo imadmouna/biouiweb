@@ -10,25 +10,18 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 }
   include("../connect.php");
 
-  if(isset($_GET['texte']) and $_GET['texte']){
-      mysql_query("update texte_projetsp set texte='".addslashes(utf8_encode($_GET['texte']))."'");
-      echo "<script>document.location.href='projectsp.php';</script>";
+  if(isset($_GET['id']) and $_GET['id']){
+      $qsq = mysql_query("select * from gps where id = ".$_GET['id']);
+      $tqss = mysql_fetch_array($qsq);
   }
 
 
-  if(isset($_GET['point_gps']) and $_GET['point_gps'] and isset($_GET['titre']) and $_GET['titre']){
-    mysql_query("insert into gps values(null, '".$_GET['point_gps']."', '".addslashes(utf8_encode($_GET['titre']))."')");
-    echo "<script>document.location.href='gps.php';</script>";
+  if(isset($_GET['point_gps']) and $_GET['point_gps'] and isset($_GET['titre']) and $_GET['titre'] and isset($_GET['id']) and $_GET['id']){
+    mysql_query("update gps set point = '".$_GET['point_gps']."', titre = '".addslashes(utf8_encode($_GET['titre']))."' where id = ".$_GET['id']);
+    echo "<script>document.location.href='editPoint.php?id=".$_GET['id']."';</script>";
   }
 
 
-  if(isset($_GET['spr'])){
-    if(($_GET['spr'])){
-      mysql_query("delete from gps where id=".$_GET["spr"]);
-      echo "<script>alert('Suppression valide !');</script>";
-      echo "<script>document.location.href='gps.php';</script>";
-    }
-  }
 
   
 ?>
@@ -76,9 +69,9 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
       
         var map;
         function initialize() {
-          var myLatlng = new google.maps.LatLng(31.6346214,-8.0078531);
+          var myLatlng = new google.maps.LatLng(<?php if(isset($tqss) and $tqss[1])echo $tqss[1];else echo "31.6346214,-8.0078531";?>);
           var mapOptions = {
-            zoom: 8,
+            zoom: 14,
             center: myLatlng,
             disableDefaultUI: true
           };
@@ -190,7 +183,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
         <section class="content">
             <div class='box'>
                 <div class='box-header'>
-                  <h3 class='box-title'>Cr&eacute;ation d'un point<small></small></h3>
+                  <h3 class='box-title'>Modification du point<small></small></h3>
                   <!-- tools box -->
                   <div class="pull-right box-tools">
                     <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
@@ -199,63 +192,29 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                 </div>
 
                 <div class='box-body pad'>
-                  <div class="alert alert-warning">
-                      Pour inclure une photo sur la page, veuillez vous rendre sur la séction 
-                      <b><i class="fa fa-upload"></i> Upload de fichiers</b>
-                      <br>Ensuite r&eacute;cup&eacute;rez le chemin de l'image et cliquez sur 
-                      <a class="btn btn-primary"><i class="fa fa-file-image-o"></i></a>
-                  </div>
+                  
 
                   <form method="get">
                     <div class="form-group">
                       <label>Titre</label>
-                      <input type="text" name="titre" id="titre" class="form-control">
+                      <input type="text" name="titre" id="titre" class="form-control" value="<?php if(isset($tqss) and $tqss[2])echo $tqss[2];?>">
                     </div>
                     <div class="form-group">
                       <label>Gps</label>
-                      <input type="text" name="point_gps" id="point_gps" class="form-control">
+                      <input type="text" name="point_gps" id="point_gps" class="form-control" value="<?php if(isset($tqss) and $tqss[1])echo $tqss[1];?>">
                     </div>
                     <div id="map-canvas"></div>
                     
                     <div class="box-footer">
                     <input type="submit" class="btn btn-default" value="Valider">
                   </div>
+                  <input type="hidden" name="id" value="<?php if(isset($_GET['id']) and $_GET['id'])echo $_GET['id'];?>">
                   </form>
 
 
 
 
-                  <table class="table table-striped">
-                      <tr>
-                          <td>Titre</td>
-                          <td>Gps</td>
-                          <td></td>
-                      </tr>
-                      <?php
-                        $sq = mysql_query("select * from gps order by id desc");
-                        while ($tsq = mysql_fetch_array($sq)){
-                      ?>
-
-                      <tr>
-                          <td><?php echo stripslashes(utf8_decode($tsq[2]));?></td>
-                          <td><?php echo stripslashes(utf8_decode($tsq[1]));?></td>
-                          <td>
-                              <div class="col-md-8 pull-right">
-                                  <div class="col-md-6">
-                                      <a href="editPoint.php?id=<?php echo $tsq[0];?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Modifier<a/>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <a data-nom="<?php echo stripslashes(utf8_decode($tsq[2])); ?>" data-id="<?php echo $tsq[0];?>" class="btn btn-danger btn-spr btn-xs"><i class="fa fa-times"></i> Supprimer<a/>
-                                  </div>
-                              </div>
-                          </td>
-                      </tr>
-
-
-                      <?php
-                        }
-                      ?>
-                  </table>
+                  
 
                 </div>
               </div>
