@@ -1,43 +1,9 @@
-<?php
-	require("../GoogleMapAPI.class.php");
-	//on crée notre carte
-	$map = new GoogleMapAPI("map","tutoriel_map");
-	$map->setAPIKey('ABQIAAAAShTzG8kE5LrshiwnXaFtxRTdW4fEFQl4pmI656gM9C0lQ-YmixQ0z6yRD-KOf_M-uUfU4T1jHtWXVw');
-	$map->disableTypeControls();
-	
-	$map->setMapType('map'); 
-	$map->disableDirections();
-	
-	$map->enableScaleControl();
-	
-    $map = new GoogleMapAPI('map');
-	$map->enableZoomEncompass();
-	$map->enableOverviewControl();	
-	$map->setHeight("500px");
-	$map->setWidth("900px");
-	
-    $map->addMarkerByAddress('Nador, Maroc','Project in Nador.','<b>Find it</b>');
-	$map->addMarkerByAddress('Chefchaouen, Maroc','Project in Chefchaouen.','<b>Find it</b>');
-	$map->addMarkerByAddress('Saidia, Maroc','Project in Saidia.','<b>Find it</b>');
-	$map->addMarkerByAddress('Oujda, Maroc','Project in Oujda.','<b>Find it</b>');
-	$map->addMarkerByAddress('Taza, Maroc','Project in Taza.','<b>Find it</b>');
-	$map->addMarkerByAddress('Jerada, Maroc','Project in Jerada.','<b>Find it</b>');
-	$map->addMarkerByAddress('Alhouceima, Maroc','Project in Alhouceima.','<b>Find it</b>');
-	$map->addMarkerByAddress('Tanger, Maroc','Project in Tanger.','<b>Find it</b>');
-	$map->addMarkerByAddress('Tetouan, Maroc','Project in Tetouan.','<b>Find it</b>');
-	$map->addMarkerByAddress('Fes, Maroc','Project in Tetouan.','<b>Find it</b>');
-	$map->addMarkerByAddress('Casablanca, Maroc','Project in Tetouan.','<b>Find it</b>');
-	
-	//$a=$map->getGeocode('Nador, Maroc');
-	//echo $a['lat']."<br>";
-	//echo $a['lon'];
-	
-    ?>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>References - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -60,7 +26,7 @@
 <script type='text/javascript' src='extra/jquery.js'></script>
 <script type='text/javascript' src='extra/dropdowns.js'></script>
 <?php //$map->printHeaderJS(); ?>
-    <?php $map->printMapJS(); ?>
+    
 <link rel="shortcut icon" href="../logo.png" />
 </head>
 
@@ -101,34 +67,46 @@
   <tr>
     <td align="left" valign="top" style="padding-left:40px;padding-right:40px;color:#666666"><p>
       <br />
-      Plus de 200 projets et travaux ont &eacute;t&eacute; effectu&eacute;s par Biouitravaux pour des administrations &agrave; plusieurs reprises depuis 2000.<br />
-<br />
-<br />
-Parmi les r&eacute;alisations r&eacute;centes, on peut citer les suivantes: <br />
-<br />
-      <div style="border:1px solid #00CC00;width:905px"><table width="900" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td align="center"><img src="img/logo/dpe.png" width="100" height="29" /></td>
-		  <td align="center"><img src="img/logo/auto.gif" width="100" height="28" /></td>
-          <td><img src="img/logo/geo.jpg" width="100" height="100" /></td>
-          <td><img src="img/logo/marjane.jpg" width="100" height="100" /></td>
-          <td><img src="img/logo/LogoONEP.gif" width="100" height="50" /></td>
-          <td><img src="img/logo/omrane.jpg" width="100" height="83" /></td>
-          <td><img src="img/logo/onda.JPG" width="100" height="40" /></td>
-          <td><img src="img/logo/Fadesa.jpg" width="100" height="31" /></td>
-          <td><img src="img/logo/oncf.jpg" width="100" height="58" /></td>
-        </tr>
-      </table></div>
-      <p>        <br />
-        <br />
-        <br />
-        <div style="border:5px solid #00CC00;width:900px">
-	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAShTzG8kE5LrshiwnXaFtxRTdW4fEFQl4pmI656gM9C0lQ-YmixQ0z6yRD-KOf_M-uUfU4T1jHtWXVw" type="text/javascript"></script>
+      
+        <?php
+          include("../connect.php");
+          $query = mysql_query("select texte from texte_reference");
+          $t = mysql_fetch_array($query);
+          echo utf8_decode($t[0]);                        
+        ?>
+      
+      <br />
+      <div style="border:1px solid #00CC00;width:905px">
 
-	<?php $map->printMap(); ?></div>
+
+        <?php
+          $qq = mysql_query("select * from uploadreferencepics order by id DESC");
+          while($ttq = mysql_fetch_array($qq)){
+        ?>
+
+            <img src="img/logo/geo.jpg" width="100" height="100"  style="padding-left:20px;float:left:top:0px;position:relative" />
+
+        <?php
+          }
+        ?>
+
+
+        
+
+    </div>
+      <p>
+        <br />
+        <br />
+        <br />
+        <div style="border:5px solid #00CC00;width:900px;height:400px" id="divi">
+	
+
+        </div>
       <br />
       <br />   
-<br />   <br />   <br />  
+      <br />   
+      <br />   
+      <br />  
       </td>
   </tr>
 </table>
@@ -136,6 +114,47 @@ Parmi les r&eacute;alisations r&eacute;centes, on peut citer les suivantes: <br 
       </tr>
       
     </table>
+<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+
+<script type="text/javascript">
+    var locations = [
+    <?php
+      $sq = mysql_query("select * from gps order by id desc");
+      while ($tsq = mysql_fetch_array($sq)){
+    ?>
+      ['<?php echo stripslashes(utf8_decode($tsq[2]));?>', <?php echo stripslashes(utf8_decode($tsq[1]));?>],
+
+    <?php
+      }
+    ?>
+    ];
+
+    var map = new google.maps.Map(document.getElementById('divi'), {
+      zoom: 5,
+      center: new google.maps.LatLng(31.7948264,-7.0847677),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+
+
 	
 	</td>
   </tr>
