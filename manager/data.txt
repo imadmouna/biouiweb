@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- G�n�r� le :  Ven 27 Mars 2015 � 21:31
+-- G�n�r� le :  Sam 28 Mars 2015 � 19:52
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.5.8
 
@@ -61,6 +61,23 @@ INSERT INTO `activites` (`id`, `titre`, `texte`, `photo`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `candidat`
+--
+
+CREATE TABLE IF NOT EXISTS `candidat` (
+  `texte` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `candidat`
+--
+
+INSERT INTO `candidat` (`texte`) VALUES
+('Candidatures spontanÃ©es');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `cat_machine`
 --
 
@@ -113,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `classification` (
 --
 
 INSERT INTO `classification` (`id`, `texte`, `fichier`) VALUES
-(2, '<b>MinistÃ¨re de l''Ã©quipement et des transports\r\n</b><br>  \r\n  \r\n    Certification de qualification et de classification des entreprises intervenant dans le secteur de l''habitat. <br>', '90efdfcf458dfe13feb0a51e0fc66d0f14ca8b21.jpg');
+(2, '<b>MinistÃ¨re de l''Ã©quipement et des transports\r\n</b><br>  \r\n  \r\n    Certification de qualification et de classification des entreprises intervenant dans le secteur de l''habitat. <br>', '9ebd8485a9dbc3ad513d465ac071d5203d829915.jpg');
 
 -- --------------------------------------------------------
 
@@ -225,6 +242,23 @@ CREATE TABLE IF NOT EXISTS `gps` (
 
 INSERT INTO `gps` (`id`, `point`, `titre`) VALUES
 (2, '32.32364160280353,-8.452284404931675', 'titre 11');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `legal`
+--
+
+CREATE TABLE IF NOT EXISTS `legal` (
+  `texte` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `legal`
+--
+
+INSERT INTO `legal` (`texte`) VALUES
+('Le site internet <a href="http://www.biouitravaux.ma/" rel="nofollow" target="_blank">www.<strong>biouitravaux.ma</strong></a>\r\n est la propriÃ©tÃ© de la sociÃ©tÃ© Biouitravaux immatriculÃ©e au Registre de\r\n   Commerce de Oujda sous le nÂ° 16337 et au capital de 50.000.000 \r\nDIRHAMS.      \r\n      <p>NÂ° de PATENTE&nbsp;: 10118185</p>\r\n      <p>CNSS&nbsp;: 6099437</p>\r\n      <p>&nbsp;</p>\r\n      <p>&nbsp;</p>\r\n      <p><strong>ResponsabilitÃ© </strong></p>\r\n      <p>Le contenu de ce site ne peut Ãªtre considÃ©rÃ© comme une \r\nproposition de   vente ou d''achat. Par consÃ©quence, l''utilisateur \r\nreconnaÃ®t utiliser les   informations de ce site sous sa responsabilitÃ© \r\nexclusive. Biouitravaux   n''est tenu que d''une simple obligation de \r\nmoyens concernant les   informations qu''il met Ã  disposition des \r\npersonnes qui accÃ¨dent Ã  son   site web <a href="http://www" rel="nofollow" target="_blank">http://www</a>.<strong>biouitravaux.ma</strong>.</p>\r\n      <p><strong>PropriÃ©tÃ© intellectuelle </strong></p>\r\n      <p>Biouitravaux est le propriÃ©taire des droits, titres et intÃ©rÃªts liÃ©s au nom de domaine Â« <strong>biouitravaux.ma</strong>\r\n Â». Toute utilisation de ce nom est interdite sans l''autorisation   \r\nprÃ©alable et Ã©crite de Biouitravaux. Ce site et son contenu sont   \r\nprotÃ©gÃ©s, au sens du code de la propriÃ©tÃ© intellectuelle, en particulier\r\n   par les droits d''auteur, dessins et modÃ¨les et droits des marques. En\r\n   application du Code marocain de la PropriÃ©tÃ© Intellectuelle et, plus \r\n  gÃ©nÃ©ralement, des traitÃ©s et accords internationaux comportant des   \r\ndispositions relatives Ã  la protection des droits d''auteurs, vous vous  \r\n interdirez de reproduire pour un usage autre que privÃ©, vendre,   \r\ndistribuer, Ã©mettre, diffuser, adapter, modifier, publier, communiquer  \r\n intÃ©gralement ou partiellement, sous quelque forme que ce soit, les   \r\ndonnÃ©es, la prÃ©sentation ou l''organisation du site ou les Åuvres   \r\nprotÃ©gÃ©es par le droit d''auteur qui figurent sur le site web <a href="http://www" rel="nofollow" target="_blank">http://www</a>.<strong>biouitravaux.ma</strong>\r\n sans autorisation Ã©crite particuliÃ¨re et prÃ©alable du dÃ©tenteur du   \r\ndroit d''auteur attachÃ© Ã  l''Åuvre, Ã  la prÃ©sentation ou Ã  l''organisation \r\n  du site ou Ã  la donnÃ©e reproduite. Vous vous interdirez Ã©galement   \r\nd''introduire des donnÃ©es sur le site web <a href="http://www" rel="nofollow" target="_blank">http://www</a>.<strong>biouitravaux.ma</strong>\r\n qui modifieraient ou qui seraient susceptibles de modifier le contenu  \r\n ou l''apparence des donnÃ©es, de la prÃ©sentation ou de l''organisation du \r\n  site ou des Åuvres figurant sur le site web de Biouitravaux et par   \r\nquelques procÃ©dÃ©s que ce soit. Pour toute information complÃ©mentaire,   \r\ncontactez le webmaster Ã  lâadresse suivante : <a rel="nofollow" target="_blank">contact@<strong>biouitravaux.ma</strong></a></p><br>');
 
 -- --------------------------------------------------------
 
@@ -1311,6 +1345,26 @@ INSERT INTO `missionvision` (`texte`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `offre`
+--
+
+CREATE TABLE IF NOT EXISTS `offre` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titre` text NOT NULL,
+  `descr` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `offre`
+--
+
+INSERT INTO `offre` (`id`, `titre`, `descr`) VALUES
+(1, 'Direction des amÃ©nagement hydraulique111', 'test');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `organisation`
 --
 
@@ -1358,6 +1412,26 @@ CREATE TABLE IF NOT EXISTS `plan_work` (
 
 INSERT INTO `plan_work` (`texte`) VALUES
 ('BIOUITRAVAUX agit dans plusieurs domaines de la construction au MAROC, \r\nÃ©tant diversifiÃ©s et en quÃªte de nouveaux dÃ©fis  nous rend leader. \r\nChaque dÃ©tail compte pour nous, Ã©tant concentrÃ©s sur nos Objectifs et \r\nbuts Ã  atteindre est notre clÃ© de succÃ¨s.<br>\r\n			  <br>\r\n\r\nVoici certains de nos projets dans les travaux d''amÃ©nagement &amp; autres:\r\n			  \r\n			  \r\n			<br>');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `prix`
+--
+
+CREATE TABLE IF NOT EXISTS `prix` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `texte` text NOT NULL,
+  `fichier` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `prix`
+--
+
+INSERT INTO `prix` (`id`, `texte`, `fichier`) VALUES
+(2, 'test', '5b9ba8bbf6f2577062d7707bb6e4f885c6ca4761.jpg');
 
 -- --------------------------------------------------------
 
@@ -1439,6 +1513,23 @@ INSERT INTO `services` (`texte`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `specialite`
+--
+
+CREATE TABLE IF NOT EXISTS `specialite` (
+  `texte` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `specialite`
+--
+
+INSERT INTO `specialite` (`texte`) VALUES
+('specialite ddd');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `texte_classification`
 --
 
@@ -1456,6 +1547,23 @@ INSERT INTO `texte_classification` (`texte`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `texte_offre`
+--
+
+CREATE TABLE IF NOT EXISTS `texte_offre` (
+  `texte` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `texte_offre`
+--
+
+INSERT INTO `texte_offre` (`texte`) VALUES
+('texte_offre1');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `texte_parc`
 --
 
@@ -1469,6 +1577,23 @@ CREATE TABLE IF NOT EXISTS `texte_parc` (
 
 INSERT INTO `texte_parc` (`texte`) VALUES
 ('textggg');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `texte_prix`
+--
+
+CREATE TABLE IF NOT EXISTS `texte_prix` (
+  `texte` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `texte_prix`
+--
+
+INSERT INTO `texte_prix` (`texte`) VALUES
+('aasssss                    <a href="https://vimeo.com/channels/staffpicks/122951412" rel="nofollow" target="_blank">https://vimeo.com/channels/staffpicks/122951412</a>');
 
 -- --------------------------------------------------------
 
@@ -1503,6 +1628,23 @@ CREATE TABLE IF NOT EXISTS `texte_reference` (
 
 INSERT INTO `texte_reference` (`texte`) VALUES
 ('ddldldk');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `texte_wcc`
+--
+
+CREATE TABLE IF NOT EXISTS `texte_wcc` (
+  `texte` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `texte_wcc`
+--
+
+INSERT INTO `texte_wcc` (`texte`) VALUES
+('aaaaaaaaaaaa');
 
 -- --------------------------------------------------------
 
@@ -1612,6 +1754,26 @@ INSERT INTO `uploadtextprojetsp` (`id`, `chemin`) VALUES
 (7, '68549035273c0a81494453577dd894418a6caf5a.jpg'),
 (8, '3be13d7337a04b5535adec278721a4374a499c7e.jpg'),
 (9, '238d22867eb0f0eec3ea5edc0a8028a6e25c6291.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `wcc`
+--
+
+CREATE TABLE IF NOT EXISTS `wcc` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `texte` text NOT NULL,
+  `fichier` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `wcc`
+--
+
+INSERT INTO `wcc` (`id`, `texte`, `fichier`) VALUES
+(2, 'ss', '045b7c1fc25a2219b1848c17f008fd398e50f6f7.jpg');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

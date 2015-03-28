@@ -73,6 +73,18 @@
               </ul>
             </li>
             
+            <li class="actives treeview">
+              <a href="#">
+                <i class="fa fa-users"></i> <span>Ressources humaines</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li class="actives"><a href="specialite.php"><i class="fa fa-map-marker"></i> Sp&eacute;cialit&eacute;s</a></li>
+                <li><a href="offre.php"><i class="fa fa-circle-o"></i> Offres d'emploi</a></li>
+                <li><a href="candidat.php"><i class="fa fa-circle-o"></i> Candidatures spontan&eacute;es</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="legal.php"><i class="fa fa-legal"></i> Mentions l&eacute;gales</a></li>
             <li><a href="upload.php"><i class="fa fa-upload"></i> Upload de fichiers</a></li>
             
           </ul>
