@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Certificat de travail compl&eacute;mentaire - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -67,103 +67,47 @@
   </tr>
   <tr>
     <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666"><p><br />
-       Biouitravaux est l'un des principaux concurrents dans la construction au Maroc.<br />
-	  En quelques années, Biouitravaux s'est développé pour devenir un leader dans son domaine en raison d'une équipe innovante, le savoir-faire des processus dans tous les <a href="projecttri.php" style="color:#333333">projets</a> et  gr&acirc;ce &agrave; son énormes <a href="machines.php" style="color:#333333">Parc de machines</a>.</p>   
-      <br /><br />
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+       
+
+      <br>
+      <?php
+        include("../connect.php");
+        $query = mysql_query("select texte from texte_wcc");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+      ?>
+
+      <br />
+      <br />
+
+      <?php
+        $qq = mysql_query("select * from wcc order by id desc");
+        while( $tqq = mysql_fetch_array($qq) ){
+      ?>
+    
+      <br />
+      <br />
+
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td width="180" align="center" valign="middle">
-		  <a href="../attestation/img1.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img src="../attestation/min/img1.jpg" width="150" height="212" border="0" style="padding:2px;border:1px solid #00CC00;" /></a>		  </td>
-          <td align="left" valign="top">
-		  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td style="font-weight:bold">Soci&eacute;t&eacute; d'am&eacute;nagement de  saidia S.A.</td>
-  </tr>
-  <tr>
-    <td>Certification de l'accomplissement des travaux routiers et de terrassement.</td>
-  </tr>
-</table>
 
-		  </td>
+            <a href="../images/uploads/<?php echo $tqq[2];?>" rel="lightbox[roadtrip]" style="text-decoration:none">
+              <img src="../images/uploads/<?php echo $tqq[2];?>" width="150" height="207" border="0" style="padding:2px;border:1px solid #00CC00;" />
+            </a>
+
+          </td>
+          <td align="left" valign="top">
+            <?php echo stripslashes(utf8_decode($tqq[1])); ?>
+          </td>
         </tr>
       </table>
-	  <br />
-	  <br />
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td width="180" align="center" valign="middle"><a href="../attestation/img2.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img src="../attestation/min/img2.jpg" width="150" height="212" border="0" style="padding:2px;border:1px solid #00CC00;" /></a> </td>
-          <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td style="font-weight:bold">Minist&egrave;re de l'&eacute;quipement et des transports de nador.</td>
-              </tr>
-              <tr>
-                <td>Certification  des travaux d'élargissement et le renforcement.</td>
-              </tr>
-          </table></td>
-        </tr>
-      </table>
-	  <br />
-	  <br />
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td width="180" align="center" valign="middle"><a href="../attestation/img3.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img src="../attestation/min/img3.jpg" width="150" height="212" border="0" style="padding:2px;border:1px solid #00CC00;" /></a> </td>
-          <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td style="font-weight:bold">Inveravante Group. </td>
-              </tr>
-              <tr>
-                <td>Certification des travaux de terrassement et de sout&egrave;nement.</td>
-              </tr>
-          </table></td>
-        </tr>
-      </table>
-	  <br />
-	  <br />
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td width="180" align="center" valign="middle"><a href="../attestation/img4.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img src="../attestation/min/img4.jpg" width="150" height="212" border="0" style="padding:2px;border:1px solid #00CC00;" /></a> </td>
-          <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td style="font-weight:bold">Secrétariat d'Etat auprès du Ministère de l'Energie des Mines de l'Eau et de l'environnement, chargé de l'Eau et de l'environnement Département de l'Eau.</td>
-              </tr>
-              <tr>
-                <td>Certification des travaux d'am&eacute;nagement pour la prot&eacute;ction contre les innondations.</td>
-              </tr>
-          </table></td>
-        </tr>
-      </table>
-	  <br />
-	  <br />
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td width="180" align="center" valign="middle"><a href="../attestation/img5.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img src="../attestation/min/img5.jpg" width="150" height="212" border="0" style="padding:2px;border:1px solid #00CC00;" /></a> </td>
-          <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td style="font-weight:bold">Minist&egrave;re de l'&eacute;quipement et des transports<br />
-                  Direction provinciale de l'Equipment et des transports de sefrou</td>
-              </tr>
-              <tr>
-                <td><br />                  
-                  Certification des travaux de d&eacute;doublement. </td>
-              </tr>
-          </table></td>
-        </tr>
-      </table>
-	  <br />
-	  <br />
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td width="180" align="center" valign="middle"><a href="../attestation/img6.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img src="../attestation/min/img6.jpg" width="150" height="212" border="0" style="padding:2px;border:1px solid #00CC00;" /></a> </td>
-          <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td style="font-weight:bold">Soci&eacute;t&eacute; Alomrane Oujda </td>
-              </tr>
-              <tr>
-                <td>Certification des travaux de voirie et d'assinissement </td>
-              </tr>
-          </table></td>
-        </tr>
-      </table>
+
+      <?php
+        }
+      ?>
+
 	  <br />
 	  <br />
 	  </td>

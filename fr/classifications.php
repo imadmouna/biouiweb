@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Classifications - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -66,50 +66,47 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B;">Classifications</td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666"><p><br />
-      Biouitravaux est l'un des principaux concurrents dans la construction au Maroc.<br />
-	  En quelques années, Biouitravaux s'est développé pour devenir un leader dans son domaine en raison d'une équipe innovante, le savoir-faire des processus dans tous les <a href="projecttri.php" style="color:#333333">projets</a> et  gr&acirc;ce &agrave; son énormes <a href="machines.php" style="color:#333333">Parc de machines</a>.
-    </p>   
-      <br /><br />
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
+      <br>
+      <?php
+        include("../connect.php");
+        $query = mysql_query("select texte from texte_classification");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+      ?>
+
+      <br />
+      <br />
+
+      <?php
+        $qq = mysql_query("select * from classification order by id desc");
+        while( $tqq = mysql_fetch_array($qq) ){
+      ?>
+	  
+  	  <br />
+  	  <br />
+
+
+	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td width="180" align="center" valign="middle">
-		  <a href="../classification/class1.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img style="padding:2px;border:1px solid #00CC00;" src="../classification/min/class1.jpg" border="0" /></a>
-		  	  
-		  </td>
-          <td align="left" valign="top">
-		  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td style="font-weight:bold">Minist&egrave;re de l'&eacute;quipement et des transports</td>
-  </tr>
-  <tr>
-    <td>Certification de qualification et de classification des entreprises intervenant dans le secteur de l'habitat. </td>
-  </tr>
-</table>
 
-		  </td>
+		        <a href="../images/uploads/<?php echo $tqq[2];?>" rel="lightbox[roadtrip]" style="text-decoration:none">
+		          <img src="../images/uploads/<?php echo $tqq[2];?>" width="150" height="207" border="0" style="padding:2px;border:1px solid #00CC00;" />
+            </a>
+
+          </td>
+          <td align="left" valign="top">
+    		  	<?php echo stripslashes(utf8_decode($tqq[1])); ?>
+		      </td>
         </tr>
       </table>
-	  <br />
-	  <br />
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td width="180" align="center" valign="middle">
-		  <a href="../classification/class2.jpg" rel="lightbox[roadtrip]" style="text-decoration:none">
-		  <img src="../classification/min/class2.jpg" width="150" height="207" border="0" style="padding:2px;border:1px solid #00CC00;" /></a>		  </td>
-          <td align="left" valign="top">
-		  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td style="font-weight:bold">Ministère de l'équipement et des transports</td>
-  </tr>
-  <tr>
-    <td>Certificat de qualification et de classification.</td>
-  </tr>
-</table>
 
-		  </td>
-        </tr>
-      </table>
+      <?php
+        }
+      ?>
+
+
 	  <br /><br />
 	  </td>
   </tr>

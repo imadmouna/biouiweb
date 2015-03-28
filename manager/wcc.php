@@ -11,47 +11,45 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
   include("../connect.php");
 
 
-  if(isset($_GET['id']) and isset($_GET['cat'])){
-      if(($_GET['id']) and ($_GET['cat'])){
-          $qq = mysql_query("select * from ".$_GET['cat']." where id = ".$_GET['id']);
-          $tt = mysql_fetch_array($qq);
-      }
+
+  if(isset($_GET['spr'])){
+    if(($_GET['spr'])){
+      mysql_query("delete from wcc where id=".$_GET["spr"]);
+      echo "<script>alert('Suppression valide !');</script>";
+      echo "<script>document.location.href='wcc.php';</script>";
+    }
   }
 
 
+  if(isset($_GET['texte']) and $_GET['texte']){
+      mysql_query("update texte_wcc set texte='".addslashes(utf8_encode($_GET['texte']))."'");
+      echo "<script>document.location.href='wcc.php';</script>";
+  }
 
-  if(isset($_POST['desc']) and isset($_POST['id']) and isset($_POST['cat'])){
-    if(($_POST['desc']) and ($_POST['id']) and ($_POST['cat'])){
-
-
-      if(isset($_FILES['photo']['tmp_name']) and ($_FILES['photo']['tmp_name'])){
-          $ds          = DIRECTORY_SEPARATOR; 
-          $storeFolder = '../images/uploads/';
-
-          $tempFile = $_FILES['photo']['tmp_name'];
-          $targetPath = dirname( __FILE__ ) . $ds. $storeFolder . $ds;
-         
-
-          $path = $_FILES['photo']['name'];
-          $ext = pathinfo($path, PATHINFO_EXTENSION);
-
-          $fichier = sha1(uniqid(mt_rand(), true)).".".$ext;
-          $targetFile =  $targetPath.$fichier;
-       
-          copy($tempFile,$targetFile);
+  if(isset($_POST['desc']) and isset($_FILES['photo']['tmp_name'])){
+    if(($_POST['desc']) and ($_FILES['photo']['tmp_name'])){
 
 
-          mysql_query("update ".$_POST['cat']." set texte = '".
-            addslashes(utf8_encode($_POST['desc']))."', fichier = '".
-            $fichier."' where id= ".$_POST['id']);
-      }else{
+      $ds          = DIRECTORY_SEPARATOR; 
+      $storeFolder = '../images/uploads/';
 
-        mysql_query("update ".$_POST['cat']." set texte = '".
-            addslashes(utf8_encode($_POST['desc']))."' where id= ".$_POST['id']);
-      }
+      $tempFile = $_FILES['photo']['tmp_name'];
+      $targetPath = dirname( __FILE__ ) . $ds. $storeFolder . $ds;
+     
 
-      
-      echo "<script>document.location.href='editCertif.php?id=".$_POST['id']."&cat=".$_POST['cat']."';</script>";
+      $path = $_FILES['photo']['name'];
+      $ext = pathinfo($path, PATHINFO_EXTENSION);
+
+      $fichier = sha1(uniqid(mt_rand(), true)).".".$ext;
+      $targetFile =  $targetPath.$fichier;
+   
+      copy($tempFile,$targetFile);
+
+
+      mysql_query("insert into wcc values(null, '".
+        addslashes(utf8_encode($_POST['desc']))."', '".
+        $fichier."')");
+      echo "<script>document.location.href='wcc.php';</script>";
     }
   }
 ?>
@@ -146,7 +144,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
         <section class="content-header">
           <h1>
-            <small><?php if(isset($_GET['cat']) and $_GET['cat']) echo ucfirst($_GET['cat']);?></small>
+            <small>Certificat de travail compl&eacute;mentaire</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -156,13 +154,40 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
 
         <section class="content">
-            
+            <div class='box'>
+                <div class='box-header'>
+                  <h3 class='box-title'>Texte de pr&eacute;sentation<small></small></h3>
+                  <!-- tools box -->
+                  <div class="pull-right box-tools">
+                    <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                    <button class="btn btn-default btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+
+                <div class='box-body pad'>
+                  <form method="get">
+                    <textarea name="texte" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                      <?php
+                        $query = mysql_query("select texte from texte_wcc");
+                        $t = mysql_fetch_array($query);
+                        echo utf8_decode($t[0]);                        
+                      ?>
+                    </textarea>
+                    
+                    <div class="box-footer">
+                    <input type="submit" class="btn btn-default" value="Valider">
+                  </div>
+                  </form>
+                </div>
+              </div>
+
+
 
 
 
               <div class='box'>
                 <div class='box-header'>
-                  <h3 class='box-title'>Edition certification<small></small></h3>
+                  <h3 class='box-title'>Certificat<small></small></h3>
                   <!-- tools box -->
                   <div class="pull-right box-tools">
                     <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
@@ -176,19 +201,14 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                     <div class="form-group">
                         <label>Description:</label>
                         
-                        <textarea name="desc" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php if(isset($tt) and $tt[2])echo stripslashes(utf8_decode($tt[1])); ?></textarea>
+                        <textarea name="desc" class="textarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                        </textarea>
                         
                     </div>
                     <div class="form-group">
                         <label>Photo:</label>
-                        <br>
-                        <img src="../images/uploads/<?php echo stripslashes(utf8_decode($tt[2]));?>" class="img-thumbnail" width="100" />
-                        <br>
                         <input type="file" class="form-control" name="photo" />
                     </div>
-
-                    <input type="hidden" name="id" value="<?php echo stripslashes(utf8_decode($tt[0]));?>" />
-                    <input type="hidden" name="cat" value="<?php echo $_GET['cat'];?>" />
                     
                     <div class="box-footer">
                     <input type="submit" class="btn btn-default" value="Valider">
@@ -201,7 +221,51 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 
 
 
-              
+              <div class='box'>
+                <div class='box-header'>
+                  <h3 class='box-title'>Liste des certifications<small></small></h3>
+                  <!-- tools box -->
+                  <div class="pull-right box-tools">
+                    <button class="btn btn-default btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                    <button class="btn btn-default btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+
+                <div class='box-body pad'>
+                  
+                  <table class="table table-striped">
+                    <tr>
+                        <td width="100">Photo</td>
+                        <td>Descriptif</td>
+                        <td></td>
+                    </tr>
+                    <?php
+                      $qq = mysql_query("select * from wcc order by id desc");
+                      while( $tqq = mysql_fetch_array($qq) ){
+
+                    ?>
+                      <tr>
+                          <td><img src="../images/uploads/<?php echo stripslashes(utf8_decode($tqq[2]));?>" class="img-thumbnail" width="100" /></td>
+                          <td><?php echo substr(stripslashes(utf8_decode($tqq[1])),0,20)."..."; ?></td>
+                          <td>
+                              <div class="col-md-6 pull-right">
+                                  <div class="col-md-6">
+                                      <a href="editCertif.php?id=<?php echo $tqq[0];?>&cat=wcc" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Modifier<a/>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <a data-nom="<?php echo substr(stripslashes(utf8_decode($tqq[1])),0,20)."..."; ?>" data-id="<?php echo $tqq[0];?>" class="btn btn-danger btn-spr btn-xs"><i class="fa fa-times"></i> Supprimer<a/>
+                                  </div>
+                              </div>
+                          </td>
+                      </tr>
+                    <?php
+
+                      }
+                    ?>
+                  </table>
+
+                </div>
+              </div>
 
         </section>
 
@@ -244,7 +308,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
         nom = $(this).data("nom");
 
         $(".spr-msg").html("Voulez-vous vraiment supprimer <b>' "+nom+" '</b> ?");
-        $(".btn-spr-oui").attr("href", "projecttri.php?spr="+id);
+        $(".btn-spr-oui").attr("href", "wcc.php?spr="+id);
 
         $(".modal-me").modal("show");
     });

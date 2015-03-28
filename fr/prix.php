@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Prix - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -69,50 +69,52 @@ function showVideo(){
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;font-size:26px;color:#77AD1B">Prix</td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;color:#666666"><p><br />
-	Biouitravaux est l'une des entreprises de construction les plus connues dans le monde.
-<br />
-<br />
-Etant une entreprise de construction nationale au Maroc avec une vaste expérience dans les diff&eacute;rents domaines de construction, Biouitravaux travaille activement sur de nombreux niveaux du processus de réalisation pour assurer des produits et services de qualité afin de garder son leadership devant la concurrence<br />
-<br />
-       <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td width="180" align="center" valign="top"><a href="../awards/1.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img src="../awards/min/1.jpg" width="150" height="212" border="0" style="padding:2px;border:1px solid #00CC00;" /></a><a href="../awards/2.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img src="../awards/min/2.jpg" width="150" height="212" border="0" style="padding:2px;border:1px solid #00CC00;display:none" /></a> </td>
-          <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td style="font-weight:bold">Editorial Office and Trade Leader's Club</td>
-              </tr>
-              <tr>
-                <td>Nouveau Prix Mill&eacute;naire international de la construction 2011.</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td style="padding-right:10px" align="left">
-					LE PRIX INTERNATIONAL DE LA CONSTRUCTION  a été créé en 1988 par l'Editorial Office, qui gère également le CLUB Trade Leaders dans le cadre de son programme de promotion des contacts et des liens entre les hommes d'affaires dans le secteur à travers le monde, offrant à ses membres un élément supplémentaire de soutien et d'appui pour les campagnes de promotion et de marketing.<br />
-<br />
-Trade Leaders Club, en service dans le domaine du transport à travers le monde qui rassemble les dirigeants des grandes entreprises et moyennes entreprises, une association commerciale internationale qui héberge le site de 7000 utilisateurs.
-<br /><br />
-Chaque année passée conduit au développement du commerce international ou régional, des organismes publics et privés qui exécutent des projets de grande envergure, compte tenu d'évaluer la contribution qu'elles ont apportée à l'économie mondiale, ces succès sont récomponsés.
+    <td align="left" valign="top" style="padding-left:40px;color:#666666">
 
-<br /><br />
-Cérémonie de remise de prix International de la construction et des transports tenue à Paris le 9 mai 2011. Comité de sélection de l' Editorial Office and Trade Leaders Club, à la suite des évaluations faites dans le domaine de la Construction, a décerné BIOUI TRAVAUX SARL au Prix international de la construction (Nouveau Prix Millénaire).
-<br /><br />
-Dans cette cérémonie, parmi les 40 pays, diverses sociétés et organisations agissant sur ??cette industrie représentée par les cadres supérieurs à Paris.
-<br /><br />
-Regarder un extrait de la cérémonie de remise des prix
-<span onclick="showVideo();" style="font-weight:bold;text-decoration:underline;cursor:pointer">Cliquez ici </span><br /><br />
-<div align="left"><div id="video" style="display:none;background-color:#333333;width:400px;padding:5px" align="center">
-<object width="400" height="400"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=24287370&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=24287370&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="400"></embed></object>
-</div></div>
-</td>
-              </tr>
-          </table></td>
+      <br>
+      <?php
+        include("../connect.php");
+        $query = mysql_query("select texte from texte_prix");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+      ?>
+
+      <br />
+      <br />
+
+      <?php
+        $qq = mysql_query("select * from prix order by id desc");
+        while( $tqq = mysql_fetch_array($qq) ){
+      ?>
+    
+      <br />
+      <br />
+
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="180" align="center" valign="middle">
+
+            <a href="../images/uploads/<?php echo $tqq[2];?>" rel="lightbox[roadtrip]" style="text-decoration:none">
+              <img src="../images/uploads/<?php echo $tqq[2];?>" width="150" height="207" border="0" style="padding:2px;border:1px solid #00CC00;" />
+            </a>
+
+          </td>
+          <td align="left" valign="top">
+            <?php echo stripslashes(utf8_decode($tqq[1])); ?>
+          </td>
         </tr>
-      </table><br />
-          <br />
-        </p></td>
+      </table>
+
+      <?php
+        }
+      ?>
+
+	     <br>
+       <br>
+       
+       
+    </td>
   </tr>
 </table>
           </td>

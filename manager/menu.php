@@ -69,7 +69,7 @@
                 <li class="actives"><a href="gps.php"><i class="fa fa-map-marker"></i> Coordonn&eacute;es Gps</a></li>
                 <li><a href="classification.php"><i class="fa fa-circle-o"></i> Classifications</a></li>
                 <li><a href="prix.php"><i class="fa fa-circle-o"></i> Prix</a></li>
-                <li><a href="certif.php"><i class="fa fa-circle-o"></i> Certificat de travail compl&eacute;mentaire</a></li>
+                <li><a href="wcc.php"><i class="fa fa-circle-o"></i> Certificat de travail compl&eacute;mentaire</a></li>
               </ul>
             </li>
             
