@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Candidature spontan&eacute;e - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -60,16 +60,17 @@
   </tr>
   <tr>
     <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
-	<br /><br />
-	Vous avez une bonne expérience, vous êtes un mécanicien, contremaître, opérateurs de machines, la construction, la comptabilité, ...<br />
-quel que soit votre profession, vous pouvez maintenant faire votre demande ouverte et nous envoyer votre candidature (CV et lettre de motivation) à l'adresse électronique suivante:
 	
-	<br /><br />
-	<a href="mailto:rh@biouitravaux.ma">rh@biouitravaux.ma</a><br />
-<br />
-Nous vous remercions pour l'interet que vous portez &agrave; notre soci&eacute;t&eacute;.
-	<br />
-	<br />
+      <br />
+     <?php
+        include("../connect.php");
+        $query = mysql_query("select texte from candidat");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+    ?>
+
+      <br />
+      <br />
 	</td>
   </tr>
 </table>

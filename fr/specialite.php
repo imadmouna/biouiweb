@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sp&eacute;cialit&eacute;s - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -60,19 +60,11 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B;">Nos Sp&eacute;cialit&eacute;s</td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666"><p><br />
-      Biouitravaux emploie 1.500 personnes ayant une expertise dans plusieurs domaines:</p>      
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> G&eacute;nie Civil </p>
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> Am&eacute;nagement de terrains</p>
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> Routes et le stationnement</p>
-      <p>&nbsp;</p>
-      L'équipe Biouitravaux est complète et permanente, il couvre tous les domaines d'activités.
-<br /><br />
-Voir la liste de nos activités et n'hésitez pas à répondre à nos offres <a href="emploi.php" style="color:#333333">ici</a>.</p>
-      <p>
-        <label style="color:#77AD1B"><br />
-          </label>
-      </p></td>
+    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
+
+      
+      
+    </td>
   </tr>
 </table>
           </td>
