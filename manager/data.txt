@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- G�n�r� le :  Sam 28 Mars 2015 � 19:52
+-- G�n�r� le :  Mar 31 Mars 2015 � 21:51
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.5.8
 
@@ -299,7 +299,7 @@ CREATE TABLE IF NOT EXISTS `manage` (
 --
 
 INSERT INTO `manage` (`login`, `pass`, `last_log`) VALUES
-('manager', 'mimadl3a', 'Fri 27 Mar 21h, 2015');
+('manager', 'mimadl3a', 'Tue 31 Mar 21h, 2015');
 
 -- --------------------------------------------------------
 
@@ -1353,14 +1353,18 @@ CREATE TABLE IF NOT EXISTS `offre` (
   `titre` text NOT NULL,
   `descr` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `offre`
 --
 
 INSERT INTO `offre` (`id`, `titre`, `descr`) VALUES
-(1, 'Direction des amÃ©nagement hydraulique111', 'test');
+(1, 'IngÃ©nieur Technicien GÃ©nie Civil', '<ul><li><div><div>Parlant couramment le franÃ§ais</div></div></li><li><div><div>Bonnes compÃ©tences en AutoCAD, MS Project, MS Office</div></div></li><li><div><div>Bonne connaissance des normes marocaines et des procÃ©dures</div></div></li><li><div><div>FlexibilitÃ© dans les heures de travail</div></div></li></ul>\r\n \r\n 2 positions sont disponibles. Postes basÃ©s Ã  Oujda.<br>\r\n <br>'),
+(2, 'Directeur de la construction', '<ul><li><div><div>License en hydraulique, transports ou gÃ©nie civil</div></div></li><li><div><div>5 ans ou plus d''expÃ©rience dans les transports, l''infrastructure, hydraulique\r\nou des projets de dÃ©veloppement des terrains</div></div></li><li><div><div>Parlant couramment le franÃ§ais</div>\r\n						</div></li><li><div><div>FlexibilitÃ© dans les heures de travail</div>\r\n						</div></li><li><div><div>Bonne connaissance des normes marocaines et des procÃ©dures</div>\r\n						</div></li><li><div><div>Bonnes compÃ©tences en relation avec le personnel et l''administration</div></div></li><li><div><div>Bon comportement en environnement d''Ã©quipe</div></div></li><li><div><div>MobilitÃ©</div></div></li></ul>\r\n <br>\r\n 2 positionssont disponibles. Postes basÃ©s au Maroc.\r\n<br>'),
+(3, 'IngÃ©nieurs diplÃ´mÃ©s', '<ul><li><div><div>License en hydraulique, transports ou gÃ©nie civil Aucune expÃ©rience n''est obligatoire</div>\r\n						</div></li><li><div><div>Bon comportement en environnement d''Ã©quipe</div>\r\n						</div></li><li><div>\r\n						  <div>MobilitÃ©</div>\r\n						</div></li><li><div><div>FlexibilitÃ© dans les heures de travail</div>\r\n						</div></li></ul>\r\n \r\n 5 Ã  10 positions sont disponibles. Postes basÃ©s au Maroc. <br>'),
+(4, 'IngÃ©nieur QualitÃ©', '<ul><li><div><div>Bon comportement en environnement d''Ã©quipe</div>\r\n						</div></li><li><div>\r\n						  <div>MobilitÃ©</div>\r\n						</div></li><li><div><div>FlexibilitÃ© dans les heures de travail</div>\r\n						</div></li></ul>\r\n 1 positions est disponible. Postes basÃ©s au Maroc. <br>\r\n <br>'),
+(5, 'Techniciens QualitÃ©', '<ul><li><div><div>Bon comportement en environnement d''Ã©quipe</div>\r\n						</div></li><li><div>\r\n						  <div>MobilitÃ©</div>\r\n						</div></li><li><div><div>FlexibilitÃ© dans les heures de travail</div>\r\n						</div></li></ul>\r\n 4 positions sont disponibles. Postes basÃ©s au Maroc.<br><br><br>Envoyez votre candidature (CV et lettre de motivation) Ã  l''adresse e-mail &nbsp;<a rel="nofollow" target="_blank">rh@biouitravaux.ma</a><br>');
 
 -- --------------------------------------------------------
 
@@ -1559,7 +1563,7 @@ CREATE TABLE IF NOT EXISTS `texte_offre` (
 --
 
 INSERT INTO `texte_offre` (`texte`) VALUES
-('texte_offre1');
+('"Le plaisir met la perfection dans le travail."<br>\r\n	      <br>\r\n	    BIOUITRAVAUX mÃ©langes expÃ©rience \r\nsignificative avec des connaissances avancÃ©es pour fournir des valeurs, \r\nidentifier des solutions pour vous aider Ã  rÃ©ussir.\r\n<br>\r\n<br>\r\nEn plus de tous ces points, BIOUITRAVAUX a toujours maintenu sa \r\nstratÃ©gie en matiÃ¨re de droits, le bien-Ãªtre et le dÃ©veloppement de ses \r\nemployÃ©s tout au long de leur carriÃ¨re au sein de l''organisation<br>\r\n<br>');
 
 -- --------------------------------------------------------
 

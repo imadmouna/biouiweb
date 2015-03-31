@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Offres d'emploi - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -60,88 +60,35 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B;">Offres d'emploi</td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:0px;color:#666666"><br /><label style="font-style:italic;font-size:14px">"Le plaisir met la perfection dans le travail."</label><br />
-	      <br />
-	    <div style="padding-left:5px">BIOUITRAVAUX m&eacute;langes exp&eacute;rience significative avec des connaissances avanc&eacute;es pour fournir des valeurs, identifier des solutions pour vous aider à r&eacute;ussir.
-<br />
-<br />
-En plus de tous ces points, BIOUITRAVAUX a toujours maintenu sa strat&eacute;gie en mati&egrave;re de droits, le bien-&ecirc;tre et le d&eacute;veloppement de ses employ&eacute;s tout au long de leur carri&egrave;re au sein de l'organisation<br />
-<br />
-	 
+    <td align="left" valign="top" style="padding-left:40px;padding-right:0px;color:#666666">
+
+
+	    <br />
+	    <?php
+	        include("../connect.php");
+	        $query = mysql_query("select texte from texte_offre");
+	        $t = mysql_fetch_array($query);
+	        echo stripslashes(utf8_decode($t[0]));
+	    ?>
+	    <br />
+	      
+
+	 <?php
+	 	$query = mysql_query("select * from offre order by id asc");
+	 	while( $tt = mysql_fetch_array($query)){
+	 ?>
 	 <p>&nbsp;</p>
-	 <p><div style="background-image:url(img/bg_t.jpg)"><b>Ingénieur Technicien Génie Civil</b></div>
-	 				 <ul style="color:#00CC00">
-						<li><div style="color:#666"><div style="padding-left:10px">Parlant couramment le français</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Bonnes compétences en AutoCAD, MS Project, MS Office</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Bonne connaissance des normes marocaines et des procédures</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Flexibilité dans les heures de travail</div></div></li>
-					 </ul>
- </p>
- 2 positions sont disponibles. Postes basés à Oujda.<br />
- <br /><br /><br />
- 
- <div style="background-image:url(img/bg_t.jpg)"><b>Directeur de la construction</b></div>
- <ul style="color:#00CC00">
-						<li><div style="color:#666"><div style="padding-left:10px">License en hydraulique, transports ou génie civil</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">5 ans ou plus d'expérience dans les transports, l'infrastructure, hydraulique
-ou des projets de développement des terrains</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Parlant couramment le fran&ccedil;ais</div>
-						</div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Flexibilit&eacute; dans les heures de travail</div>
-						</div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Bonne connaissance des normes marocaines et des proc&eacute;dures</div>
-						</div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Bonnes compétences en relation avec le personnel et l'administration</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Bon comportement en environnement d'équipe</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Mobilité</div></div></li>
-					 </ul>
- <br />
- 2 positionssont disponibles. Postes bas&eacute;s au Maroc.
-<br />
-<br />
-<p><div style="background-image:url(img/bg_t.jpg)"><b>Ingénieurs diplômés</b></div>
-	 				 <ul style="color:#00CC00">
-						<li><div style="color:#666"><div style="padding-left:10px">License en hydraulique, transports ou g&eacute;nie civil Aucune expérience n'est obligatoire</div>
-						</div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Bon comportement en environnement d'&eacute;quipe</div>
-						</div></li>
-						<li><div style="color:#666">
-						  <div style="padding-left:10px">Mobilit&eacute;</div>
-						</div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Flexibilit&eacute; dans les heures de travail</div>
-						</div></li>
-					 </ul>
- </p>
- 5 &agrave; 10 positions sont disponibles. Postes bas&eacute;s au Maroc. <br />
-<br /><br />
- <div style="background-image:url(img/bg_t.jpg)"><b>Ingénieur Qualité</b></div>
-  <ul style="color:#00CC00">
-						<li><div style="color:#666"><div style="padding-left:10px">Bon comportement en environnement d'&eacute;quipe</div>
-						</div></li>
-						<li><div style="color:#666">
-						  <div style="padding-left:10px">Mobilit&eacute;</div>
-						</div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Flexibilit&eacute; dans les heures de travail</div>
-						</div></li>
-</ul>
- 1 positions est disponible. Postes bas&eacute;s au Maroc. <br />
- <br />
- <br />
-<br /><br />
- <div style="background-image:url(img/bg_t.jpg)"><b>Techniciens Qualité</b></div>
-  <ul style="color:#00CC00">
-						<li><div style="color:#666"><div style="padding-left:10px">Bon comportement en environnement d'&eacute;quipe</div>
-						</div></li>
-						<li><div style="color:#666">
-						  <div style="padding-left:10px">Mobilit&eacute;</div>
-						</div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Flexibilit&eacute; dans les heures de travail</div>
-						</div></li>
-</ul>
- 4 positions sont disponibles. Postes bas&eacute;s au Maroc. <br />
- <br />
-     <p>Envoyez votre candidature (CV et lettre de motivation) à l'adresse e-mail &nbsp;<a href="mailto:rh@biouitravaux.ma">rh@biouitravaux.ma</a></p>
-	    </div><br />
+	 			<p><div style="background-image:url(img/bg_t.jpg)"><b><?php echo stripslashes(utf8_decode($tt[1])); ?></b></div>
+	 				
+	 				 	<br>
+						<?php echo stripslashes(utf8_decode($tt[2])); ?>
+						<br /><br />
+					 
+				 </p>
+
+	 <?php
+	 	}
+	 ?>
 	    </td>
   </tr>
 </table>
