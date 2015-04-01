@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Mission et Vision - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -61,12 +61,12 @@
   </tr>
   <tr>
     <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
-
+      <br>
     <?php
         include("../connect.php");
         $query = mysql_query("select texte from missionvision");
         $t = mysql_fetch_array($query);
-        echo utf8_decode($t[0]);                        
+        echo stripslashes(utf8_decode($t[0]));                        
     ?>
 
     <br />
@@ -96,7 +96,7 @@
 Royaume du Maroc<br /><br />
       T&eacute;l.: +212 (0) 536 680 509 / +212 (0) 536 690 116<br />
         Fax: +212 (0) 536688747 / +212 (0) 536706708<br />
-        2011, BIOUITRAVAUX <br />
+        <?php echo date("Y"); ?>, BIOUITRAVAUX <br />
         Tous droit reserv&eacute;s.<br /><br /></td>
   </tr>
 </table>

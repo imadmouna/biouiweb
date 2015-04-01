@@ -166,7 +166,7 @@
                 </table></td>
               </tr>
               <tr>
-                <td height="20" align="right" valign="bottom"  style="font-family:tahoma;font-size:10px;">&copy; BIOUITRAVAUX, 2011. Tous droits r&eacute;s&eacute;rv&eacute;s. </td>
+                <td height="20" align="right" valign="bottom"  style="font-family:tahoma;font-size:10px;">&copy; BIOUITRAVAUX, <?php echo date("Y"); ?>. Tous droits r&eacute;s&eacute;rv&eacute;s. </td>
               </tr>
             </table></div></td>
           </tr>
@@ -180,7 +180,7 @@
       Royaume du Maroc</p>
       <p>T&eacute;l.: +212 (0) 536 680 509 / +212 (0) 536 690 116<br />
         Fax: +212 (0) 536688747 / +212 (0) 536706708<br />
-        2011, BIOUITRAVAUX <br />
+        <?php echo date("Y"); ?>, BIOUITRAVAUX <br />
         Tous droit reserv&eacute;s.<br />
       </p></td>
   </tr>

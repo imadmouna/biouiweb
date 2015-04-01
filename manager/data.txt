@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- G�n�r� le :  Mar 31 Mars 2015 � 21:51
+-- G�n�r� le :  Mer 01 Avril 2015 � 11:45
 -- Version du serveur :  5.6.15-log
 -- Version de PHP :  5.5.8
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `accueil` (
 --
 
 INSERT INTO `accueil` (`texte`) VALUES
-('BIOUI TRAVAUX est leader dans les domaines de la construction des \r\nInfrastructures de Transport, du GÃ©nie Civil et du dÃ©veloppement de \r\nprojets au Maroc. <br>\r\n	<br>\r\n	Nous combinons entre notre expertise, nos capacitÃ©s techniques, un parc\r\n de machines Ã©norme et Ã  la pointe de la tÃ©chnologie ainsi que notre \r\nforce financiÃ¨re pour la rÃ©alisations  des maisons, des espaces de vie, \r\nla modernisation urbaine, le dÃ©veloppement  des projets publics.\r\n	<br>\r\n	<br>\r\n	Trois principales activitÃ©s font partie de toute une gamme de services \r\nqui couvres une grande chaÃ®ne de l''industrie de la construction:\r\n	<br>                    <br>');
+('BIOUI TRAVAUX est leader dans les domaines de la construction des \r\nInfrastructures de Transport, du GÃ©nie Civil et du dÃ©veloppement de \r\nprojets au Maroc. <br>\r\n	<br>\r\n	Nous combinons entre notre expertise, nos capacitÃ©s techniques, un parc\r\n de machines Ã©norme et Ã  la pointe de la tÃ©chnologie ainsi que notre \r\nforce financiÃ¨re pour la rÃ©alisations  des maisons, des espaces de vie, \r\nla modernisation urbaine, le dÃ©veloppement  des projets publics.\r\n	<br>\r\n	<br>\r\n	Trois principales activitÃ©s font partie de toute une gamme de services \r\nqui couvres une grande chaÃ®ne de l''industrie de la construction:\r\n	<br>');
 
 -- --------------------------------------------------------
 
@@ -49,14 +49,16 @@ CREATE TABLE IF NOT EXISTS `activites` (
   `texte` text NOT NULL,
   `photo` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `activites`
 --
 
 INSERT INTO `activites` (`id`, `titre`, `texte`, `photo`) VALUES
-(3, 'Transport & Infrastructures', 'Notre expertise s''Ã©tends sur plusieurs segments d''infrastructures Ã  savoir:<br><br>\r\n\r\nconduits, projets de barrages, l''eau potable et des collecteurs d''eau de pluie, ponts,l''ar-sanary, travaux de gÃ©nie civil.\r\n<br><br>\r\nBIOUITRAVAUX se dÃ©voue a offrir , des services complet couvrant toutes \r\nles activitÃ©s de la construction des routes et chemins de fer...<br><br><a href="http://biouitravaux.ma/fr/projecttri.php" rel="nofollow" target="_blank">cliquez ici pour accÃ©der au projects</a><br><br>', 'images/others/246a2f67f32e227f5af01ae508c2ad7b29bda23d.jpg');
+(5, 'Travaux hydrauliques et gÃ©nie civil', '<p>BIOUITRAVAUX donne une grande valeur aux travaux hydrauliques ainsi \r\nqu''Ã  la gÃ©nie civil pour leur importance \r\n                dans les domaines d''affaires de BIOUITRAVAUX dans le but\r\n d''Ãªtre compÃ©titif dans la modÃ©rnisation des villes et des projets de \r\ncomfort car\r\n                BIOUITRAVAUX donnant vie Ã  ce que les gens ont besoin.</p>\r\n              <p>Les services dans ce domaine comprend des projets \r\nvisant principalement des constructions de distribution d''eau, la \r\nprotection contre les inondations <br>\r\n                de bÃ¢timents: commerciales et industrielles ...<br>\r\n              </p>\r\n              <br>\r\n              <br>\r\n              <a href="http://biouitravaux.ma/fr/civil.php" rel="nofollow" target="_blank">cliquez ici pour accÃ©der au projects</a><br>', 'images/others/98d860a927321d3661d3eacd4adca83e132d3f95.jpg'),
+(4, 'Transport & Infrastructures', 'Notre expertise s''Ã©tends sur plusieurs segments d''infrastructures Ã  savoir:<br><br>\r\n\r\nconduits, projets de barrages, l''eau potable et des collecteurs d''eau de pluie, ponts,l''ar-sanary, travaux de gÃ©nie civil.\r\n<br><br>\r\nBIOUITRAVAUX se dÃ©voue a offrir , des services complet couvrant toutes \r\nles activitÃ©s de la construction des routes et chemins de fer...<br><br>\r\n              <a href="http://biouitravaux.ma/fr/projecttri.php" rel="nofollow" target="_blank">cliquez ici pour accÃ©der au projects</a><br>', 'images/others/54153083583097d75d2ba4669b4b5d32331f90bc.jpg'),
+(6, 'AmÃ©nagement et autres travaux', '<span>Modernisation et/ou reconstruction de bÃ¢timents, commercials, des espaces de vie et le dÃ©veloppement de projets...\r\n              <br>\r\n              <br>\r\n              <a href="http://biouitravaux.ma/fr/plan_work.php" rel="nofollow" target="_blank">cliquez ici pour accÃ©der au projects</a></span><br>', 'images/others/ca7d8b283c0c2c44622ed65226ab730a32e84f90.jpg');
 
 -- --------------------------------------------------------
 
@@ -73,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `candidat` (
 --
 
 INSERT INTO `candidat` (`texte`) VALUES
-('Candidatures spontanÃ©es');
+('Vous\r\n avez une bonne expÃ©rience, vous Ãªtes un mÃ©canicien, contremaÃ®tre, \r\nopÃ©rateurs de machines, la construction, la comptabilitÃ©, ...<br>\r\nquel que soit votre profession, vous pouvez maintenant faire votre \r\ndemande ouverte et nous envoyer votre candidature (CV et lettre de \r\nmotivation) Ã  l''adresse Ã©lectronique suivante:\r\n	\r\n	<br><br>\r\n	<a rel="nofollow" target="_blank">rh@biouitravaux.ma</a><br>\r\n<br>\r\nNous vous remercions pour l''interet que vous portez Ã  notre sociÃ©tÃ©.\r\n	<br>\r\n	<br>&nbsp;\r\n	\r\n  \r\n\r\n          \r\n      \r\n      \r\n    \r\n	\r\n	\r\n  \r\n  \r\n    <br><br>');
 
 -- --------------------------------------------------------
 
@@ -221,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `enviro` (
 --
 
 INSERT INTO `enviro` (`texte`) VALUES
-('bbbbb');
+('DÃ¨s le dÃ©part, nous avons compris la valeur de notre milieu naturel et la nÃ©cessitÃ© de minimiser notre impact. <br>Par consÃ©quent Biouitravaux a dÃ©veloppÃ© un savoir-faire tout vert.\r\n	<p>\r\n	ProtÃ©ger notre environnement naturel est en effet au cÅur de notre \r\npolitique industrielle. Il commence par une analyse du site du projet, \r\nson environnement immÃ©diat et prend en compte toutes les contraintes \r\nenvironnementales, mais aussi:\r\n	 </p>\r\n      <p><img src="http://biouitravaux.ma/fr/img/puce.png" alt="" height="10" width="12"> Gestion des dÃ©chets.</p>\r\n      <p><img src="http://biouitravaux.ma/fr/img/puce.png" alt="" height="10" width="12"> Recyclage.</p>\r\n      <p><img src="http://biouitravaux.ma/fr/img/puce.png" alt="" height="10" width="12"> Protection contre le bruit.</p>      \r\n      <span><br>\r\n      </span><br>');
 
 -- --------------------------------------------------------
 
@@ -299,7 +301,7 @@ CREATE TABLE IF NOT EXISTS `manage` (
 --
 
 INSERT INTO `manage` (`login`, `pass`, `last_log`) VALUES
-('manager', 'mimadl3a', 'Tue 31 Mar 21h, 2015');
+('manager', 'mimadl3a', 'Wed 01 Apr 11h, 2015');
 
 -- --------------------------------------------------------
 
@@ -1340,7 +1342,7 @@ CREATE TABLE IF NOT EXISTS `missionvision` (
 --
 
 INSERT INTO `missionvision` (`texte`) VALUES
-('aa');
+('MISSION<br>\r\n      <br>\r\n      Notre mission est de crÃ©er des solutions d''ingÃ©nierie, des espaces\r\n de vie, le renforcement des structures de haute qualitÃ©, faire des \r\nroutes et des lieux sans affecter l''environnement de faire vivre plus Ã  \r\nl''aise avec nos valeurs;<br><br>\r\n	  <strong><img src="http://biouitravaux.ma/fr/img/puce.png" alt="" height="10" width="12">&nbsp;IntegritÃ©</strong>\r\n      <div>Gardez les meilleures relations avec nos clients, nos fournisseurs et employÃ©s\r\n	  <br>\r\nDes relations fondÃ©es sur la confiance et le respect mutuel</div><br>\r\n  <strong><img src="http://biouitravaux.ma/fr/img/puce.png" alt="" height="10" width="12"></strong><strong>&nbsp;ResponsabilitÃ©</strong> <br>\r\n        <div>Tout le monde doit considÃ©rer l''impact de ses dÃ©cisions et actions</div><br>\r\n        <strong><img src="http://biouitravaux.ma/fr/img/puce.png" alt="" height="10" width="12"></strong>        <strong>&nbsp;Autonomie</strong> <br>\r\n        <div>L''Ã©panouissement personnel, l''Ã©laboration de nouvelles options, de la crÃ©ativitÃ©.</div><br>\r\n        <strong><img src="http://biouitravaux.ma/fr/img/puce.png" alt="" height="10" width="12"></strong>        <strong>&nbsp;SecuritÃ©</strong> <br>\r\n  <div>Comme le proverbe Â«Mieux vaut prÃ©venir que guÃ©rir!Â»<br>\r\nMaintenir un environnement de travail de qualitÃ©, protÃ©ger les plantes et prÃ©server l''environnement.</div>\r\n  <br>\r\n        <strong><img src="http://biouitravaux.ma/fr/img/puce.png" alt="httpbiouitravauxcomuploadsimagespucepng" height="10" width="12"></strong>        <strong>&nbsp;HumilitÃ©</strong> <br>\r\n        <div>Ãtre modeste et toujours fier de ce que nous faisons</div>\r\n		<br><br>\r\n		VISION\r\n		<br><br>\r\n		Pour poursuivre notre chemin Ã  l''expansion des segments d''affaires \r\ndans notre secteur, d''engager nos valeurs sur l''ensemble de nos gens qui\r\n travaillent avec nous et les dÃ©velopper selon les critÃ¨res techniques, \r\ndes informations, l''homme Ã©tant essentiel.\r\n		<br><br>\r\n		Offrir nos services Ã  nos clients avec le respect du temps, standard et leurs autres besoins.<br>');
 
 -- --------------------------------------------------------
 
@@ -1381,7 +1383,7 @@ CREATE TABLE IF NOT EXISTS `organisation` (
 --
 
 INSERT INTO `organisation` (`texte`) VALUES
-('BIOUI TRAVAUX est leader dans les domaines de la construction des \r\nInfrastructures de Transport, du GÃ©nie Civil et du dÃ©veloppement de \r\nprojets au Maroc. <br>\r\n	<br>\r\n	Nous combinons entre notre expertise, nos capacitÃ©s techniques, un parc\r\n de machines Ã©norme et Ã  la pointe de la tÃ©chnologie ainsi que notre \r\nforce financiÃ¨re pour la rÃ©alisations  des maisons, des espaces de vie, \r\nla modernisation urbaine, le dÃ©veloppement  des projets publics.\r\n	<br>\r\n	<br>\r\n	Trois principales activitÃ©s font partie de toute une gamme de services \r\nqui couvres une grande chaÃ®ne de l''industrie de la construction:\r\n	<br><br>                    <br>                    <img src="http://localhost/BIOUI/images/uploads/beecb728f09994c1faeb5a681cef13da010527b5.jpg" alt="">');
+('- PrÃ©sident Directeur GÃ©nÃ©ral: Abdennabi BIIOUI<br>\r\n	<br>\r\n\r\n- Directeur GÃ©nÃ©ral: Abderrahim BIIOUI<br>\r\n<br>\r\n\r\n- Directeur GÃ©nÃ©ral Adminstrative et Financier:  Khalid SEDDAS<br>\r\n<br>\r\n\r\n- Directeur Gestion et Technique: Onder CAY<br>\r\n<br>\r\n\r\n- Directeur Logistique et MatÃ©riel: Mohamed TABICH<br>\r\n<br><br><br>\r\n\r\n \r\n\r\n<div>L''organisation de Biouitravaux et les projets structurÃ©s s''articulent autour de quatre pÃ´les:</div>\r\n<p><br>\r\n    <br>\r\n  \r\n  \r\n  La Gestion et le centre technique intÃ¨grent toutes les activitÃ©s de \r\nconception, d''ingÃ©nierie d''Ã©tude, gestion de production et de projets et\r\n dÃ©veloppement des affaires.\r\n<br><br>\r\nDivision Administrative et FinanciÃ¨re, qui regroupe les activitÃ©s de \r\ncontrÃ´les financiers, informatiques et administratives de surveillance \r\n\r\n<br><br>\r\nMatÃ©riaux, responsable de la gestion du parc de machines, l''achat et \r\ninitiateur d''actions de maintenance prÃ©ventive et corrective.\r\n<br><br>\r\nSantÃ©, SÃ©curitÃ© et Environnement, dont la mission est de surveiller les \r\nquestions liÃ©es Ã  la santÃ©, la sÃ©curitÃ© et l''environnement.<br>\r\n  <br>\r\n  \r\n  <br>\r\n</p>\r\n\r\n	  \r\n        \r\n          Notre organigramme par projet :<br><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><img src="http://localhost/BIOUI/images/uploads/2dd9b9bc6aafe695f28750a6a0302ec61d216a29.jpg" alt=""><br></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote>');
 
 -- --------------------------------------------------------
 
@@ -1435,7 +1437,7 @@ CREATE TABLE IF NOT EXISTS `prix` (
 --
 
 INSERT INTO `prix` (`id`, `texte`, `fichier`) VALUES
-(2, 'test', '5b9ba8bbf6f2577062d7707bb6e4f885c6ca4761.jpg');
+(2, '<span>Editorial Office and Trade Leader''s Club\r\n              \r\n              \r\n                Nouveau Prix MillÃ©naire international de la construction 2011.\r\n              \r\n              \r\n                &nbsp;\r\n              \r\n              <span>\r\n                <span>\r\n					LE PRIX INTERNATIONAL DE LA CONSTRUCTION  a Ã©tÃ© crÃ©Ã© en 1988 par \r\nl''Editorial Office, qui gÃ¨re Ã©galement le CLUB Trade Leaders dans le \r\ncadre de son programme de promotion des contacts et des liens entre les \r\nhommes d''affaires dans le secteur Ã  travers le monde, offrant Ã  ses \r\nmembres un Ã©lÃ©ment supplÃ©mentaire de soutien et d''appui pour les \r\ncampagnes de promotion et de marketing.<br>\r\n<br>\r\nTrade Leaders Club, en service dans le domaine du transport Ã  travers le\r\n monde qui rassemble les dirigeants des grandes entreprises et moyennes \r\nentreprises, une association commerciale internationale qui hÃ©berge le \r\nsite de 7000 utilisateurs.\r\n<br><br>\r\nChaque annÃ©e passÃ©e conduit au dÃ©veloppement du commerce international \r\nou rÃ©gional, des organismes publics et privÃ©s qui exÃ©cutent des projets \r\nde grande envergure, compte tenu d''Ã©valuer la contribution qu''elles ont \r\napportÃ©e Ã  l''Ã©conomie mondiale, ces succÃ¨s sont rÃ©componsÃ©s.\r\n\r\n<br><br>\r\nCÃ©rÃ©monie de remise de prix International de la construction et des \r\ntransports tenue Ã  Paris le 9 mai 2011. ComitÃ© de sÃ©lection de l'' \r\nEditorial Office and Trade Leaders Club, Ã  la suite des Ã©valuations \r\nfaites dans le domaine de la Construction, a dÃ©cernÃ© BIOUI TRAVAUX SARL \r\nau Prix international de la construction (Nouveau Prix MillÃ©naire).\r\n<br><br>\r\nDans cette cÃ©rÃ©monie, parmi les 40 pays, diverses sociÃ©tÃ©s et \r\norganisations agissant sur ??cette industrie reprÃ©sentÃ©e par les cadres \r\nsupÃ©rieurs Ã  Paris.\r\n</span></span></span><br>', '64d9ca9559f45519a857aef5e4bd29b569af7642.jpg');
 
 -- --------------------------------------------------------
 
@@ -1495,7 +1497,7 @@ CREATE TABLE IF NOT EXISTS `securite` (
 --
 
 INSERT INTO `securite` (`texte`) VALUES
-('ff');
+('<p>La sÃ©curitÃ© est l''affaire de tous!</p>      \r\n      <p>Dans Biouitravaux, la sÃ©curitÃ© intervient Ã  plusieurs niveaux:</p>\r\n      <p><img src="http://biouitravaux.ma/fr/img/puce.png" alt="" height="10" width="12">\r\n \r\n	  En amont de la construction de routes, dans la phase de conception \r\npour intÃ©grer le facteur de visibilitÃ© et le comportement des usagers \r\nsur les routes.\r\n	  </p>\r\n      <p><img src="http://biouitravaux.ma/fr/img/puce.png" alt="" height="10" width="12"> En aval avec les traitements de surface pour amÃ©liorer l''adhÃ©rence.</p>\r\n      <p><br>\r\n      </p>\r\n      <p>Enfin Biouitravaux engage des plans de formation Ã  son \r\npersonnel et des actions de prÃ©vention et de contrÃ´le (instructions \r\nspÃ©ciales) d''amÃ©liorer en permanence la sÃ©curitÃ© du personnel sur les \r\nsites.</p><br>');
 
 -- --------------------------------------------------------
 
@@ -1529,7 +1531,7 @@ CREATE TABLE IF NOT EXISTS `specialite` (
 --
 
 INSERT INTO `specialite` (`texte`) VALUES
-('specialite ddd');
+('Biouitravaux emploie 1.500 personnes ayant une expertise dans plusieurs domaines:      \r\n      <p><img src="http://biouitravaux.ma/fr/img/puce.png" alt="" height="10" width="12"> GÃ©nie Civil </p>\r\n      <p><img src="http://biouitravaux.ma/fr/img/puce.png" alt="" height="10" width="12"> AmÃ©nagement de terrains</p>\r\n      <p><img src="http://biouitravaux.ma/fr/img/puce.png" alt="" height="10" width="12"> Routes et le stationnement</p>\r\n      <p>&nbsp;</p>\r\n      L''Ã©quipe Biouitravaux est complÃ¨te et permanente, il couvre tous les domaines d''activitÃ©s.\r\n<br><br>\r\nVoir la liste de nos activitÃ©s et n''hÃ©sitez pas Ã  rÃ©pondre Ã  nos offres <a href="http://biouitravaux.ma/fr/emploi.php" rel="nofollow" target="_blank">ici</a>.\r\n      <p>\r\n        <span><br>\r\n          </span>\r\n      </p><br>');
 
 -- --------------------------------------------------------
 
@@ -1580,7 +1582,7 @@ CREATE TABLE IF NOT EXISTS `texte_parc` (
 --
 
 INSERT INTO `texte_parc` (`texte`) VALUES
-('textggg');
+('<b>BIOUITRAVAUX</b> fait un gros investissement dans le parc de machines\r\n et d''Ã©quipements pour se sentir prÃªte pour tout type de projets dans \r\ntous les segments oÃ¹ elle agit.\r\nVoici quelques machines et Ã©quipements:<br>');
 
 -- --------------------------------------------------------
 
@@ -1597,7 +1599,7 @@ CREATE TABLE IF NOT EXISTS `texte_prix` (
 --
 
 INSERT INTO `texte_prix` (`texte`) VALUES
-('aasssss                    <a href="https://vimeo.com/channels/staffpicks/122951412" rel="nofollow" target="_blank">https://vimeo.com/channels/staffpicks/122951412</a>');
+('Biouitravaux est l''une des entreprises de construction les plus connues dans le monde.\r\n<br>\r\n<br>\r\nEtant une entreprise de construction nationale au Maroc avec une vaste \r\nexpÃ©rience dans les diffÃ©rents domaines de construction, Biouitravaux \r\ntravaille activement sur de nombreux niveaux du processus de rÃ©alisation\r\n pour assurer des produits et services de qualitÃ© afin de garder son \r\nleadership devant la concurrence<a href="https://vimeo.com/channels/staffpicks/122951412" rel="nofollow" target="_blank"></a>                    <br>');
 
 -- --------------------------------------------------------
 
@@ -1614,7 +1616,7 @@ CREATE TABLE IF NOT EXISTS `texte_projetsp` (
 --
 
 INSERT INTO `texte_projetsp` (`texte`) VALUES
-('dd');
+('<b>BIOUITRAVAUX</b> agit dans diffÃ©rents segments de la construction au \r\nMaroc, chaque rÃ©alisation ouvre de nouveaux horizons et de nouvelles \r\nperpectives.\r\nÃtre efficace, rÃ©actif et innovateur contribue Ã  maintenir notre \r\nleadership.\r\n<br><br>\r\nVoici une gallerie de photos de quelques projets:\r\n			<br>');
 
 -- --------------------------------------------------------
 
@@ -1631,7 +1633,7 @@ CREATE TABLE IF NOT EXISTS `texte_reference` (
 --
 
 INSERT INTO `texte_reference` (`texte`) VALUES
-('ddldldk');
+('Plus de 200 projets et travaux ont Ã©tÃ© effectuÃ©s par Biouitravaux pour des administrations Ã  plusieurs reprises depuis 2000.<br><br>\r\nParmi les rÃ©alisations rÃ©centes, on peut citer les suivantes: <br>');
 
 -- --------------------------------------------------------
 
@@ -1648,7 +1650,7 @@ CREATE TABLE IF NOT EXISTS `texte_wcc` (
 --
 
 INSERT INTO `texte_wcc` (`texte`) VALUES
-('aaaaaaaaaaaa');
+('Biouitravaux est l''un des principaux concurrents dans la construction au Maroc.<br>\r\n	  En quelques annÃ©es, Biouitravaux s''est dÃ©veloppÃ© pour devenir un \r\nleader dans son domaine en raison d''une Ã©quipe innovante, le \r\nsavoir-faire des processus dans tous les <a href="http://biouitravaux.ma/fr/projecttri.php" rel="nofollow" target="_blank">projets</a> et  grÃ¢ce Ã  son Ã©normes <a href="http://biouitravaux.ma/fr/machines.php" rel="nofollow" target="_blank">Parc de machines</a>.<br>');
 
 -- --------------------------------------------------------
 
@@ -1660,15 +1662,14 @@ CREATE TABLE IF NOT EXISTS `upload` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `chemin` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Contenu de la table `upload`
 --
 
 INSERT INTO `upload` (`id`, `chemin`) VALUES
-(9, '0753cc587f40368e89811afeeb6716e84ddb6bd5.jpg'),
-(10, '76b144171966a8c4ce42c6714ae3454417eb7e28.jpg');
+(11, '2dd9b9bc6aafe695f28750a6a0302ec61d216a29.jpg');
 
 -- --------------------------------------------------------
 
@@ -1680,30 +1681,7 @@ CREATE TABLE IF NOT EXISTS `uploadreferencepics` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `chemin` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
-
---
--- Contenu de la table `uploadreferencepics`
---
-
-INSERT INTO `uploadreferencepics` (`id`, `chemin`) VALUES
-(1, 'fda81c47127c19699157b7ba1c29b8b3f4d002a8.jpg'),
-(2, '83de165d17515706dadd477f4468a23bef08c8bf.jpg'),
-(3, '15eccfacaa8a6077631704bff4dd23243e1e490e.jpg'),
-(4, '665e94fc67b86bbb5fc4b8ac2d872bfb471e759f.jpg'),
-(5, '6810c89070ed443f4ef152887cfd183ac37153de.jpg'),
-(6, '502ad7909d0e9b836b8b980b6e60b75f09b29883.jpg'),
-(7, 'da308dc4ece5d2b79d2acf177eb323e4a6215df7.jpg'),
-(8, '471d52104188ca8abfb75947f649f37a4c211a36.jpg'),
-(9, 'd80e8b2e543e39f9262eb356bffa25803427abb9.jpg'),
-(10, '2fd1be21926736a485d9eb5c695a574cdc9d4425.jpg'),
-(11, '7cda06c66801a3c2c7dbf044022d584681c75b57.jpg'),
-(12, '85e504d1e3b891d1d357d5141ddd0fbdbba50ad9.jpg'),
-(13, 'e997b958f38739fe3ab5613ca1d5d1277281104a.jpg'),
-(14, '45a644be1ee2f40f009d7b48d6a594b466f9cbbc.jpg'),
-(15, '1afa5833df736262c72a7aaf7855be77c376abc7.jpg'),
-(16, 'a81225d0e89432a925585843f18de03fccb43d83.jpg'),
-(17, 'cec7aa7e4cc9fe71a41f3a5db53b057713d95697.jpg');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1728,9 +1706,7 @@ INSERT INTO `uploadtextparc` (`id`, `chemin`) VALUES
 (20, '753fb5857f7cf3e55e865060e0aa4a5c7dda1694.jpg'),
 (21, '5ab10ce2b81a62145177840662bf8ca0854cebee.jpg'),
 (22, '40e4041367a736e0891d4c9c0644afd29091e8da.jpg'),
-(24, '7284bd1a10927acf386ce6bb49b0ee5e1fba7810.jpg'),
-(25, '4921d1037b9d0d11d947f5c4b074bfbdfb31d920.jpg'),
-(26, '9003fb6ea6e4da967209e4be0a37441098b7eedc.jpg');
+(24, '7284bd1a10927acf386ce6bb49b0ee5e1fba7810.jpg');
 
 -- --------------------------------------------------------
 
@@ -1742,22 +1718,14 @@ CREATE TABLE IF NOT EXISTS `uploadtextprojetsp` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `chemin` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Contenu de la table `uploadtextprojetsp`
 --
 
 INSERT INTO `uploadtextprojetsp` (`id`, `chemin`) VALUES
-(1, '0db608b677e3f6045dfbdeafdce6a006237748f9.jpg'),
-(2, 'a55d0097d48bd1ba4465138eea86038716c6f9c9.jpg'),
-(3, '7a26658fabc443219310c9fe732fdd86865ff2f9.jpg'),
-(4, '5988c3787c2c4130c3cc96626dff0263fd89860d.jpg'),
-(5, '223d5ca5922d60bd37508c7eff1bf7eeb614abb4.jpg'),
-(6, 'f24bdf81edbe36b5726cfd5a580633be4d2c355c.jpg'),
-(7, '68549035273c0a81494453577dd894418a6caf5a.jpg'),
-(8, '3be13d7337a04b5535adec278721a4374a499c7e.jpg'),
-(9, '238d22867eb0f0eec3ea5edc0a8028a6e25c6291.jpg');
+(10, 'b8162cffea5aeaf8f22051b4e00b8b27aabf0760.jpg');
 
 -- --------------------------------------------------------
 
@@ -1770,14 +1738,14 @@ CREATE TABLE IF NOT EXISTS `wcc` (
   `texte` text NOT NULL,
   `fichier` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `wcc`
 --
 
 INSERT INTO `wcc` (`id`, `texte`, `fichier`) VALUES
-(2, 'ss', '045b7c1fc25a2219b1848c17f008fd398e50f6f7.jpg');
+(3, 'SociÃ©tÃ© d''amÃ©nagement de  saidia S.A.\r\n  \r\n  \r\n    Certification de l''accomplissement des travaux routiers et de terrassement.<br>', '2b3565558faf4d0031e757047ec6574c35c39e69.jpg');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

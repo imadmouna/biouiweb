@@ -68,6 +68,8 @@
         echo utf8_decode($t[0]);                        
       ?>
       <br />
+      <br />
+      <br />
     </td>
   </tr>
   <tr>
@@ -78,7 +80,7 @@
       
 
     <?php
-        $query = mysql_query("select * from activites order by id desc");
+        $query = mysql_query("select * from activites order by id asc");
         while($t1 = mysql_fetch_array($query)){
     ?>
 
@@ -134,7 +136,7 @@
 Royaume du Maroc<br /><br />
       T&eacute;l.: +212 (0) 536 680 509 / +212 (0) 536 690 116<br />
         Fax: +212 (0) 536688747 / +212 (0) 536706708<br />
-        2011, BIOUITRAVAUX <br />
+        <?php echo date("Y"); ?>, BIOUITRAVAUX <br />
         Tous droit reserv&eacute;s.<br /><br />
       </td>
   </tr>
