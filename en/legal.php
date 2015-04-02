@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Legal notice  - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -61,29 +61,17 @@
       <br /></td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666"><p>
-	<br /><br />
-	
-www.biouitravaux.ma website is the property of the company Biouitravaux registered with the Trade Oujda as No. 16337 and capital of 50,000,000 Dirham.</p>      
-      <p>PATENT No.: 10118185</p>
-      <p>CNSS&nbsp;: 6099437</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p><strong>Responsability</strong></p>
-      <p>The contents of this web site may not be considered as an offer to sell or purchase. Consequently, the user agrees to use the information on this site under his sole responsibility. Biouitravaux is bound by an obligation of means regarding the information it makes available to persons visiting its website http://www.biouitravaux.ma.</p>
-      <p><strong>Intellectual Property </strong></p>
-	  
-      <p>Biouitravaux owns the rights, title and interest in the domain name "biouitravaux.ma.<br />
-	   Any use of this name is forbidden without the prior written Biouitravaux. This site and its contents are protected under the Code of intellectual property, particularly copyright, designs and trademark rights. 
-	   <br /><br />
-	   Under Moroccan Code of Intellectual Property and, more generally, treaties and international agreements containing provisions on the protection of copyright, you agree not to reproduce for any purpose other than private, sell, distribute, transmit, disseminate, adapt, modify, publish, in whole or in part in any form whatsoever, data, presentation or organization of the site or the works protected by copyright shown on the website http:/ / www.biouitravaux.ma without the prior written permission of the copyright holder attached to the work, the presentation or organization of the site or the data reproduced. 
-	   
-	   <br /><br />You are also prohibited from entering the data on the website http://www.biouitravaux.ma that would change or would change the content or appearance of data, presentation or organization of the site or works contained on the website and Biouitravaux by any means whatsoever. For further information, contact the webmaster at the following address: <a href="mailto:contact@biouitravaux.ma">contact@<strong>biouitravaux.ma</strong></a></p>
-      <label style="color:#77AD1B"><br />
-      </label></td>
-  </tr>
-</table>
-          </td>
+    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
+
+     <br />
+     <?php
+        include("connect.php");
+        $query = mysql_query("select texte from legal");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+    ?>
+
+    </td>
       </tr>
       
     </table>

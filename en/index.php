@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Welcome - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -60,70 +60,60 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;font-size:30px;font-family:TitilliumMaps26L500wt;color:#77AD1B;background-color:#C0D897">HOME</td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666;"><br /><br /><p>BIOUI Travaux is  a leading Transportation Infrastructures Construction &amp; Civil Engineering; and  project development company of Morocco. <br />
+    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666;"><br /><br />
+      <?php
+        include("connect.php");
+        $query = mysql_query("select texte from accueil");
+        $t = mysql_fetch_array($query);
+        echo stripslashes(utf8_decode($t[0]));                        
+      ?>
       <br />
-      We are combining our expertise, power  of &nbsp;workmanship, technical abilities,  huge machinery park and financial strength to develop homes, living areas, city  modernization, comfort development of  the public projects.<br />
-      
-        <br />
-      Three main activities are part of a whole range of services that covers a large chain of the construction industry:</p>
-      <p><br /><br /><br />
-       
-        <br />
-	    </p>
-      </p>      </td>
+      <br />
+      <br />
+    </td>
   </tr>
   <tr>
   <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;font-size:30px;font-family:TitilliumMaps26L500wt;color:#77AD1B;background-color:#C0D897">Our activities</td>
   </tr>
   <tr>
     <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666;"><p></p>
+      
+
+    <?php
+        $query = mysql_query("select * from activites order by id asc");
+        while($t1 = mysql_fetch_array($query)){
+    ?>
+
+
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td align="left" valign="top" style="padding-left:10px"><strong style="color:#77AD1B;">Transportation &amp; Infrastructures</strong><br />
-              <br />
-            From starting of run-up movement of development system of modern transport  routes, highways in Morocco we are doing and creating transportation projects  to reach our aim of connecting cities without making influence to environment &nbsp;withintegrating people to economic flows, to  make transportation safer and easier .
-            <p>In infrastructures segment  we are doing pipelines, dams projects to make greener and&nbsp; more&nbsp;fertile&nbsp;lands Sewage ,drinking  water and rain water collectors are also in our expertise. Bridges, arti-sanary  civil works are important for BIOUI to make complete service covering all  activities in the road and railway construction&nbsp;  &hellip;<br /><br />
-              <a href="projecttri.php" style="color:#333333">click to see our  projects</a></p></td>
-          <td width="400" align="right" valign="top" style="padding-left:10px;padding-right:20px"><img src="img/img.jpg" width="240" height="260" style="padding:1px;border:solid 1px #CCCCCC"/></td>
-        </tr>
-        <tr>
-          <td colspan="2" style="padding-left:10px"><br /></td>
-        </tr>
-      </table>
-      <br />
-      <br />
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td align="left" valign="top" style="padding-left:10px"><strong style="color:#77AD1B;">Hydraulic works &amp;  Civil Engineering</strong><br />
-              <br />
-            BIOUI focused on Hydraulic Works  &amp; Civil Engineering segments which are very important business fields for  BIOUI to challenge in city modernizations and&nbsp;  comfort development projects
-            <p>BIOUI concentrate on  bringing to life what people need.<br />
-              <br />
-              The gap of services in this area includes projects  mainly Water distribution constructions, protection against flooding, commercial and industrial  buildings &hellip;<br />
-              <br />
-              <a href="civil.php" style="color:#333333">click to see our  projects</a></p></td>
-          <td width="400" align="right" valign="top" style="padding-left:10px;padding-right:20px"><img src="img/img1.jpg" width="240" height="260" style="padding:1px;border:solid 1px #CCCCCC"/></td>
-        </tr>
-        <tr>
-          <td colspan="2" style="padding-left:10px"><br /></td>
-        </tr>
-      </table>
-      <p><br />
+          <td align="left" valign="top" style="padding-left:10px"><strong style="color:#77AD1B;">
+            <?php echo stripslashes(utf8_decode($t1[1])); ?>
+          </strong>
           <br />
-      </p>
-      <div>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td align="left" valign="top" style="padding-right:30px;padding-left:10px"><span style="padding-left:0px"><strong style="color:#77AD1B;">Land development &amp; Other Works</strong><br />
-                  <br />
-              Modernization and/or reconstruction of buildings places, commercial or out  living areas, project developments are comprises this segment &hellip;<br /><br />
-              <a href="plan_work.php" style="color:#333333">click to see our  projects</a></span></td>
-            <td width="400" align="right" valign="top" style="padding-left:10px;padding-right:20px"><img src="img/img2.jpg" width="240" height="260" style="padding:1px;border:solid 1px #CCCCCC"/></td>
-          </tr>
-        </table><br /><br />
-      </div></td>
-  </tr>
-</table>
+          <br />
+           <?php echo stripslashes(utf8_decode($t1[2])); ?>
+          </td>
+          <td width="400" align="right" valign="top" style="padding-left:10px;padding-right:20px">
+            <img src="../<?php echo $t1[3]; ?>" width="240" height="260" style="padding:1px;border:solid 1px #CCCCCC" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="padding-left:10px"><br /></td>
+        </tr>
+      </table>
+      <br />
+      <br />
+
+
+    <?php
+      }
+    ?>
+
+
+
+
+      
           </td>
       </tr>
       

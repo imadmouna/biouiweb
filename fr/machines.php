@@ -90,7 +90,7 @@
 	<div style="padding-right:20px;padding-left:40px">
 	
 	<?php
-        include("../connect.php");
+        include("connect.php");
         $query = mysql_query("select texte from texte_parc");
         $t = mysql_fetch_array($query);
         echo utf8_decode($t[0]);                        
@@ -121,7 +121,7 @@
    
       
   <?php 
-  include("../connect.php");
+  include("connect.php");
   $req=mysql_query("select * from cat_machine");
   while($t=mysql_fetch_array($req)){
   

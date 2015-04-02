@@ -69,7 +69,7 @@
     <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
       <br>
       <?php
-        include("../connect.php");
+        include("connect.php");
         $query = mysql_query("select texte from texte_classification");
         $t = mysql_fetch_array($query);
         echo utf8_decode($t[0]);                        

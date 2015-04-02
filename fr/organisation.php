@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Organisation - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -63,48 +63,18 @@
   <tr>
     <td align="left" valign="top" style="padding-left:40px;color:#666666">
 	<br />
-	- Pr&eacute;sident Directeur G&eacute;n&eacute;ral: Abdennabi BIIOUI<br />
-	<br />
-
-- Directeur Général: Abderrahim BIIOUI<br />
-<br />
-
-- Directeur Général Adminstrative et Financier:  Khalid SEDDAS<br />
-<br />
-
-- Directeur Gestion et Technique: Onder CAY<br />
-<br />
-
-- Directeur Logistique et Matériel: Mohamed TABICH<br />
-<br /><br /><br />
-
- 
-
-<div style="font-size:20px;font-weight:bold;color:#77AD1B">L'organisation de Biouitravaux et les projets structur&eacute;s s'articulent autour de quatre p&ocirc;les:</div>
-<p><br />
-    <br />
-  
-  
-  La Gestion et le centre technique intègrent toutes les activités de conception, d'ingénierie d'étude, gestion de production et de projets et développement des affaires.
-<br /><br />
-Division Administrative et Financière, qui regroupe les activités de contrôles financiers, informatiques et administratives de surveillance 
-
-<br /><br />
-Matériaux, responsable de la gestion du parc de machines, l'achat et initiateur d'actions de maintenance préventive et corrective.
-<br /><br />
-Santé, Sécurité et Environnement, dont la mission est de surveiller les questions liées à la santé, la sécurité et l'environnement.<br />
-  <br />
+	
   
   <br />
 </p>
-<div align="center">
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td align="left" valign="middle">Notre organigramme par projet :</td>
-          <td align="center" valign="middle"><img src="img/services.jpg" width="345" height="441" /><br />
-            <br /></td>
-        </tr>
-      </table>
+<div align="left">
+	  
+    <?php
+        include("connect.php");
+        $query = mysql_query("select texte from organisation");
+        $t = mysql_fetch_array($query);
+        echo stripslashes(utf8_decode($t[0]));                        
+      ?>
 	  </div>	</td>
   </tr>
 </table>

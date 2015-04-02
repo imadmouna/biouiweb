@@ -88,7 +88,7 @@
 			<div style="padding-left:20px">
 
                     <?php
-                      include("../connect.php");
+                      include("connect.php");
                       $query = mysql_query("select texte from plan_work");
                       $t = mysql_fetch_array($query);
                       echo utf8_decode($t[0]);                        

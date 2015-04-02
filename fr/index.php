@@ -62,10 +62,10 @@
   <tr>
     <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666;"><br /><br />
       <?php
-        include("../connect.php");
+        include("connect.php");
         $query = mysql_query("select texte from accueil");
         $t = mysql_fetch_array($query);
-        echo utf8_decode($t[0]);                        
+        echo stripslashes(utf8_decode($t[0]));                        
       ?>
       <br />
       <br />

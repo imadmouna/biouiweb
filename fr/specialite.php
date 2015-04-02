@@ -64,7 +64,7 @@
 
     <br />
     <?php
-        include("../connect.php");
+        include("connect.php");
         $query = mysql_query("select texte from specialite");
         $t = mysql_fetch_array($query);
         echo utf8_decode($t[0]);                        
