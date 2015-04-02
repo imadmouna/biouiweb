@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include("../../connect.php");
+include("../../en/connect.php");
 if(isset($_POST['login']) and isset($_POST['pass']) and isset($_POST['recaptcha_response_field']) and isset($_POST['recaptcha_challenge_field']) and $_POST['login'] and $_POST['pass'] and $_POST['recaptcha_response_field'] and $_POST['recaptcha_challenge_field']){
 
 	
@@ -23,7 +23,7 @@ if(isset($_POST['login']) and isset($_POST['pass']) and isset($_POST['recaptcha_
 			$_SESSION['admin']=$_POST['login'];
 			$_SESSION['last_log']=$t['last_log'];
 			mysql_query("update manage set last_log='".date("D d M H")."h".date(", Y")."'");
-			echo "<script language='javascript'>document.location.href='main.php';</script>";
+			echo "<script language='javascript'>document.location.href='accueil.php';</script>";
 		}else{
 			echo "Erreur, les donnees saisies sont incorrectes!";
 		}

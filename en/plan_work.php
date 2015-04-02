@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Land development &amp; Divers works - BIOUITRAVAUX</title>
 	
 
@@ -84,318 +84,135 @@
       <br /></td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:10px;padding-right:20px;color:#666666"><br />
-			<div style="padding-left:20px">
-			  <br /><b>BIOUITRAVAUX</b> acts in several domains of construction 
-			    in MOROCCO, being divers and looking for new challenges  makes us leader. Every single detail counts for us, keep focusing on our objectifs and goals to reach is our key of success.<br /><br />
-			Here is some of our projects in Planing &amp; Divers works:
-			</div><br /><br />
-	
-	 <div style="padding-left:10px">
-  <div id="accordion" style="font-family:TitilliumMaps26L500wt;width:960px;font-size:14px">
-  <h3 style="background-image:url(img/imgh.jpg); background-repeat:repeat-y;background-position:left"><a href="#" style="color:#666666">Ongoing Projects</a></h3>
-	  <div style="font-family:TitilliumMaps26L500wt;font-size:14px;color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td align="left" valign="top"> </td>
-        </tr>
-        <tr>
-          <td align="left" valign="top" style="padding-left:0px">
-		  <br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="center" valign="middle"><img src="img/logo/omrane.jpg" width="80" height="63" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">AL Omrane<br />
-                Al Boughase</td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Roadworks and sanitation</b> of group B of the new city of the prefecture Ch'rafate Fahs Anjra</td>
-              </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-		  <br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="top"><img src="img/logo/geo.jpg" width="100" height="100" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">Directorate of Water Development</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Development work</b> of streams for protection against flooding of the town of Beni N'sar in the province of Nador<br />
-			  <b>The completion of development work and transferring water</b> from the wadi Tizguit for the preservation and safeguarding of natural lake &quot;Aoua Dayat&quot; in the Province of Ifrane</td>
-            </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-		  <br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"><img src="img/logo/fadesa.jpg" width="89" height="25" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">FADESA</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Roadworks and landscaping</b> / development company Saidia-Fadesa <br />
-			  <b>Coating works</b>: The Plot Epb 1, Alleys of la Medina, Planning of parking in front of Lake, <b>Marina Parking Restoration</b></td>
-            </tr>
-          </table>
-		  </td>
-        </tr>
-      </table></div>
-	  
-  <h3 style="background-image:url(img/imgh.jpg); background-repeat:repeat-y;background-position:left"><a href="#" style="color:#666666">Completed Projects</a></h3>
-	  <div><table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td align="left" valign="top"> </td>
-        </tr>
-        <tr>
-          <td align="left" valign="top" style="padding-left:20px">
-			<br />
-			
-		  <br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="center" valign="middle"><img src="img/logo/omrane.jpg" width="80" height="63" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">AL OMRANE<br />
-OUJDA</td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Construction of paving and tiling sidewalks and construction of intersections</b> of the Boulevard Med VI at Ain Beni Mathar<br />
-			  <b>Reconstruction</b> of roads in the neighborhood SAMARA Oujda<br />
-			  <b>Rehabilitation and redevelopment</b> of the Jeddah site in Oujda-Civil Works-coating (Lot No. 1)<br />
-			  <b>Development work</b> around the edge III South entry by the North grafted Boulevard Hassan II in Saidia</td>
-              </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-<br />
-		  
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"><img src="img/logo/marjane.jpg" width="100" height="100" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">MARJANE HOLDING </td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Excavation and remediation</b> of the shopping center Marjane A Nador (1st slice)<br />
-			  <b>Road works</b> and car parks of shopping center project in Marjane Nador (slice-1)<br />
-			  <b>Excavation and remediation</b> of the shopping center project Marjane FES-II (slice-1)</td>
-              </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-		  <br />
-		  
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"><img src="img/logo/fadesa.jpg" width="89" height="25" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">FADESA</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Earthmoving and construction</b> of pathways and parking at the Medina Saidia
-			  <br /><b>Coating works</b>: The Plot Epb 1, Medina Driveways, Planning parking in front of Lake Marina Parking Restoration
-			  </td>
-            </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-              <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-            </tr>
-          </table>
-		  <br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"><img src="img/logo/dpe.png" width="100" height="29" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">CFR</td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Development works</b> of the unclassified road linking the RN2-Aghbal on 3 KM - Province of Berkane<br />
-			  <b>Development work</b> PK 0+000 to KP 14+600 and construction of PK 14+600 to KP 32+550 of  RP 6034 connecting the RN 17 and RN 607, 32.5 km Matrouh on-wilaya of Oujda<br />
-			  <b>Development work</b> of the RP 5125  linking Oulad Ali and Hassan Bni 15 +000 to PK 25 +000, Province Boulemane</td>
-              </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-		  <br />
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"><img src="img/logo/dpe.png" width="100" height="29" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">DPE Taza </td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Development work</b> of the PR 5432 Maghraoua linking Ras and Laksar KP 0 +000 to KP 37 +500, Province of Taza<br />
-			  <b>Work to develop</b> the road between El Melga Ouidane RN15 Ouled Khallouf by KP 0 +000 to KP 814 28 - Province of Taza</td>
-              </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-		  <br />
-		
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="middle"><img src="img/logo/dpe.png" width="100" height="29" /></td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">DPE Nador </td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Development work</b> of the unclassified road from KP 0 +000 to PK 18+007 (Linking M'Hajer-Sidi Hssaine) in the province of Nador</td>
-              </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-		  <br />
-		  
-		  
-		
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="top">&nbsp;</td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">Nador Province</td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Development</b> of the main axes of the city of Nador (4th Slice)<br />
-			  <b>Development work</b> of Zeraktouni Boulevard and its surroundings in the town of Nador in the province of Nador</td>
-              </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-		  <br />
-		
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="top">&nbsp;</td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">Taourirt Province</td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Development work</b> of crossing Taourirt city (1st Slice)-pavement between the bypass and Military Barracks, Province Taourirt</td>
-              </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-		  <br />
-		  <br />
-		  
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="top">&nbsp;</td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">Municipality of Nador</td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Construction and development</b> of the Nador Highways, Nador Province</td>
-              </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-		  <br />
-		  
-		  
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="top">&nbsp;</td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">Wilaya de
-                la R.O</td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Construction</b> of the No. 2 bd linking the N2 to the Permanent School Limouna through 6011, ISTA and delegation of MEN<br />
-			  <b>Development work</b> of the cornice of Saidia Lot No. 1 which includes the following lots in: big works - Coatings - Irrigation systems and fire protection (1st slice)</td>
-              </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-		  <br />
-		  
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="top">&nbsp;</td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">The Minister of Interior, tutor of Communities</td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Development work</b> of the association SIDI YAHYA-Frontiere Moroccan-Algerian Ouled Bouarfa through 13-km-Oujda Angad Prefecture</td>
-              </tr>
-          </table>
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40" valign="top"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
-    <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
-  </tr>
-</table>
-		  <br />
-		  
-		  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="100" height="100" align="left" valign="top">&nbsp;</td>
-              <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">ANFAPLAGE</td>
-              </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><b>Excavation Project</b>, ANFAPLAGE casablanca </td>
-              </tr>
-          </table>
-		  </td>
-        </tr>
-      </table></div>
-	  
-	  </div>
-	  </div>
-	  <br />
-	  <br />     
+    <td align="left" valign="top" style="padding-left:10px;padding-right:20px;color:#666666">
+
+
+      <div style="padding-left:20px">
+
+                    <?php
+                      include("connect.php");
+                      $query = mysql_query("select texte from plan_work");
+                      $t = mysql_fetch_array($query);
+                      echo utf8_decode($t[0]);                        
+                    ?>
+
+      </div>
+      <br /><br />
+  
+   <div style="padding-left:10px">
+                  <div id="accordion" style="font-family:TitilliumMaps26L500wt;width:960px;font-size:14px">
+                    <h3 style="background-image:url(img/imgh.jpg); background-repeat:repeat-y;background-position:left"><a href="#" style="color:#666666">Ongoing projects </a></h3>
+                    <div style="font-family:TitilliumMaps26L500wt;font-size:14px;color:#666666">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td align="left" valign="top"></td>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top" style="padding-left:0px"><br />
+                              <br />
+
+                              <?php
+                                $queryq = mysql_query("select * from projets where cat = 'plan_work' and type=1 order by titre");
+                                while($tqq = mysql_fetch_array($queryq)){
+                              ?>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="100" height="100" align="center" valign="middle">
+                                      <img src="../images/uploads/<?php echo $tqq[4]; ?>" width="80" height="63" />
+                                  </td>
+                                  <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">
+                                    <?php echo stripslashes(utf8_decode($tqq[2])); ?> 
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>&nbsp;</td>
+                                  <td> 
+
+                                    <?php echo stripslashes(utf8_decode($tqq[3])); ?> 
+
+                                  </td>
+                                </tr>
+                              </table>
+
+
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                  <td valign="top" width="40"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
+                                  <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
+                                </tr>
+                              </tbody></table>
+
+                              <br />
+                              <?php
+                                }
+                              ?>
+
+
+                                                     
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <h3 style="background-image:url(img/imgh.jpg); background-repeat:repeat-y;background-position:left"><a href="#" style="color:#666666">Completed projects </a></h3>
+                    <div style="font-family:TitilliumMaps26L500wt;color:#666666">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td align="left" valign="top"></td>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top" style="padding-left:20px"><br />
+                            
+                            <br />
+
+                              <?php
+                                $queryq = mysql_query("select * from projets where cat = 'plan_work' and type=2 order by titre");
+                                while($tqq = mysql_fetch_array($queryq)){
+                              ?>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="100" height="100" align="center" valign="middle">
+                                      <img src="../images/uploads/<?php echo $tqq[4]; ?>" width="80" height="63" />
+                                  </td>
+                                  <td align="left" valign="middle" style="padding-bottom:0px;font-size:20px;color:#006600;font-weight:bold">
+                                    <?php echo stripslashes(utf8_decode($tqq[2])); ?> 
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>&nbsp;</td>
+                                  <td> 
+
+                                    <?php echo stripslashes(utf8_decode($tqq[3])); ?> 
+
+                                  </td>
+                                </tr>
+                              </table>
+
+
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                  <td valign="top" width="40"><div style="border-bottom:5px #00cc00 solid">&nbsp;</div></td>
+                                  <td valign="top"><div style="border-bottom:1px #00cc00 solid">&nbsp;</div></td>
+                                </tr>
+                              </tbody></table>
+
+                              <br />
+                              <?php
+                                }
+                              ?>
+
+
+                                         
+
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
     <br />
-	<br />
+    <br />     
+    <br />
+  <br />
 	  
 	  </td>
   </tr>

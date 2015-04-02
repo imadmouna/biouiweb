@@ -87,7 +87,7 @@ if (!empty($_FILES)) {
 
 
 
-    include("../../connect.php");
+    include("../../en/connect.php");
     mysql_query("insert into uploadTextParc values(null, '".$fichier."')");
 
     $t = mysql_fetch_array(mysql_query("select id from uploadTextParc where chemin like '%".$fichier."%'"));

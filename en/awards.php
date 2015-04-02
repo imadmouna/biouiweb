@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Awards - BIOUITRAVAUX</title>
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" href="../specimen_files/specimen_stylesheet.css" type="text/css" title="" charset="utf-8">
@@ -67,68 +67,58 @@ function showVideo(){
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;font-size:26px;color:#77AD1B">Awards</td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;color:#666666"><p><br />
-      Biouitravaux is one of the well known construction companies in the world.<br /><br />
-	  As a national construction company in Morocco with extensive experience in different construction fields, Biouitravaux actively works on many levels of the process of achieving to ensure high quality products and services in order to keep it's leadership among all the competitors.
-	  </p>
-      <br /><br />
+    <td align="left" valign="top" style="padding-left:40px;color:#666666">
+
+
+
+
+      <br>
+      <?php
+        include("connect.php");
+        $query = mysql_query("select texte from texte_prix");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+      ?>
+
+      <br />
+      <br />
+
+      <?php
+        $qq = mysql_query("select * from prix order by id desc");
+        while( $tqq = mysql_fetch_array($qq) ){
+      ?>
+    
+      <br />
+      <br />
+
+
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="180" align="center" valign="top"><a href="../awards/1.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img src="../awards/min/1.jpg" width="150" height="212" border="0" style="padding:2px;border:1px solid #00CC00;" /></a><a href="../awards/2.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img src="../awards/min/2.jpg" width="150" height="212" border="0" style="padding:2px;border:1px solid #00CC00;display:none" /></a> </td>
-          <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td style="font-weight:bold">Editorial Office and Trade Leader's Club</td>
-              </tr>
-              <tr>
-                <td>New Millenium International Construction Award 2011.</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td style="padding-right:10px" align="left">
-					THE INTERNATIONAL CONSTRUCTION AWARD was created in 1988 by Editorial
-Office, which also runs the TRADE LEADERS' CLUB as a part of its programme
-of promotion of contacts and links between business people in the sector
-worldwide, offering its members an additional element of support and
-backin for promotional and marketing campaigns.
-<br />
-<br />
-Trade Leaders Club, serving in the field of transportation around the
-world that brings together the leaders of large and medium-sized
-companies, an international business association that hosts the user site
-7000.
-<br /><br />
-Each year around the world led to the development of international trade
-orregional public and private organizations that perform a large and
-successful projects, taking into account to evaluate the contributions
-they have made the global economy subjected, those successful are awarded.
-<br /><br />
-International Construction and Transportation Awards Ceremony held in
-Paris on May 9, 2011. Editorial Office and Trade Leaders Club Selection
-Committee, as a result of evaluations made in the field of Construction,
-awarded BIOUI TRAVAUX SARL with  International Construction Award (New
-Millennium Award).
-<br />
-<br />
-In this  Ceremony, from the 40 countries,  various companies and
-organizations acting on this industry represented by senior managers in
-Paris.
-<br /><br />
-Watch a Preview of the ceremony awards
-<span onclick="showVideo();" style="font-weight:bold;text-decoration:underline;cursor:pointer">Click here </span><br />
-<br />
-<div align="left"><div id="video" style="display:none;background-color:#333333;width:400px;padding:5px" align="center">
-<object width="400" height="400"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=24287370&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=24287370&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="400"></embed></object>
-</div></div>
-</td>
-              </tr>
-          </table></td>
+          <td width="180" align="center" valign="middle">
+
+            <a href="../images/uploads/<?php echo $tqq[2];?>" rel="lightbox[roadtrip]" style="text-decoration:none">
+              <img src="../images/uploads/<?php echo $tqq[2];?>" width="150" height="207" border="0" style="padding:2px;border:1px solid #00CC00;" />
+            </a>
+
+          </td>
+          <td align="left" valign="top">
+            <?php echo stripslashes(utf8_decode($tqq[1])); ?>
+          </td>
         </tr>
       </table>
-      <p>            <br />
-        <br />
-      </p></td>
+
+      <?php
+        }
+      ?>
+
+       <br>
+       <br>
+       
+       
+      
+
+
+      </td>
   </tr>
 </table>
           </td>
@@ -154,7 +144,7 @@ Watch a Preview of the ceremony awards
       Kingdom of Morocco </p>
       <p>Telephone.: +212 (0) 536 680 509 / +212 (0) 536 690 116<br />
         Fax: +212 (0) 536688747 / +212 (0) 536706708<br />
-        2011, BIOUITRAVAUX <br />
+        <?php echo date("Y");?>, BIOUITRAVAUX <br />
         All rights reserved.<br />
       </p></td>
   </tr>

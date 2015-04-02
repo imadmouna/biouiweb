@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Classifications - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -66,50 +66,52 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B;">Classifications</td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666"><p><br />
-      Biouitravaux is one of top competitors in constructions in Morocco.<br />
-      In few years, Biouitravaux <span id="main"><span id="search">has grown to become a leader in its field due to an innovative team, <span id="result_box" lang="en" xml:lang="en"><span title="Cliquer ici pour voir d'autres traductions">know-how</span></span> processes in all <a href="projects.php" style="color:#333333">projects</a> and its huge <a href="machinery.php" style="color:#333333">Machinery Park</a> </span></span>.</p>   
-      <br /><br />
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
+
+
+
+
+      <br>
+      <?php
+        include("connect.php");
+        $query = mysql_query("select texte from texte_classification");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+      ?>
+
+      <br />
+      <br />
+
+      <?php
+        $qq = mysql_query("select * from classification order by id desc");
+        while( $tqq = mysql_fetch_array($qq) ){
+      ?>
+    
+      <br />
+      <br />
+
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td width="180" align="center" valign="middle">
-		  <a href="../classification/class1.jpg" rel="lightbox[roadtrip]" style="text-decoration:none"><img style="padding:2px;border:1px solid #00CC00;" src="../classification/min/class1.jpg" border="0" /></a>
-		  	  
-		  </td>
-          <td align="left" valign="top">
-		  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td style="font-weight:bold">Ministry of Equipment and Transport</td>
-  </tr>
-  <tr>
-    <td>Certification of qualification and classification of companies involved in the housing sector.</td>
-  </tr>
-</table>
 
-		  </td>
+            <a href="../images/uploads/<?php echo $tqq[2];?>" rel="lightbox[roadtrip]" style="text-decoration:none">
+              <img src="../images/uploads/<?php echo $tqq[2];?>" width="150" height="207" border="0" style="padding:2px;border:1px solid #00CC00;" />
+            </a>
+
+          </td>
+          <td align="left" valign="top">
+            <?php echo stripslashes(utf8_decode($tqq[1])); ?>
+          </td>
         </tr>
       </table>
-	  <br />
-	  <br />
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td width="180" align="center" valign="middle">
-		  <a href="../classification/class2.jpg" rel="lightbox[roadtrip]" style="text-decoration:none">
-		  <img src="../classification/min/class2.jpg" width="150" height="207" border="0" style="padding:2px;border:1px solid #00CC00;" /></a>		  </td>
-          <td align="left" valign="top">
-		  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td style="font-weight:bold">Ministry of Equipment and Transport</td>
-  </tr>
-  <tr>
-    <td>Certificat of qualification and classification.</td>
-  </tr>
-</table>
 
-		  </td>
-        </tr>
-      </table>
-	  <br /><br />
+      <?php
+        }
+      ?>
+
+
+    <br /><br />
 	  </td>
   </tr>
 </table>
@@ -136,7 +138,7 @@
       Kingdom of Morocco </p>
       <p>Telephone.: +212 (0) 536 680 509 / +212 (0) 536 690 116<br />
         Fax: +212 (0) 536688747 / +212 (0) 536706708<br />
-        2011, BIOUITRAVAUX <br />
+        <?php echo date("Y");?>, BIOUITRAVAUX <br />
         All rights reserved.<br />
       </p></td>
   </tr>

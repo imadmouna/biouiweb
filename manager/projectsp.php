@@ -198,14 +198,14 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
           <tr>
             <td><span class="glyphicon glyphicon-paperclip"></span></td>
             <td>
-              <img src="../images/uploads/parc/small/<?php echo $ttq[1];?>" width="50" class="img-thumbnail" />
+              <img src="../images/uploads/projetsp/small/<?php echo $ttq[1];?>" width="50" class="img-thumbnail" />
               <?php echo $ttq[1];?></td>
             
             <td>
               <div class="pull-right col-md-5">
                 <div class="col-md-6">
                   <a target="_blank" title="Afficher" 
-                  href="../images/uploads/parc/small/<?php echo $ttq[1];?>" class="btn btn-success btn-xs">
+                  href="../images/uploads/projetsp/small/<?php echo $ttq[1];?>" class="btn btn-success btn-xs">
                     <i class="glyphicon glyphicon-eye-open"></i> 
                   </a>
                 </div>

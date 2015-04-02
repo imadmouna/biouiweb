@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Environment - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -60,12 +60,23 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B;">Environment</td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666"><br />From the outset, we understood the value of our natural environment and the need to minimize the impact. Therefore Biouitravaux has developed know-how <strong>everything green</strong>.<p>Protecting our natural environment is indeed at the heart of our industrial policy. It begins with a site analysis of the project, its immediate environment and takes into account all the environmental constraints, but also : </p>
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> Waste Management</p>
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> Recycling</p>
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> Protection against noise.</p>      
-      <label style="color:#77AD1B"><br />
-      </label></td>
+    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
+
+    <br>
+
+    <?php
+        include("connect.php");
+        $query = mysql_query("select texte from enviro");
+        $t = mysql_fetch_array($query);
+        echo stripslashes(utf8_decode($t[0]));                        
+    ?>
+
+    <br />
+    <br />
+
+
+
+    </td>
   </tr>
 </table>
           </td>
@@ -90,7 +101,7 @@
       Kingdom of Morocco </p>
       <p>Telephone.: +212 (0) 536 680 509 / +212 (0) 536 690 116<br />
         Fax: +212 (0) 536688747 / +212 (0) 536706708<br />
-        2011, BIOUITRAVAUX <br />
+        <?php echo date("Y");?>, BIOUITRAVAUX <br />
         All rights reserved.<br />
       </p></td>
   </tr>

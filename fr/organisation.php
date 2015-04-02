@@ -62,20 +62,22 @@
   </tr>
   <tr>
     <td align="left" valign="top" style="padding-left:40px;color:#666666">
-	<br />
-	
-  
-  <br />
-</p>
-<div align="left">
-	  
-    <?php
-        include("connect.php");
-        $query = mysql_query("select texte from organisation");
-        $t = mysql_fetch_array($query);
-        echo stripslashes(utf8_decode($t[0]));                        
-      ?>
-	  </div>	</td>
+  	  <br />
+  	
+    
+      <br />
+      <div align="left">
+  	  
+      <?php
+          include("connect.php");
+          $query = mysql_query("select texte from organisation");
+          $t = mysql_fetch_array($query);
+          echo stripslashes(utf8_decode($t[0]));                        
+        ?>
+  	  </div>
+
+
+  </td>
   </tr>
 </table>
           </td>

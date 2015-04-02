@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Our services - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -61,27 +61,23 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;font-size:26px;color:#77AD1B">Our services </td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;color:#666666"><br />Our&nbsp;expertise:&nbsp;<br /><br />
-	- building&nbsp;human  spaces&nbsp;and&nbsp;safe roads&nbsp;with&nbsp;minimal&nbsp;impact&nbsp;on our 
-      - natural environment.<br />
+    <td align="left" valign="top" style="padding-left:40px;color:#666666">
+
+      
       <br />
-- Among&nbsp;the&nbsp;range&nbsp;of our&nbsp;services:<br />
+    
+      <?php
+        include("connect.php");
+        $query = mysql_query("select texte from services");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+      ?>
+
+    <br />
 <br />
-- Planning&nbsp;and&nbsp;environmental analysis<br />
-<br />
-- Construction&nbsp;and&nbsp;management&nbsp;of&nbsp;highway<br />
-<br />
-- Refurbishments&nbsp;of existing  intersections,&nbsp;boulevards&nbsp;and&nbsp;main&nbsp;roads<br />
-<br />
-- Rehabilitation&nbsp;and&nbsp;redevelopment&nbsp;of&nbsp;public&nbsp;spaces,  platforms&nbsp;and&nbsp;structures<br />
-<br />
-- Civil Works<br />
-<br />
-- Subdivision&nbsp;road works,&nbsp;sanitation&nbsp;and&nbsp;parking<br />
-<br />
-- Finishing&nbsp;(marking,&nbsp;signage, cleaning,&nbsp;clearing&nbsp;...)<br />
-<br />
-For&nbsp;more&nbsp;information&nbsp;about&nbsp;our&nbsp;services,  <a href="contact.php" style="color:#666666">contact us!</a><br /><br /></td>
+
+
+    </td>
   </tr>
 </table>
           </td>
@@ -107,7 +103,7 @@ For&nbsp;more&nbsp;information&nbsp;about&nbsp;our&nbsp;services,  <a href="cont
       Kingdom of Morocco </p>
       <p>Telephone.: +212 (0) 536 680 509 / +212 (0) 536 690 116<br />
         Fax: +212 (0) 536688747 / +212 (0) 536706708<br />
-        2011, BIOUITRAVAUX <br />
+        <?php echo date("Y");?>, BIOUITRAVAUX <br />
         All rights reserved.<br />
       </p></td>
   </tr>

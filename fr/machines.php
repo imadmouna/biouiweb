@@ -86,7 +86,11 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B">Parc des machines  &amp; Equipements </td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:0px;color:#666666"><br />
+    <td align="left" valign="top" style="padding-left:0px;color:#666666">
+
+
+
+      <br />
 	<div style="padding-right:20px;padding-left:40px">
 	
 	<?php

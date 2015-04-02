@@ -18,7 +18,7 @@ if (!empty($_FILES)) {
  
     copy($tempFile,$targetFile);
 
-    include("../../connect.php");
+    include("../../en/connect.php");
     mysql_query("insert into upload values(null, '".$fichier."')");
 
     $t = mysql_fetch_array(mysql_query("select id from upload where chemin like '%".$fichier."%'"));

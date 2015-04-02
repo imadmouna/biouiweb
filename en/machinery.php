@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Machinery - BIOUITRAVAUX</title>
 
 
@@ -86,21 +86,39 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B">Machinery park &amp; Equipment </td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:0px;color:#666666"><br />
+    <td align="left" valign="top" style="padding-left:0px;color:#666666">
+
+
+
+
+
+      <br />
 	<div style="padding-right:20px;padding-left:40px">
-	BIOUI Travaux make a big investment in machinery and equipment park to feel ready for any type of projects in all segments where it acts.<br />
-Some machinery and equipment of BIOUI Travaux:<br />
-<br />
+	
+	<?php
+        include("connect.php");
+        $query = mysql_query("select texte from texte_parc");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+    ?>
+
+	<br />
+	<br />
 	</div>
-	<div style="padding-right:20px;padding-left:50px"><?php
-	for($i=1;$i<=16;$i++){
-?>
-<a href="../parc/<?php echo $i; ?>.JPG" rel="lightbox[roadtrip]" style="text-decoration:none">
-	<span><img style="padding:2px;border:1px solid #00CC00;width:100px;height:75px" src="../parc/min/<?php echo $i; ?>.JPG" border="0" />	</span></a>
-<?php 
-	}
-?>	
-</div><br />
+	<div style="padding-right:20px;padding-left:50px">
+
+	<?php
+        $query1 = mysql_query("select * from uploadtextparc");
+        while($t1 = mysql_fetch_array($query1)){ 
+    ?>
+
+		<a href="../images/uploads/parc/big/<?php echo $t1[1]; ?>" rel="lightbox[roadtrip]" style="text-decoration:none">
+		<span><img style="padding:2px;border:1px solid #00CC00;width:100px;height:75px" src="../images/uploads/parc/small/<?php echo $t1[1]; ?>" border="0" />	</span></a>
+	<?php 
+		}
+	?>
+	</div>
+	<br />
 <br />
 
 <div style="padding-left:10px">
@@ -109,27 +127,19 @@ Some machinery and equipment of BIOUI Travaux:<br />
    
       
   <?php 
-  include("../connect.php");
-  $req=mysql_query("select distinct(designation) from mat");
+  include("connect.php");
+  $req=mysql_query("select * from cat_machine");
   while($t=mysql_fetch_array($req)){
   
-  	$designation="";
-  	if($t[0]=='earth')$designation="Earthwork & Road Construction Machinery";
-	if($t[0]=='sanitary')$designation="Sanitary works and Pipeline Construction Machinery";
-	if($t[0]=='quarry')$designation="Quarry hardware and Drilling Machinery";
-	if($t[0]=='asphalt')$designation="Asphalt and Bitume Equipments";
-	if($t[0]=='trans')$designation="Carrying and Transportation Equipments";
-	if($t[0]=='build')$designation="Elevators and Building Equipments";
 	
-	
-	
-  	$r=mysql_query("select * from mat where designation='".$t[0]."' group by typem,marque,type");echo '<h3 style="background-image:url(img/imgi.jpg); background-repeat:repeat-y;background-position:left"><a href="#" style="color:#666666">'.$designation.'</a></h3><div  style="font-family:TitilliumMaps26L500wt;font-size:14px;color:#666666"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family:TitilliumMaps26L500wt;font-size:14px;color:#666666">';
-	echo '<tr><td style="color:#00cc00">Designation</td><td style="color:#00cc00">Specifications(Horsepower, capacity, ...)</td><td style="color:#00cc00">Number</td></tr><tr><td>&nbsp;</td></tr>';
-	while($t=mysql_fetch_array($r)){
-		$s="select typem,marque,type,count(*) from mat where typem='".$t[1]."' and marque='".$t[2]."' and type='".$t[3]."' group by marque;";
-		$tab=mysql_fetch_array(mysql_query($s));
+  	$r=mysql_query("select * from machines where cat=".$t[0]);
+  	echo '<h3 style="background-image:url(img/imgi.jpg); background-repeat:repeat-y;background-position:left"><a href="#" style="color:#666666">'.stripslashes(utf8_decode($t[1])).'</a></h3>
+  	<div  style="font-family:TitilliumMaps26L500wt;font-size:14px;color:#666666">
+  	<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family:TitilliumMaps26L500wt;font-size:14px;color:#666666">';
+	echo '<tr><td style="color:#00cc00">Designation</td><td style="color:#00cc00">	Specifications(Horsepower, capacity, ...)</td><td style="color:#00cc00">Number</td></tr><tr><td>&nbsp;</td></tr>';
+	while($tab=mysql_fetch_array($r)){		
 		
-		echo ' <tr height="22"><td height="22" width="294">'.$tab[0].'</td><td width="294">'.$tab[1].'&nbsp;'.$tab[2].'</td><td width="294">'.$tab[3].'</td></tr>';
+		echo ' <tr height="22"><td height="22" width="294">'.$tab[1].'</td><td width="294">'.$tab[2].'</td><td width="294">'.$tab[3].'</td></tr>';
 	
 	}	
 	echo '</table></div>';
@@ -167,7 +177,7 @@ Some machinery and equipment of BIOUI Travaux:<br />
       Kingdom of Morocco </p>
       <p>Telephone.: +212 (0) 536 680 509 / +212 (0) 536 690 116<br />
         Fax: +212 (0) 536688747 / +212 (0) 536706708<br />
-        2011, BIOUITRAVAUX <br />
+        <?php echo date("Y");?>, BIOUITRAVAUX <br />
         All rights reserved.<br />
       </p></td>
   </tr>

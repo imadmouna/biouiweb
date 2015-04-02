@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Our Jobs - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -60,73 +60,39 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B;">Our Jobs </td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:0px;color:#666666"><br /><label style="font-style:italic;font-size:14px">"Pleasure in the job puts perfection in the work."</label><br />
-	      <br />
-	    <div style="padding-left:5px">BIOUITRAVAUX Blends significant experience with advanced knowledge to provide values, identify solutions to help you succeed.
-	 <br /> <br />In addition to all those points, BIOUITRAVAUX has always maintained its strategy with regard to rights, welfare and development of its employees throughout their careers within the organization<br /><br />
-	 
-	 <p>&nbsp;</p>
-	 <p><div style="background-image:url(img/bg_t.jpg)"><b>Technical Civil Engineer</b></div>
-	 				 <ul style="color:#00CC00">
-						<li><div style="color:#666"><div style="padding-left:10px">Fluent in french</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Good skill in AutoCAD, MS Project , MS office</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Good knowledge in Moroccan standards and procedures</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Flexibility in working hour</div></div></li>
-					 </ul>
- </p>
- Are needed 2 positions are available. Positions based in Oujda.<br />
- <br /><br /><br />
- 
- <div style="background-image:url(img/bg_t.jpg)"><b>Construction Manager</b></div>
- <ul style="color:#00CC00">
-						<li><div style="color:#666"><div style="padding-left:10px">License in one of hydraulic, Transportation or Civil Engineering</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">5 or more years experience in Transportation,infrastructure, Hydraulic
-or Land development projects</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Fluent in French</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Flexibility in working hour</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Good knowledge in Moroccan standards and procedures</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Good skill in relation with staff and administration</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Good behavior in team environment</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Mobility</div></div></li>
-					 </ul>
- <br />
- Are needed 2 positions are available. Positions based in Morocco.
-<br />
-<br />
-<p><div style="background-image:url(img/bg_t.jpg)"><b>Graduate Engineers</b></div>
-	 				 <ul style="color:#00CC00">
-						<li><div style="color:#666"><div style="padding-left:10px">License in one of hydraulic, Transportation or Civil Engineering No
-experience is obligatory</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Good behavior in team environment</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Mobility</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Flexibility in working hour</div></div></li>
-					 </ul>
- </p>
- Are needed 5-10 positions are available. Positions based in Morocco
-.<br />
-<br /><br />
- <div style="background-image:url(img/bg_t.jpg)"><b>Quality Engineer</b></div>
-  <ul style="color:#00CC00">
-						<li><div style="color:#666"><div style="padding-left:10px">Good behavior in team environment</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Mobility</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Flexibility in working hour</div></div></li>
-</ul>
- Is needed 1 position is available. Position based in Morocco
-.<br />
- <br />
- <br />
-<br /><br />
- <div style="background-image:url(img/bg_t.jpg)"><b>Quality Techniciens</b></div>
-  <ul style="color:#00CC00">
-						<li><div style="color:#666"><div style="padding-left:10px">Good behavior in team environment</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Mobility</div></div></li>
-						<li><div style="color:#666"><div style="padding-left:10px">Flexibility in working hour</div></div></li>
-</ul>
- Are needed 4 positions are available. Positions based in Morocco
-.<br />
- <br />
-     <p>Send your application (CV and motivation letter) to the email address &nbsp;<a href="mailto:rh@biouitravaux.ma">rh@biouitravaux.ma</a></p>
-	    </div><br />
+    <td align="left" valign="top" style="padding-left:40px;padding-right:0px;color:#666666">
+
+
+
+
+      <br />
+      <?php
+          include("connect.php");
+          $query = mysql_query("select texte from texte_offre");
+          $t = mysql_fetch_array($query);
+          echo stripslashes(utf8_decode($t[0]));
+      ?>
+      <br />
+        
+
+   <?php
+    $query = mysql_query("select * from offre order by id asc");
+    while( $tt = mysql_fetch_array($query)){
+   ?>
+   <p>&nbsp;</p>
+        <p><div style="background-image:url(img/bg_t.jpg)"><b><?php echo stripslashes(utf8_decode($tt[1])); ?></b></div>
+          
+            <br>
+            <?php echo stripslashes(utf8_decode($tt[2])); ?>
+            <br /><br />
+           
+         </p>
+
+   <?php
+    }
+   ?>
+
+      
 	    </td>
   </tr>
 </table>
@@ -152,7 +118,7 @@ experience is obligatory</div></div></li>
       Kingdom of Morocco </p>
       <p>Telephone.: +212 (0) 536 680 509 / +212 (0) 536 690 116<br />
         Fax: +212 (0) 536688747 / +212 (0) 536706708<br />
-        2011, BIOUITRAVAUX <br />
+        <?php echo date("Y");?>, BIOUITRAVAUX <br />
         All rights reserved.<br />
       </p></td>
   </tr>

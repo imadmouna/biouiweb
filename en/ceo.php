@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Message of the President - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -59,22 +59,20 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B;">Message of the President      </td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;color:#666666;font-size:14px"><br />
-	For over 10 years we have built a solid reputation for quality and reliability in all areas of our business, we are very proud.
+    <td align="left" valign="top" style="padding-left:40px;color:#666666;font-size:14px">
+
 
       <br />
-      Our primary asset, combining technical expertise, environmental friendliness and safety.
-<br /><br />
-Given the scale of reforms undertaken by our country, we want to actively support the implementation of this strategy, commitment to build safer roads and create human environments.
-<br /><br />Our expertise and good risk management and environmental parameters, we can get a head start.
+      <br />
+  
+      <?php
+        include("connect.php");
+        $query = mysql_query("select texte from pdg");
+        $t = mysql_fetch_array($query);
+        echo utf8_decode($t[0]);                        
+      ?>
 
-<br /><br /><br /><br /><br />
-Sincerely yours,<br /><br />
-      <p> <div align="right" style="padding-right:20px">Abdennabi BIIOUI<br />
-        <strong>President & CEO</strong></div>
-        
-      </p>
-      </p><br /><br /></td>
+    <br /><br /></td>
   </tr>
 </table>
           </td>
@@ -100,7 +98,7 @@ Sincerely yours,<br /><br />
       Kingdom of Morocco </p>
       <p>Telephone.: +212 (0) 536 680 509 / +212 (0) 536 690 116<br />
         Fax: +212 (0) 536688747 / +212 (0) 536706708<br />
-        2011, BIOUITRAVAUX <br />
+        <?php echo date("Y");?>, BIOUITRAVAUX <br />
         All rights reserved.<br />
       </p></td>
   </tr>

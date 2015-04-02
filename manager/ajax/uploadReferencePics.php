@@ -87,7 +87,7 @@ if (!empty($_FILES)) {
 
 
 
-    include("../../connect.php");
+    include("../../fr/connect.php");
     mysql_query("insert into uploadreferencepics values(null, '".$fichier."')");
 
     $t = mysql_fetch_array(mysql_query("select id from uploadreferencepics where chemin like '%".$fichier."%'"));

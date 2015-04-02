@@ -59,7 +59,11 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B;">Mot du PDG </td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;color:#666666;font-size:14px"><br />
+    <td align="left" valign="top" style="padding-left:40px;color:#666666;font-size:14px">
+
+
+      <br />
+      <br />
 	
       <?php
         include("connect.php");

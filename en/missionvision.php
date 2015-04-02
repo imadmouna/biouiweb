@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Mission and Vision - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -60,28 +60,19 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;padding-top:0px;font-size:26px;color:#77AD1B;">Mission and Vision</td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666"><label style="color:#77AD1B"><br />MISSION</label><br />
-      <br />
-      Our mission is creating engineering solutions, living  areas, building high quality structures, making roads and places without  effecting environment to make live more comfortable with our values;</p>
-      <br /><br />
-	  <strong><img width="12" height="10" src="img/puce.png" />&nbsp;Integrity</strong>
-      <div style="padding-left:30px">Keep the best relations with our customers, our suppliers and employees<br />
-Relationships based on trust and mutual respect</div><br />
-  <strong><img width="12" height="10" src="img/puce.png" /></strong><strong>&nbsp;Responsability</strong> <br />
-        <div style="padding-left:30px">Everyone should consider the impact of its decisions and actions</div><br />
-        <strong><img width="12" height="10" src="img/puce.png" /></strong>        <strong>&nbsp;Autonomy</strong> <br />
-        <div style="padding-left:30px">Self-fulfillment, devising new options, creativity.</div><br />
-        <strong><img width="12" height="10" src="img/puce.png" /></strong>        <strong>&nbsp;Security</strong> <br />
-  <div style="padding-left:30px">As the old saying &laquo;&nbsp;<em>Prevention is better than cure!</em>&nbsp;&raquo; <br />
-    Maintain a quality work environment, protect plants and preserve the environment.</div>
-  <br />
-        <strong><img width="12" height="10" src="img/puce.png" alt="http://biouitravaux.com/uploads/images/puce.png" /></strong>        <strong>&nbsp;Humility</strong> <br />
-        <div style="padding-left:30px">Being modest and always proud of what we do</div>
-		<br /><br />
-		<label style="color:#77AD1B">VISION</label>
-		<br /><br />
-To continue  on our way with expanding business segments in our industry, to commit our values on all our people working with us and develop them according to technical, information, human being essential. <br /> <br />Delivering our services to our clients with respecting time, standard and their other needs.<br /><br />
+    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
 
+
+      <br>
+    <?php
+        include("connect.php");
+        $query = mysql_query("select texte from missionvision");
+        $t = mysql_fetch_array($query);
+        echo stripslashes(utf8_decode($t[0]));                        
+    ?>
+
+    <br />
+    <br />
 		</td>
   </tr>
 </table>
@@ -107,7 +98,7 @@ To continue  on our way with expanding business segments in our industry, to com
       Kingdom of Morocco </p>
       <p>Telephone.: +212 (0) 536 680 509 / +212 (0) 536 690 116<br />
         Fax: +212 (0) 536688747 / +212 (0) 536706708<br />
-        2011, BIOUITRAVAUX <br />
+        <?php echo date("Y");?>, BIOUITRAVAUX <br />
         All rights reserved.<br />
       </p></td>
   </tr>

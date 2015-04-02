@@ -95,7 +95,7 @@
           </table></td>
         </tr>
         <tr>
-          <td height="20" align="right" valign="bottom"  style="font-family:tahoma;font-size:10px;">&copy; BIOUITRAVAUX, 2011. All rights reserved. </td>
+          <td height="20" align="right" valign="bottom"  style="font-family:tahoma;font-size:10px;">&copy; BIOUITRAVAUX, <?php echo date("Y");?>. All rights reserved. </td>
         </tr>
       </table>
     </div></td>

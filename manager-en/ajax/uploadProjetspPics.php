@@ -87,7 +87,7 @@ if (!empty($_FILES)) {
 
 
 
-    include("../../connect.php");
+        include("../../en/connect.php");
     mysql_query("insert into uploadTextProjetsp values(null, '".$fichier."')");
 
     $t = mysql_fetch_array(mysql_query("select id from uploadTextProjetsp where chemin like '%".$fichier."%'"));

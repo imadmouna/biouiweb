@@ -82,7 +82,9 @@
                 <br /></td>
           </tr>
           <tr>
-            <td align="left" valign="top" style="padding-left:10px;padding-right:20px;color:#666666"><br />
+            <td align="left" valign="top" style="padding-left:10px;padding-right:20px;color:#666666">
+
+                <br />
                 <div style="padding-left:20px"> 
 
                     <?php

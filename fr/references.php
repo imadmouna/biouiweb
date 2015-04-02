@@ -25,7 +25,6 @@
 
 <script type='text/javascript' src='extra/jquery.js'></script>
 <script type='text/javascript' src='extra/dropdowns.js'></script>
-<?php //$map->printHeaderJS(); ?>
     
 <link rel="shortcut icon" href="../logo.png" />
 </head>

@@ -61,9 +61,12 @@
     <td height="60" align="left" valign="middle" background="img/bg_t.jpg" style="padding-left:10px;font-size:26px;color:#77AD1B">Nos services </td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;color:#666666"><br />
+    <td align="left" valign="top" style="padding-left:40px;color:#666666">
+
+
+      <br />
     
-    <?php
+      <?php
         include("connect.php");
         $query = mysql_query("select texte from services");
         $t = mysql_fetch_array($query);

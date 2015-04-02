@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Security - BIOUITRAVAUX</title>
 	
 	<script src="../fonts/specimen_files/easytabs.js" type="text/javascript" charset="utf-8"></script>
@@ -61,15 +61,21 @@
       <br /></td>
   </tr>
   <tr>
-    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666"><p><strong>Safety is everyone's business ! </strong></p>      
-      <p>In Biouitravaux, security comes at several levels:</p>
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> Upstream of the construction of roads, in the design phase to incorporate the visibility factor and user behavior on the roads.</p>
-      <p><img src="img/puce.png" alt="" width="12" height="10" /> Downstream with surface treatments to enhance adhesion.</p>
-      <p><br />
-      </p>
-      <p>Finally Biouitravaux incurs training plans to his staff and actions for prevention and control (special instructions) to continuously improve the safety of personnel on sites.</p>
-      <label style="color:#77AD1B"><br />
-      </label></td>
+    <td align="left" valign="top" style="padding-left:40px;padding-right:20px;color:#666666">
+
+
+    <?php
+        include("connect.php");
+        $query = mysql_query("select texte from securite");
+        $t = mysql_fetch_array($query);
+        echo stripslashes(utf8_decode($t[0]));
+    ?>
+
+    <br />
+    <br />
+
+
+    </td>
   </tr>
 </table>
           </td>
@@ -94,7 +100,7 @@
       Kingdom of Morocco </p>
       <p>Telephone.: +212 (0) 536 680 509 / +212 (0) 536 690 116<br />
         Fax: +212 (0) 536688747 / +212 (0) 536706708<br />
-        2011, BIOUITRAVAUX <br />
+        <?php echo date("Y");?>, BIOUITRAVAUX <br />
         All rights reserved.<br />
       </p></td>
   </tr>
