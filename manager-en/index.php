@@ -32,7 +32,7 @@ session_start();
 
     <script language="javascript">
 function verifier(){
-  if(document.getElementById("login").value!="" && document.getElementById("pass").value!="" &&  document.getElementById("recaptcha_response_field").value!=""){
+  if(document.getElementById("login").value!="" && document.getElementById("pass").value!=""){
       try{xh1=new XMLHttpRequest();}
         catch(e){
           try{xh1=new ActiveXObject("Microsoft.XMLHTTP");}
@@ -42,13 +42,11 @@ function verifier(){
         }
       xh1.onreadystatechange=function(){
         if(xh1.readyState==4){
-          if(xh1.responseText=='Erreur, les donnees saisies sont incorrectes!'){
-            document.getElementById("divi").innerHTML="Erreur, les données saisies sont incorrectes!";
-          }else if(xh1.responseText=="Erreur, le code n'est pas valide!!"){
-            Recaptcha.reload();
-            document.getElementById("divi").innerHTML="Erreur, le code n'est pas valide!!";
+          data = JSON.parse(xh1.responseText);
+          if(!data.validation){
+            document.getElementById("divi").innerHTML=data.message;
           }else{
-            document.write(xh1.responseText);
+            document.write(data.message);
           }
         }else{
           document.getElementById("divi").innerHTML="<img src='images/loading.gif' />";
@@ -57,20 +55,11 @@ function verifier(){
             
       xh1.open("post","ajax/ajax_auth.php",true);
       xh1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-      xh1.send("login="+document.getElementById("login").value+"&pass="+document.getElementById("pass").value+"&recaptcha_response_field="+document.getElementById("recaptcha_response_field").value+"&recaptcha_challenge_field="+document.getElementById("recaptcha_challenge_field").value);
+      xh1.send("login="+document.getElementById("login").value+"&pass="+document.getElementById("pass").value);
       }else{
         document.getElementById('divi').innerHTML="Les champs sont vides !";
       }
 }
-</script>
-<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
-<script type="text/javascript">
-function showRecaptcha() {
-  Recaptcha.create("6LdvmeUSAAAAAFyaoQvhcxpswJID8W71jYWNTJEO", 'recaptcha_div', {
-  theme: "white",
-  callback: Recaptcha.focus_response_field});
-}
-
 </script>
 
 
@@ -82,8 +71,7 @@ function showRecaptcha() {
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">
-                  <div id="recaptcha_div"></div>
-                  <div id="divi" style="font-size:11px;font-family:tahoma; color:#999999;"></div>
+          <div id="divi" style="font-size:11px;font-family:tahoma; color:#999999;"></div>
         </p>
         <form action="../../index2.html" method="post">
           <div class="form-group has-feedback">
@@ -110,6 +98,7 @@ function showRecaptcha() {
 
        
 
+        
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->

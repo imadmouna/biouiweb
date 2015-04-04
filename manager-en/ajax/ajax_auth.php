@@ -1,6 +1,37 @@
 <?php 
 session_start();
 include("../../en/connect.php");
+if(isset($_POST['login']) and isset($_POST['pass']) and $_POST['login'] and $_POST['pass']){
+
+	
+
+		$t=mysql_fetch_array(mysql_query("select * from manage where login='".addslashes($_POST['login'])."' and pass='".addslashes($_POST['pass'])."'"));
+		if($t[0]){
+			$_SESSION['admin']=$_POST['login'];
+			$_SESSION['last_log']=$t['last_log'];
+			mysql_query("update manage set last_log='".date("D d M H")."h".date(", Y")."'");
+			echo json_encode(
+					array(
+						"validation"=>true,
+						"message"=>"<script language='javascript'>document.location.href='accueil.php';</script>"
+					)
+				);
+		}else{
+			echo json_encode(
+					array(
+						"validation"=>false,
+						"message"=>"Erreur, les donnees saisies sont incorrectes!"
+					)
+				);
+		}
+}
+?>
+
+
+<?php 
+/*
+session_start();
+include("../../en/connect.php");
 if(isset($_POST['login']) and isset($_POST['pass']) and isset($_POST['recaptcha_response_field']) and isset($_POST['recaptcha_challenge_field']) and $_POST['login'] and $_POST['pass'] and $_POST['recaptcha_response_field'] and $_POST['recaptcha_challenge_field']){
 
 	
@@ -28,8 +59,6 @@ if(isset($_POST['login']) and isset($_POST['pass']) and isset($_POST['recaptcha_
 			echo "Erreur, les donnees saisies sont incorrectes!";
 		}
 	}
-
-	
-	
 }
+*/
 ?>
