@@ -10,8 +10,8 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
 }
   include("connect.php");
 
-  if(isset($_GET['texte']) and $_GET['texte']){
-      mysql_query("update legal set texte='".addslashes(utf8_encode($_GET['texte']))."'");
+  if(isset($_POST['texte']) and $_POST['texte']){
+      mysql_query("update legal set texte='".addslashes(utf8_encode($_POST['texte']))."'");
       echo "<script>document.location.href='legal.php';</script>";
   }
 ?>
@@ -82,12 +82,12 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                       <a class="btn btn-primary"><i class="fa fa-file-image-o"></i></a>
                   </div>
 
-                  <form method="get">
+                  <form method="POST">
                     <textarea name="texte" class="textarea" style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
                       <?php
                         $query = mysql_query("select texte from legal");
                         $t = mysql_fetch_array($query);
-                        echo utf8_decode($t[0]);                        
+                        echo stripslashes(utf8_decode($t[0]));                        
                       ?>
                     </textarea>
                     

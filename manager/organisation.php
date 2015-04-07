@@ -87,7 +87,7 @@ if(isset($_REQUEST["dec"]) and $_REQUEST["dec"]=="1"){
                       <?php
                         $query = mysql_query("select texte from organisation");
                         $t = mysql_fetch_array($query);
-                        echo utf8_decode($t[0]);                        
+                        echo stripslashes(utf8_decode($t[0]));
                       ?>
                     </textarea>
                     

@@ -90,7 +90,7 @@
                       include("connect.php");
                       $query = mysql_query("select texte from civil");
                       $t = mysql_fetch_array($query);
-                      echo utf8_decode($t[0]);                        
+                      echo stripslashes(utf8_decode($t[0]));
                     ?>
 
       </div>
