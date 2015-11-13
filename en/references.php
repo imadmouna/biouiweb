@@ -99,8 +99,8 @@
         <br />
         <br />
         <br />
-        <div style="border:5px solid #00CC00;width:900px;height:400px" id="divi">
-  
+        <div style="border:5px solid #00CC00;width:900px;height:400px;display:none" id="divi">
+          <img src="images/map.png" width="900" />
 
         </div>
       <br />
@@ -118,6 +118,7 @@
 	<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
 <script type="text/javascript">
+/*
     var locations = [
     <?php
       $sq = mysql_query("select * from gps order by id desc");
@@ -153,6 +154,7 @@
         }
       })(marker, i));
     }
+    */
   </script>
 	</td>
   </tr>
